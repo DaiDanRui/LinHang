@@ -7,7 +7,9 @@
  * Date: 16/1/17
  * Time: 19:48
  */
-include_once '../Config.php';
+//include_once ("../Config.php");
+$path = dirname(dirname(__FILE__)); 
+include_once($path.'/Config.php');
 class User
 {
     private $conn;
