@@ -27,6 +27,12 @@ class Config
      * @var unknown
      */
     const  table_user = 'tbl_user';
+    
+    static function  connect(){
+        $conn = mysqli_connect(Config::HOST, Config::USER, Config::PASSWORD, Config::DB_NAME);
+        mysqli_query($conn,"SET NAMES 'UTF8'");
+        return $conn;
+    }
 }
 
 ?>

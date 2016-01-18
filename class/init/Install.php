@@ -16,6 +16,7 @@ class Install
      */
     public function init(){
         $this->conn = mysqli_connect(Config::HOST, Config::USER, Config::PASSWORD);
+        mysqli_query($this->conn,"SET NAMES 'UTF8'");
         //检测连接
         if(!$this->conn){
             die("connect failed:". mysqli_connect_error());
@@ -38,11 +39,11 @@ class Install
         $table_user->initTable();
     }
     /**
-     * @param string $operation  just as create or drop DATABASE
+     * @param string $operation  just as create  DATABASE
      * @param string $db_name the name of database
      */
     private function  sql_query( $operation, $db_name){
-        $sql_operation = $operation.' DATABASE '.$db_name;
+        $sql_operation = $operation.' DATABASE '.$db_name." DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
         $result = NULL;
         if(mysqli_query($this->conn, $sql_operation)){
             echo "database $operation successfully";
