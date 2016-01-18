@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 
 /**
@@ -38,7 +39,10 @@ class User
      * 初始化table_name，用户表名
      */
     public function __construct(){
-        $this->conn = mysqli_connect(Config::HOST, Config::USER, Config::PASSWORD, Config::DB_NAME);
+        $this->conn = Config::connect();
+        if(!$this->conn){
+            die('cannot connect to the database');
+        }
         $this->table_name = Config::table_user;
     }
     
@@ -97,7 +101,43 @@ class User
         if($this->search()){
             return false;
         }
-        $query = "insert into $this->table_name ".$this->get_insert_values();
+        $query = "INSERT  into $this->table_name
+                  (
+                  user_is_seller    ,
+                  user_log_name     ,
+                  user_password      ,
+    
+                  user_legal_name     ,
+                  user_school         ,
+                  user_school_id      ,
+    
+                  user_phone_number   ,
+                  user_email          ,
+    
+                  user_nick_name      ,
+                  birthday            ,
+    
+                  is_active           ,
+                  last_log            
+        ) values (
+                 
+                  '$this->user_is_seller'    ,
+                  '$this->user_log_name'     ,
+                  '$this->user_password'      ,
+    
+                  '$this->user_legal_name'     ,
+                  '$this->user_school'         ,
+                  '$this->user_school_id'      ,
+    
+                  '$this->user_phone_number'   ,
+                  '$this->user_email'          ,
+    
+                  '$this->user_nick_name'      ,
+                  '$this->birthday'            ,
+    
+                  '$this->is_active'           ,
+                  '$this->last_log'            
+        )";
         return mysqli_query($this->conn, $query);
     }
     
@@ -136,46 +176,7 @@ class User
         return mysqli_query($this->conn, $query);
     }
     
-    private function get_insert_values(){
-        return "(
-        
-                  
-                  user_is_seller    ,
-                  user_log_name     ,
-                  user_password      ,
     
-                  user_legal_name     ,
-                  user_school         ,
-                  user_school_id      ,
-    
-                  user_phone_number   ,
-                  user_email          ,
-    
-                  user_nick_name      ,
-                  birthday            ,
-    
-                  is_active           ,
-                  last_log            
-        ) values (
-                 
-                  $this->user_is_seller    ,
-                  $this->user_log_name     ,
-                  $this->user_password      ,
-    
-                  $this->user_legal_name     ,
-                  $this->user_school         ,
-                  $this->user_school_id      ,
-    
-                  $this->user_phone_number   ,
-                  $this->user_email          ,
-    
-                  $this->user_nick_name      ,
-                  $this->birthday            ,
-    
-                  $this->is_active           ,
-                  $this->last_log            
-        )";
-    }
     
     public function __destruct(){
         mysqli_close($this->conn);
