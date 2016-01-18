@@ -3,6 +3,14 @@ body{
     background-color: #2debae;
 }
 
+button{
+    border-style: none;
+    border-bottom-left-radius: 0.2em;
+    border-top-right-radius: 0.2em;
+    border-top-left-radius: 0.2em;
+    border-bottom-right-radius: 0.2em;
+}
+
 table{
     border-collapse: collapse;
 }
@@ -68,12 +76,12 @@ a{
 .bottom{
     position: relative;
     text-align: left;
-    top: 105px;
+    top: 10px;
     color: #242424;
 /*#658b65*/
 }
 
-#forget,#reg{
+#forget{
     font-size: 12px;
     font-family: "Microsoft YaHei";
     margin-left: 33px;
@@ -81,6 +89,8 @@ a{
 }
 
 #reg{
-    margin-left: 100px;
-    margin-right: 33px;
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    margin-left: 80px;
+    /*margin-right: 33px;*/
 }

@@ -7,6 +7,14 @@ table{
     border-collapse: collapse;
 }
 
+button{
+    border-style: none;
+    border-bottom-left-radius: 0.2em;
+    border-bottom-right-radius: 0.2em;
+    border-top-left-radius: 0.2em;
+    border-top-right-radius: 0.2em;
+}
+
 /*注册的表格*/
 .form_register{
     position: relative;
@@ -70,9 +78,16 @@ table{
     top: 170px;
     font-size: 13px;
     font-family: "Microsoft YaHei";
-    color: #3b4f36  ;
-    text-align: center;
-    margin: 50px;
+    color: #3b4f36;
+    text-align: left;
+}
+
+#return{
+    margin-left: 40px;
+}
+
+#next{
+    margin-left: 100px;
 }
 
 a{

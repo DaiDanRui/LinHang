@@ -2,24 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="../css/register.css" rel="stylesheet" type="text/css" />
+    <link href="css/register.css" rel="stylesheet" type="text/css" />
     <title>注册step_2</title>
 </head>
 <body>
 <div class="form_register" id="reg2">
-    <form id="regist_form">
+    <form id="regist_form" name="regist_form" action="Register2.php" method="post">
         <table id="regist_table">
             <tr>
                 <td class="table_item">学校</td>
-                <td><input class="input" id="input_sch" type="text"/></td>
+                <td><input class="input" id="input_sch" name="input_sch" type="text"/></td>
             </tr>
             <tr>
                 <td class="table_item">学号</td>
-                <td><input class="input" id="input_stu_id" type="text"/></td>
+                <td><input class="input" id="input_stu_id" name="input_stu_id" type="text"/></td>
             </tr>
             <tr>
                 <td class="table_item">姓名</td>
-                <td><input class="input" id="input_name" type="text"/></td>
+                <td><input class="input" id="input_name" name="input_name" type="text"/></td>
             </tr>
             <tr>
                 <td class="table_item">性别</td>
@@ -29,9 +29,9 @@
                 </td>
             </tr>
         </table>
-        <div>
-            <a class="bottom" href="register1.html">上一页</a>
-            <a class="bottom" href="register3.html" >下一页-></a>
+        <div class="bottom">
+            <button id="return" name="return">上一页</button>
+            <button id="next" name="next">下一页-></button>
         </div>
     </form>
 </div>

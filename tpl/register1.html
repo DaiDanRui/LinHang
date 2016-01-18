@@ -2,29 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="../css/register.css" rel="stylesheet" type="text/css" />
+    <link href="css/register.css" rel="stylesheet" type="text/css" />
     <title>注册step_1</title>
 </head>
 <body>
     <div class="form_register" id="reg1">
-        <form id="regist_form">
+        <form id="regist_form" name="regist_form" action="Register1.php" method="post">
             <table id="regist_table_1">
                 <tr>
                     <td class="table_item">用户名</td>
-                    <td><input class="input" id="input_user" type="text"/></td>
+                    <td><input class="input" id="input_user" name="input_user" type="text"/></td>
                 </tr>
                 <tr>
                     <td class="table_item">密码</td>
-                    <td><input class="input" id="input_pwd" type="password"/></td>
+                    <td><input class="input" id="input_pwd" name="input_pwd" type="password"/></td>
                 </tr>
                 <tr>
                     <td class="table_item">再次密码</td>
-                    <td><input class="input" id="input_pwd_again" type="password"/></td>
+                    <td><input class="input" id="input_pwd_again" name="input_pwd_again" type="password"/></td>
                 </tr>
             </table>
-            <div>
-                <a class="bottom" href="login.html">返回登录</a>
-                <a class="bottom" href="register2.html" >下一页-></a>
+            <div class="bottom">
+                <button id="return" name="return">返回登录</button>
+                <button id="next" name="next">下一页-></button>
             </div>
         </form>
     </div>
