@@ -1,0 +1,20 @@
+/*body样式*/
+
+body{
+    background-color:#292c37;
+}
+
+.sheet_1{
+    position: relative;
+    left: 0;
+    right:0;
+    top: 70px;
+    background-image: url("../img/perInfo_bac.png");
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+    height: 520px;
+
+    text-align: center;
+}
