@@ -57,6 +57,7 @@ table{
 .input{
     font-size: 25px;
     width: 150px;
+    border-style: none;
     border-bottom-left-radius: 0.2em;
     border-bottom-right-radius: 0.2em;
     border-top-left-radius: 0.2em;
