@@ -1,0 +1,69 @@
+/*body样式*/
+body{
+    background-color: #292c37;
+}
+
+/*登录/注册的表格*/
+.sheet_1{
+    position: relative;
+    left: 0; right: 0; top: 70px;
+    background-image: url("../img/register2_bac.png");
+    background-size: cover;
+    margin-left: auto; margin-right: auto;
+    width: 320px;
+    height: 520px;
+
+    text-align: center;
+}
+
+/*注册的表格*/
+#regist_table{
+    position: relative;
+    /*width: 50%;*/
+    left: 46px;
+    right: 46px;
+    top: 100px;
+    /*width: 300px;*/
+    /*height: 300px;*/
+}
+
+/*text*/
+.table_item_1{
+    font-family: "Microsoft YaHei";
+    font-size: 15px;
+    color: #658b65;
+}
+
+/*next,back*/
+.part2{
+    position: relative;
+    top: 170px;
+    font-size: 15px;
+    color: #3b4f36  ;
+    text-align: center;
+    margin: 50px;
+}
+
+/*input*/
+.input_f1{
+    font-size: 25px;
+    width: 150px;
+    border-bottom-left-radius: 0.2em;
+    border-bottom-right-radius: 0.2em;
+    border-top-left-radius: 0.2em;
+    border-top-right-radius: 0.2em;
+}
+
+.input_sex{
+    margin-left: 20px;
+}
+
+tr{
+    position: relative;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
