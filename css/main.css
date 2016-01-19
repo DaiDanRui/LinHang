@@ -1,7 +1,18 @@
-body{
-    background-color: #fafafa;
+body{  background-color: #fafafa;  }
+table{  border-collapse: collapse;  }
+button{  border-style: none;  }
+a{  text-decoration: none;  }
+dl{
+    text-align: left;
+    margin-left: 7%;
+    margin-top: 0px;
+    padding-top: 10px;
 }
-
+li{
+    font-family: "Microsoft YaHei";
+    font-size: 20px;
+    color: #242424;
+}
 .main_part{
     position: relative;
     left: 0; right: 0; top: 70px;
@@ -13,4 +24,46 @@ body{
     height: 520px;
 
     text-align: center;
+}
+
+.main_part1{
+    text-align: left;
+    height: 8%;
+    background-color: #292c37;
+}
+
+.main_part2{
+    height: 33%;
+    background-color: #cccc99;
+}
+
+.main_part3{
+    height: 6%;
+    background-color: #ff7d10;
+}
+
+.main_part4{
+    height: 45%;
+    background-color: #fefeeb;
+}
+
+.main_part5{
+    height: 8%;
+    background-color: #292c37;
+}
+
+.main_bt1{
+    background-color: #292c37;
+    color: #fafafa;
+    float: left;
+    padding: 8px;
+    width: 20%;
+    /*border: 1px solid;*/
+}
+
+.main_bt2{
+    background-color: #f2e3c6;
+    width: 30%;
+    height: 80%;
+    margin-top: 3px;
 }

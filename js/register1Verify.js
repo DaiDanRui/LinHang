@@ -39,8 +39,13 @@ function twiceSame(){
 }
 
 function verify(el){
-    if (twiceSame()) return true;
+    var bt = document.getElementById("next");
+    if (twiceSame()) {
+        bt.value = "true";
+        return true;
+    }
     else{
+        bt.value = "false";
         el.focus();
         return false;
     }

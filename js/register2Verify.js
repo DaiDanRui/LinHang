@@ -12,9 +12,17 @@ function verify(){
     var p1 = document.getElementById("register_stu_id");
     var p2 = document.getElementById("register_name");
 
+    var bt = document.getElementById("next");
+
     var c1 = isNull(p1);
     var c2 = isNull(p2);
 
-    if (!c1&&!c2) return true;
-    else return false;
+    if (!c1&&!c2) {
+        bt.value = "true";
+        return true;
+    }
+    else {
+        bt.value = "false";
+        return false;
+    }
 }
