@@ -3,21 +3,20 @@ include_once ('class/user/User.php');
 session_start();
 include_once ('smarty_init.php');
 
-echo "start<br/>";
-if (isset($_POST['next'])  && $_POST['next'] ){
+if (isset($_POST['next'])  
+    && $_POST['next']=="true" 
+    ){
     echo $_POST['next'];
     $register_user = new User();
     $register_user->user_log_name = $_POST['input_user'];
     $register_user->user_password = $_POST['input_pwd'];
     
-    if($register_user->search()){
+    if($register_user->is_exist() == ResultReturn::log_name_already_exist){
         //if already exist
-        $smarty->display("register1.html");
+       // $smarty->display("register1.html");
     }else{
-        
+        //<=> if($register_user->is_exist() == ResultReturn::log_name_not_exist)
         $_SESSION['register_user'] = $register_user;
-        //    $p1 = $_SESSION['register_user']->user_log_name ;
-        //    echo "$p1";
         $smarty->display("register2.html");
     }
     

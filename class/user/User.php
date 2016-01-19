@@ -185,14 +185,27 @@ class User
         ";
         return $this->excute_query($query);
     }
-        
+    
+    /**
+     * 同名用户是否已经存在
+     * @return number ResultReturn：：
+     */
+    public function is_exist(){
+        $search_result = $this->search();
+        $test=mysqli_fetch_array($search_result, MYSQL_ASSOC);
+        if($test){
+            return ResultReturn::log_name_already_exist;
+        }else {
+            return ResultReturn::log_name_not_exist;
+        }
+    }
     
     /**
      * just return the search result
      * @return false when not exist,
      *         search result when exist
      */
-    public function search(){
+    protected function search(){
         $query = "select * from $this->table_name
         WHERE user_log_name = '$this->user_log_name'";
         return $this->excute_query($query);
