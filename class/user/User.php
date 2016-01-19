@@ -10,6 +10,7 @@
 //include_once ("../Config.php");
 $path = dirname(dirname(__FILE__)); 
 include_once($path.'/Config.php');
+include_once('ResultReturn.php');
 class User
 {
     private $table_name;
@@ -48,7 +49,7 @@ class User
      * 根据用户名完善用户信息
      * @param unknown $log_name 用户名必须是实际存在的 否则返回false
      */
-    public function complete_user_info($log_name){
+    protected function complete_user_info($log_name){
         
         $this->user_log_name = $log_name;
         $retval = $this->search();
@@ -92,9 +93,13 @@ class User
      */
     public function login($log_name, $password){
         if($this->complete_user_info($log_name)){
-            return $password == $this->user_password;
+            if($password == $this->user_password){
+                return ResultReturn::log_verify_pass;
+            }else {
+                return ResultReturn::password_wrong;
+            }
         }else {
-            return false;
+            return ResultReturn::log_name_not_exist;
         }
     }
     
@@ -102,7 +107,7 @@ class User
     public function insert_to_DB()
     {
         if($this->search()){
-            return false;
+            return ResultReturn::log_name_already_exist;
         }
         $query = "INSERT  into $this->table_name
                   (
@@ -144,7 +149,11 @@ class User
                   '$this->user_last_log'            
         )";
         
-        return $this->excute_query($query);
+        if( $this->excute_query($query)){
+            return ResultReturn::register_pass;
+        }else{
+            return ResultReturn::register_failed;
+        }
         
     }
     

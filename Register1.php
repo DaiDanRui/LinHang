@@ -12,6 +12,10 @@ if (isset($_POST['next'])){
 //    $p1 = $_SESSION['register_user']->user_log_name ;
 //    echo "$p1";
     $smarty->display("register2.html");
+
+}else if (isset($_POST['return'])){
+    $smarty->display("login.html");
+
 }else {
     $smarty->display("register1.html");
 }

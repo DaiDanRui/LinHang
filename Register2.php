@@ -14,6 +14,9 @@ if (isset($_POST['next'])){
     $register_user->user_legal_name = $_POST['input_name'];
     $register_user->sex = $_POST['sex'];
     $smarty->display("register3.html");
+}else if (isset($_POST['return'])){
+    $smarty->display("register1.html");
+
 }else {
     $smarty->display("register2.html");
 }

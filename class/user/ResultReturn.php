@@ -1,5 +1,4 @@
 <?php
-namespace user;
 /**
  * 
  * @author yan
@@ -7,8 +6,14 @@ namespace user;
  */
 final class ResultReturn
 {
-    const log_name_not_exist = '';
-    const password_wrong = '';
+    const log_name_not_exist = 0;
+    const password_wrong = 1;
+    const log_verify_pass = 2;
+    
+    const log_name_already_exist = 3;
+    const register_failed = 4;
+    const register_pass = 5;
+    
 }
 
 ?>
