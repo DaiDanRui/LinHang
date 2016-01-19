@@ -14,8 +14,10 @@ if (isset($_POST['login'])){
     if ($login_result  == ResultReturn::log_verify_pass){
         $_SESSION['is_verified_pass'] = true;
         echo "succed to login";
-    }else {
+    }else if($login_result == ResultReturn::log_name_not_exist){
         echo "login failed";
+    }else if($login_result == ResultReturn::password_wrong){
+        echo "wrong password";
     }
     
 }else if (isset($_POST['reg'])){
