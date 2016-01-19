@@ -1,0 +1,16 @@
+body{
+    background-color: #fafafa;
+}
+
+.main_part{
+    position: relative;
+    left: 0; right: 0; top: 70px;
+    background-size: cover;
+    /*background-image: url("../img/login.png");*/
+    background-color: #859987;
+    margin-left: auto; margin-right: auto;
+    width: 320px;
+    height: 520px;
+
+    text-align: center;
+}

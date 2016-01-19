@@ -1,6 +1,6 @@
 /*body样式*/
 body{
-    background-color: #2debae;
+    background-color: #fafafa;
 }
 
 table{
@@ -94,4 +94,17 @@ a{
     text-decoration: none;
 }
 
-
+.register_err{
+    position: absolute;
+    left: 130px;
+    
+    font-family: "Microsoft YaHei";
+    font-size: 10px;
+    color: crimson;
+}
+#register_err1{  top: 174px;  }
+#register_err2{  top: 230px;  }
+#register_err3{  top: 290px;  }
+#register_err4{  top: 290px;  }
+#register_err5{  top: 232px;  }
+#register_err6{  top: 290px;  }

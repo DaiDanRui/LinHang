@@ -1,6 +1,6 @@
 /*body样式*/
 body{
-    background-color: #2debae;
+    background-color: #fafafa;
 }
 
 button{
@@ -94,3 +94,14 @@ a{
     margin-left: 80px;
     /*margin-right: 33px;*/
 }
+
+#login_err1,#login_err2{
+    position: absolute;
+    left:35px;
+
+    font-family: "Microsoft YaHei";
+    font-size: 15px;
+    color: crimson;
+}
+#login_err1{  top: 204px;  }
+#login_err2{  top: 264px;  }
