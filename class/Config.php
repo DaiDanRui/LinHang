@@ -33,5 +33,4 @@ class Config
         return $conn;
     }
 }
-
 ?>
