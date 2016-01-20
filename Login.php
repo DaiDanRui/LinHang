@@ -8,9 +8,14 @@ if (isset($_POST['login'])){
     $user = new User();
     $log_name = $_POST['username'];
     $password = $_POST['pwd'];
-    $_SESSION['is_verified_pass'] = false;
+    
     
     $login_result = $user->login($log_name, $password);
+    //save the login information
+    $_SESSION['is_verified_pass'] = false;
+    $_SESSION['current_login_user'] = $user;
+    
+    //handle the login result
     if ($login_result  == ResultReturn::log_verify_pass){
         $_SESSION['is_verified_pass'] = true;
         echo "succed to login";
