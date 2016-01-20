@@ -30,18 +30,28 @@ class DBadder
         $q = 'insert into'. $this->table_name;
         $field_name = '';
         $field_value = '';
+        
+        $is_first_value = true;
         foreach($this->commodity_array as $key => $value)
          {
-             $field_name = $field_name.$key.',';
-             $field_value = " '$field_value.$value' , ";
+             if(!$is_first_value)
+             {
+                 $q = $q.' , ';
+             }
+             else
+             {
+                 $is_first_value = false;
+             }
+             $field_name  = $field_name .$key      ;
+             $field_value = $field_value.$value    ;
          }
-        $field_value = substr($field_value, 0, strlen($field_value)-1);
+//       $field_value = substr($field_value, 0, strlen($field_value)-1);
         $q = $q.'('.$field_name.')'.'values'.'('.$field_value.')';
         
         
         include_once('SQLexcute.php');
         $excute = new SQLexcute($q);
-        $excute->excute();
+        return $excute->excute();
     }
 }
 

@@ -26,15 +26,25 @@ class DBupdater
         
         
         $q = 'update '.$this->table_name.' set ';
+        
+        $is_first_value = true;
         foreach ($this->commodity_array as $key => $value)
         {
-            $q = $q."$key = '$value', ";
+            if(!$is_first_value)
+            {
+                $q = $q.',';
+            }else 
+            {
+                $is_first_value = false;
+            }
+            $q = $q." $key = '$value' ";
+            
+           
         }
-        $field_value = substr($q, 0, strlen($q)-1);
         
         include_once('SQLexcute.php');
         $excute = new SQLexcute($q);
-        $excute->excute();
+        return $excute->excute();
     }
 }
 

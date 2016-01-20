@@ -19,17 +19,17 @@
 class Config_course
 {
     const  course_array =array(
-        'tbl_course_id'      ,
-        'tbl_course_seller'     ,
-        'tbl_course_seller_account_type' ,
-        'tbl_course_seller_account'  ,
-        'tbl_course_price'  ,
-        'tbl_course_place'  ,
-        'tbl_course_release_date' ,
-        'tbl_course_type'  	,
-        'tbl_course_description'  	,
-        'tbl_course_pic_path'  	,
-        'tbl_course_is_valued' ,
+        'id'      ,
+        'seller_id'     ,
+        'seller_account_type' ,
+        'seller_account'  ,
+        'price'  ,
+        'place'  ,
+        'release_date' ,
+        'type'  	,
+        'description'  	,
+        'pic_path'  	,
+        'is_valued' ,
     );
 }
 

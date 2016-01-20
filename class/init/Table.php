@@ -25,6 +25,7 @@ abstract class Table
             echo 'done';
         }
     }
+    
     /**
      * 获得按序字段名
      * 获得按序字段类型
