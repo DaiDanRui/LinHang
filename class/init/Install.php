@@ -24,9 +24,8 @@ class Install
             echo "success";
         }
         echo "<br/>";
-    
         
-        $this->sql_query('CREATE', Config::DB_NAME);
+      //  $this->create_database_query( Config::DB_NAME);
         mysqli_select_db($this->conn, Config::DB_NAME);
         $this->initialDBTable();
       //$this->sql_query('DROP', self::DB_NAME);
@@ -39,17 +38,17 @@ class Install
         $table_user->initTable();
     }
     /**
-     * @param string $operation  just as create  DATABASE
+     * @param string $CREATE  just as create  DATABASE
      * @param string $db_name the name of database
      */
-    private function  sql_query( $operation, $db_name){
-        $sql_operation = $operation.' DATABASE '.$db_name." DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
+    private function  create_database_query( $db_name){
+        $sql_operation = 'CREATE DATABASE '.$db_name." DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
         $result = NULL;
         if(mysqli_query($this->conn, $sql_operation)){
-            echo "database $operation successfully";
+            echo 'database CREATE successfully';
             $result = true;
         }else{
-            echo "Error $operation database:". mysqli_error($this->conn);
+            echo 'Error CREATE database:'. mysqli_error($this->conn);
             $result = false;
         }
         echo "<br/>";

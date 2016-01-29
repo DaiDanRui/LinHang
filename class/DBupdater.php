@@ -38,8 +38,6 @@ class DBupdater
                 $is_first_value = false;
             }
             $q = $q." $key = '$value' ";
-            
-           
         }
         
         include_once('SQLexcute.php');

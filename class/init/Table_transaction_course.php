@@ -22,7 +22,7 @@ class Table_transaction_course extends Table
             payer_account_type  VARCHAR(20)   CHARACTER SET utf8 COLLATE utf8_general_ci,
             payer_account       VARCHAR(30)   CHARACTER SET utf8 COLLATE utf8_general_ci,
             seller_account_type VARCHAR(20)   CHARACTER SET utf8 COLLATE utf8_general_ci,
-            payer_account       VARCHAR(30)   CHARACTER SET utf8 COLLATE utf8_general_ci,
+            seller_account       VARCHAR(30)   CHARACTER SET utf8 COLLATE utf8_general_ci,
             is_payer_evaluated  tinyint         not null,
             payer_evaluation    VARCHAR(140),
             is_seller_evaluated tinyint         not null,

@@ -27,28 +27,31 @@ class DBadder
     public function add( ) 
     {
         
-        $q = 'insert into'. $this->table_name;
+        $q = 'insert into '. $this->table_name;
         $field_name = '';
         $field_value = '';
         
         $is_first_value = true;
         foreach($this->commodity_array as $key => $value)
-         {
+        {
              if(!$is_first_value)
              {
-                 $q = $q.' , ';
+                 $field_name = $field_name.' , ';
+                 $field_value = $field_value.' , ';
              }
              else
              {
                  $is_first_value = false;
              }
              $field_name  = $field_name .$key      ;
-             $field_value = $field_value.$value    ;
-         }
-//       $field_value = substr($field_value, 0, strlen($field_value)-1);
-        $q = $q.'('.$field_name.')'.'values'.'('.$field_value.')';
+             $field_value = $field_value." '$value' "    ;
+        }
+//      $field_value = substr($field_value, 0, strlen($field_value)-1);
+        $q = $q. '(' . $field_name. ')' 
+            .'values'.
+             '(' . $field_value . ')';
         
-        
+        echo $q;
         include_once('SQLexcute.php');
         $excute = new SQLexcute($q);
         return $excute->excute();

@@ -20,6 +20,7 @@ class Table_course extends Table
             description	    VARCHAR(140)	 not null ,		
             pic_path	    	VARCHAR(40)	,	
             is_valued	    tinyint	 not null ,		
+            praise          int default 0 ,
             
             PRIMARY KEY (user_id),
             INDEX index_seller_id(seller_id),

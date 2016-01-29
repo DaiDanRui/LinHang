@@ -18,7 +18,7 @@
  */
 class Config_course
 {
-    const  course_array =array(
+    const  course_array = array(
         'id'      ,
         'seller_id'     ,
         'seller_account_type' ,
@@ -30,7 +30,21 @@ class Config_course
         'description'  	,
         'pic_path'  	,
         'is_valued' ,
+        'praise'
     );
+    
+    const id = 'id'      ;
+    const seller_id = 'seller_id'     ;
+    const seller_account_type = 'seller_account_type' ;
+    const seller_account = 'seller_account'  ;
+    const price =  'price'  ;
+    const place = 'place'  ;
+    const release_date = 'release_date' ;
+    const type = 'type'  	;
+    const description = 'description'  	;
+    const pic_path = 'pic_path'  	;
+    const is_valued =  'is_valued' ;
+    const praise = 'praise';
 }
 
 ?>

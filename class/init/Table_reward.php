@@ -19,7 +19,8 @@ class Table_reward extends Table
             description	    VARCHAR(140)	 not null ,		
             pic_path	    	VARCHAR(40)	,	
             is_valued	    tinyint	 not null ,		
-           
+            praise          int default 0 ,
+            
             PRIMARY KEY (tbl_reward_id),
             INDEX index_seller_id(seller_id),
             INDEX index_type(type)
