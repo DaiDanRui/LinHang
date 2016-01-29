@@ -8,7 +8,7 @@ class DBfinder
      * @param ArrayObject $ary关联数组所有键都必须是数据库中 字段名 也就是在Config_文件中存在
      */
     public function __construct($name,$ary){
-        $this->commodity_array = $ary;
+        $this->ary = $ary;
         $this->table_name = $name;
     }
     /**
@@ -30,7 +30,7 @@ class DBfinder
             }
             $q = $q." $key = '$value' ";
         }
-         
+         echo $q;
         include_once('SQLexcute.php');
         $excute = new SQLexcute($q);
         return $excute->excute();

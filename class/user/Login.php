@@ -22,13 +22,13 @@ class Login
         );
         $myDBfinder = new DBfinder(Config_user::table_name, $ary);
         $retval = $myDBfinder->find();
-        $complete_ary = mysqli_fetch_array($retval, MYSQL_ASSOC);
-        if(!$complete_ary)
+        if(mysqli_num_rows($retval)==0)
         {
             return ResultReturn::log_name_not_exist;
         }
         else
         {
+            $complete_ary = mysqli_fetch_array($retval, MYSQL_ASSOC);
             if( $complete_ary[Config_user::password] == $this->password )
             {
                 return ResultReturn::log_verify_pass;
