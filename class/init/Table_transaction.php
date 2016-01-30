@@ -1,9 +1,6 @@
 <?php
 include('Table.php');
-/**
- * @author yan
- */
-class Table_transaction_course extends Table
+class Table_transaction extends Table
 {
     public function __construct($conn){
     
@@ -28,12 +25,12 @@ class Table_transaction_course extends Table
             is_seller_evaluated tinyint         not null,
             seller_evaluation   VARCHAR(140)  CHARACTER SET utf8 COLLATE utf8_general_ci,
             pay_id              VARCHAR(20)   CHARACTER SET utf8 COLLATE utf8_general_ci      not null,
-            
+    
             PRIMARY KEY (id),
             INDEX index_payer_id(payer_id),
             INDEX index_seller_id(seller_id),
             INDEX index_date_choose(date_choose),
-            INDEX index_pay_id(pay_id)
+            INDEX index_pay_id(pay_id)      not null
         ';
     }
 }

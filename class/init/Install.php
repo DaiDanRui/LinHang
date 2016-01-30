@@ -33,9 +33,13 @@ class Install
     }
     
     private function  initialDBTable(){
-        require_once 'Table_user.php';
+       /*  require_once 'Table_user.php';
         $table_user = new Table_user($this->conn);
-        $table_user->initTable();
+        $table_user->initTable(); */
+        
+        require_once 'Table_commodity.php';
+        $table_commodity = new Table_commodity($this->conn);
+        $table_commodity->initTable();
     }
     /**
      * @param string $CREATE  just as create  DATABASE
