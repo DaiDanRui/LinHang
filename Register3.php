@@ -1,5 +1,8 @@
 <?php
-include_once ('class/user/User.php');
+
+/**
+ * $post next input_nick input_phone input_email
+ */
 session_start();
 include_once ('smarty_init.php');
 include_once ('class/user/ResultReturn.php');

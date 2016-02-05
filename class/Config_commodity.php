@@ -32,7 +32,7 @@ leave_message_time
         'place'  ,
         'release_date' ,
          
-         'title',
+        'title',
         'description'  	,
         'pic_path'  	,
         'is_valued' ,
@@ -44,6 +44,8 @@ leave_message_time
          'leave_message_time'
     );
     
+    const table_name = '';
+     
     const id = 'id'      ;
     const type = 'type'  ;
     const publisher = 'publisher'     ;
@@ -62,6 +64,11 @@ leave_message_time
     const communication_number= 'communication_number';
     const surf_time = 'surf_time';
     const leave_message_time = 'leave_message_time';
+    
+    
+    const reward_config_number = 0 ;
+    const course_config_numbrt = 1 ;
+    
 }
 
 ?>

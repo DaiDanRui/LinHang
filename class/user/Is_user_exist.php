@@ -15,7 +15,7 @@ class Is_user_exist
         include_once($path.'/Config_user.php');
         $ary = 'where '.Config_user::log_name.' =  ' ." '$this->user_name' ";
         $myDBfinder = new DBtraverser(Config_user::table_name, $ary);
-        $retval = $myDBfinder->traverse();
+        $retval = $myDBfinder->excute_without_conn();
         if($retval){
             return true;
         }

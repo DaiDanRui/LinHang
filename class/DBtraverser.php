@@ -1,6 +1,6 @@
 <?php
-
-class DBtraverser
+include_once 'DBexcutor.php';
+class DBtraverser extends DBexcutor
 {
     private $table_name;
     private $where;
@@ -9,11 +9,19 @@ class DBtraverser
         $this->where = $where;
         $this->table_name = $name;
     }
-    public function traverse(){
-        $q = 'select * '.$this->table_name.' '.$this->where;
+    /* public function excute_without_conn(){
+        
         include_once('SQLexcute.php');
-        $excute = new SQLexcute($q);
+        $excute = new SQLexcute($this->getSQL());
         return $excute->excute();
+    } */
+    
+    /**
+     * @return string sql 语句
+     */
+    protected function getSQL()
+    {
+        return  'select * '.$this->table_name.' '.$this->where;
     }
 }
 

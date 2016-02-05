@@ -16,7 +16,7 @@ class Register
         include_once($path.'/Config_user.php');
         include_once 'ResultReturn.php';
         $myDBadder = new DBadder(Config_user::table_name, $this->ary);
-       if($myDBadder->add())
+       if($myDBadder->excute_without_conn())
        {
            return ResultReturn::register_pass;
        }

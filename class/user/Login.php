@@ -21,7 +21,7 @@ class Login
             Config_user::log_name=>$this->log_name
         );
         $myDBfinder = new DBfinder(Config_user::table_name, $ary);
-        $retval = $myDBfinder->find();
+        $retval = $myDBfinder->excuteWithoutConn();
         if(mysqli_num_rows($retval)==0)
         {
             return ResultReturn::log_name_not_exist;

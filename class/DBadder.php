@@ -1,5 +1,6 @@
 <?php
-class DBadder
+include_once 'DBexcutor.php';
+class DBadder extends DBexcutor
 {
     /**
      * without pre
@@ -24,9 +25,20 @@ class DBadder
      * 后置： 对应商品插入数据库中
      * 前置： 该类已正确初始化
      */
-    public function add( ) 
+   /*  public function excute_without_conn( ) 
     {
+
         
+        include_once('SQLexcute.php');
+        $excute = new SQLexcute($this->getSQL());
+        return $excute->excute();
+    } */
+    
+    /**
+     * @return string sql 语句
+     */
+    protected function getSQL()
+    {
         $q = 'insert into '. $this->table_name;
         $field_name = '';
         $field_value = '';
@@ -34,27 +46,24 @@ class DBadder
         $is_first_value = true;
         foreach($this->commodity_array as $key => $value)
         {
-             if(!$is_first_value)
-             {
-                 $field_name = $field_name.' , ';
-                 $field_value = $field_value.' , ';
-             }
-             else
-             {
-                 $is_first_value = false;
-             }
-             $field_name  = $field_name .$key      ;
-             $field_value = $field_value." '$value' "    ;
+            if(!$is_first_value)
+            {
+                $field_name = $field_name.' , ';
+                $field_value = $field_value.' , ';
+            }
+            else
+            {
+                $is_first_value = false;
+            }
+            $field_name  = $field_name .$key      ;
+            $field_value = $field_value." '$value' "    ;
         }
-//      $field_value = substr($field_value, 0, strlen($field_value)-1);
-        $q = $q. '(' . $field_name. ')' 
+        //      $field_value = substr($field_value, 0, strlen($field_value)-1);
+        $q = $q. '(' . $field_name. ')'
             .'values'.
-             '(' . $field_value . ')';
+            '(' . $field_value . ')';
         
-        echo $q;
-        include_once('SQLexcute.php');
-        $excute = new SQLexcute($q);
-        return $excute->excute();
+        return $q;
     }
 }
 

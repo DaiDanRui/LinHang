@@ -1,5 +1,4 @@
 <?php
-include_once ('class/user/User.php');
 session_start();
 include_once ('smarty_init.php');
 include_once 'class/Config_user.php';

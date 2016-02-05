@@ -1,5 +1,6 @@
 <?php
-class DBfinder
+include_once 'DBexcutor.php';
+class DBfinder extends DBexcutor
 {
     private $table_name;
     private $ary;
@@ -14,7 +15,18 @@ class DBfinder
     /**
      * 没有进行 mysqli_fetch_array($retval, MYSQL_ASSOC)
      */
-    public function find()
+    /* public function excute_without_conn()
+    {
+        
+        include_once('SQLexcute.php');
+        $excute = new SQLexcute($this->getSQL());
+        return $excute->excute();
+    } */
+    
+    /**
+     * @return string sql 语句
+     */
+    protected function getSQL()
     {
         $q = 'select * from '.$this->table_name.' where ';
         
@@ -24,16 +36,13 @@ class DBfinder
             {
                 $q = $q.' AND ';
             }
-            else 
+            else
             {
                 $is_first_value = false;
             }
             $q = $q." $key = '$value' ";
         }
-         echo $q;
-        include_once('SQLexcute.php');
-        $excute = new SQLexcute($q);
-        return $excute->excute();
+        return $q;
     }
 }
 
