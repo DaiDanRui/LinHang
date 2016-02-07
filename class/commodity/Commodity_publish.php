@@ -1,4 +1,10 @@
 <?php
+/**
+ * 
+ * created by zend
+ * @author darxan 
+ * @date 2016年2月5日
+ */
 class Commodity
 {
     

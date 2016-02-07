@@ -39,7 +39,7 @@ class DBadder extends DBexcutor
      */
     protected function getSQL()
     {
-        $q = 'insert into '. $this->table_name;
+        /* $q = 'insert into '. $this->table_name;
         $field_name = '';
         $field_value = '';
         
@@ -63,8 +63,14 @@ class DBadder extends DBexcutor
             .'values'.
             '(' . $field_value . ')';
         
-        return $q;
+        return $q; */
+        $key_string = join(',', array_keys($this->commodity_array));
+        $value_string = "'".join("','", array_values($this->commodity_array))."'";
+        $sql = 'insert  into '.$this->table_name. 
+        ' ('.$key_string. ')'.' values '. '(' . $value_string . ')';
     }
+    
+    
 }
 
 ?>
