@@ -30,7 +30,7 @@ abstract class Table
      * 获得按序字段名
      * 获得按序字段类型
      * 以及相应约束
-     * @return 以‘，’隔开
+     * @return string 以‘，’隔开 
      */
     protected   abstract  function get_field_name();
 }

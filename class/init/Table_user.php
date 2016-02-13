@@ -64,6 +64,7 @@ class Table_user extends Table
             count_publish_reward	INT	not null	DEFAULT 0,
             count_choose_course	INT	not null	DEFAULT 0,
             count_choose_reward	INT	not null	DEFAULT 0 ,           
+            
             PRIMARY KEY (id),
             INDEX index_user_log_name (log_name(20))
         ';

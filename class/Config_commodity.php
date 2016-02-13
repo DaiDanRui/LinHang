@@ -29,7 +29,7 @@ class Config_commodity
          'leave_message_time'
     );
     
-    const table_name = '';
+    const table_name = 'tbl_commodity';
      
     const id = 'id'      ;
     const type = 'type'  ;

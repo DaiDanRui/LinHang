@@ -18,11 +18,11 @@ class Message_leave
     
     public function excute()
     {
-        $path = dirname(dirname(__FILE__));
+        /* $path = dirname(dirname(__FILE__));
         include_once($path.'/DBadder.php');
-     //   include_once($path.'/Config_commodity.php');
+        include_once($path.'/Config_commodity.php');
         
-     //   $myDBadder = new DBadder(Config_commodity::table_name, $this->ary);
+        $myDBadder = new DBadder(Config_commodity::table_name, $this->ary);
         if($myDBadder->excuteWithoutConn())
         {
             return true;
@@ -30,7 +30,7 @@ class Message_leave
         else
         {
             return false;
-        }
+        } */
     }
 }
 
