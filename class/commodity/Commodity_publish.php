@@ -1,22 +1,26 @@
 <?php
-/**
- * 
- * created by zend
- * @author darxan 
- * @date 2016年2月5日
- */
-class Commodity
+
+ /**
+  ****************************************************************************************************
+  * created by zend
+  * @author darxan 
+  * @date 2016年2月5日
+  ****************************************************************************************************
+  */
+class Commodity_publish
 {
     
    
     private  $ary;
     
-    function __construct($ary)
+    public function __construct($ary)
     {
         $this->ary = $ary;
     }
-    
-    function addCommodity()
+    /**
+     * 不区分商品类别， 悬赏还是课程
+     */
+    public function excute()
     {
         $path = dirname(dirname(__FILE__));
         include_once($path.'/DBadder.php');

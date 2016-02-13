@@ -1,28 +1,13 @@
 <?php
-
+/**
+ *****************************************************************************************************************************
+ * created by zend
+ * @author darxan 
+ * @version 2016年2月13日
+ */
 class Config_commodity
 {
-    /**
-     * 
-id
-type
-publisher
-price
-place
-release_date
-
-title
-description
-pic_path
-is_valued
-praise
-
-communication_way
-communication_number
-surf_time
-leave_message_time
-     * @var unknown
-     */
+    
      public  $course_array = array(
         'id'      ,
         'type'    ,

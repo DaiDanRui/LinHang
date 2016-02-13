@@ -9,6 +9,17 @@
  */
 class Commodity_surf
 {
+    private  $commodity_id;
+    
+    public function __construct($commodity_id)
+    {
+        $this->commodity_id = $commodity_id;
+    }
+   
+    public function excute()
+    {
+        
+    }
 }
 
 ?>

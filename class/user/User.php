@@ -1,16 +1,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
-
+//include_once ("../Config.php");
+$path = dirname(dirname(__FILE__));
+include_once($path.'/Config.php');
+include_once('ResultReturn.php');
 /**
  * Created by PhpStorm.
  * User: raychen
  * Date: 16/1/17
  * Time: 19:48
+ * @deprecated 成员变量由关联数据代替
  */
-//include_once ("../Config.php");
-$path = dirname(dirname(__FILE__)); 
-include_once($path.'/Config.php');
-include_once('ResultReturn.php');
 class User
 {
     private $table_name;
