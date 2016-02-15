@@ -16,6 +16,7 @@ if (isset($_POST['login'])){
     //handle the login result
     if ($login_result  == ResultReturn::log_verify_pass){
         $_SESSION['is_verified_pass'] = true;
+        $_SESSION['current_login_user'] = $_POST['username'];
         echo "succed to login";
     }else if($login_result == ResultReturn::log_name_not_exist){
         echo "login failed:log_name_not_exist";

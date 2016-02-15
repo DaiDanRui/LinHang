@@ -7,6 +7,7 @@ include ('Table.php');
  * @author darxan 
  * @version 2016年2月13日
  * @date    2016年1月18日
+ * @see Table
  */
 class Table_user extends Table
 {

@@ -6,6 +6,7 @@ include('Table.php');
  * @author darxan 
  * @version 2016年2月15日
  * @date    2016年2月15日
+ * @see Table
  */
 class Table_commodity_type extends Table
 {

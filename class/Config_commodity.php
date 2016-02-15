@@ -50,18 +50,7 @@ class Config_commodity
     const surf_time = 'surf_time';
     const leave_message_time = 'leave_message_time';
     
-   /**
-     * type==reward_config_number 
-     * means the commodity is a reward
-     * @var tinyint
-     */
-    const reward_config_number = 0 ;
-    /**
-     * type==course_config_numbrt 
-     * means the commodity is a course
-     * @var tinyint
-     */
-    const course_config_numbrt = 1 ;
+  
     
 }
 

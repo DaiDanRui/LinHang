@@ -1,5 +1,12 @@
 <?php
 include('Table.php');
+/**
+ *****************************************************************************************************************************
+ * created by zend
+ * @author darxan 
+ * @version 2016年2月15日
+ * @see Table
+ */
 class Table_commodity extends Table
 {
     public function __construct($conn){
@@ -20,9 +27,10 @@ class Table_commodity extends Table
             pic_path	     VARCHAR(40)		   CHARACTER SET utf8 COLLATE utf8_general_ci    	,
             is_valued	     tinyint	not null,	
             praise	         int	    not null	DEFAULT 0,
-            communication_way	    tinyint	not null,
-            surf_time	            int	not null	DEFAULT 0,
-            leave_message_time	    int	not null	DEFAULT 0,
+            communication_way	tinyint	not null	,
+            communication_number	VARCHAR(40)	not null	,
+            surf_time	int	not null	DEFAULT 0,
+            leave_message_time	int	not null	DEFAULT 0,
     
             PRIMARY KEY (id),
             INDEX index_publisher(publisher),

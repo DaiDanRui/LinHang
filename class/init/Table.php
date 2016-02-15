@@ -2,8 +2,8 @@
 /**
  * 
  * @author yan
- * @abstract
- * @namespace init
+ * @abstract 要求实现abstract方法
+ * @see Table::get_field_name()
  */
 abstract class Table
 {

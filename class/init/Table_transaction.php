@@ -1,5 +1,12 @@
 <?php
 include('Table.php');
+/**
+ *****************************************************************************************************************************
+ * created by zend
+ * @author darxan 
+ * @version 2016年2月15日
+ * @see Table
+ */
 class Table_transaction extends Table
 {
     public function __construct($conn){
