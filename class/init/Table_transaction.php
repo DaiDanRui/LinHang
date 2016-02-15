@@ -4,7 +4,7 @@ class Table_transaction extends Table
 {
     public function __construct($conn){
     
-        parent::__construct($conn, 'tbl_transaction_reward');
+        parent::__construct($conn, 'tbl_transaction');
     }
     protected function get_field_name(){
         return '

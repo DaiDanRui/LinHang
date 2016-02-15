@@ -20,6 +20,9 @@ class Config_transaction
        
         'pay_id'
     );
+    
+    const table_name = 'tbl_transaction';
+    
     const id = 'id'      ;
     const choosed_id = 'choosed_id'     ;
     const state = 'state' ;
