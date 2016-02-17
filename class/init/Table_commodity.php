@@ -16,6 +16,7 @@ class Table_commodity extends Table
     protected function get_field_name(){
         return'
             id	             BIGINT	not null	AUTO_INCREMENT,
+            course_or_reward tinyint not null	,
             type	         tinyint	not null	,
             publisher	     BIGINT	not null,	
             price	         FLOAT(7,3)	not null,	

@@ -8,8 +8,10 @@
 class Config_commodity
 {
     
-     public  $course_array = array(
+     public  $commodity_array = array(
         'id'      ,
+         
+        'course_or_reward',
         'type'    ,
         'publisher'     ,
         
@@ -32,6 +34,7 @@ class Config_commodity
     const table_name = 'tbl_commodity';
      
     const id = 'id'      ;
+    const course_or_reward  = 'course_or_reward';
     const type = 'type'  ;
     const publisher = 'publisher'     ;
     
