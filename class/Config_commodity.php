@@ -22,7 +22,7 @@ class Config_commodity
         'title',
         'description'  	,
         'pic_path'  	,
-        'is_valued' ,
+        'commodity_state' ,
         'praise'  ,
          
          'communication_way',
@@ -45,7 +45,7 @@ class Config_commodity
     const title = 'title';
     const description = 'description'  	;
     const pic_path = 'pic_path'  	;
-    const is_valued =  'is_valued' ;
+    const commodity_state =  'commodity_state' ;
     const praise = 'praise';
 
     const communication_way = 'communication_way';
