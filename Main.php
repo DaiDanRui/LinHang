@@ -11,4 +11,4 @@ include_once("smarty_init.php");
 $t = "cr";
 
 $smarty->assign('test',$t);
-$smarty->display("register1.html");
+$smarty->display("common/register1.html");

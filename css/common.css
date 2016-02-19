@@ -1,0 +1,120 @@
+body{
+    height: 100%;
+    width: 100%;
+    background: url("../img/back-1.png") no-repeat;
+    background-size: 100%;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+}
+
+.common-head{/*login的logo*/
+    background: url("../img/LG.png") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    top: 120px;
+    margin: 0 auto;
+    height: 120px;
+    width: 160px;
+}
+
+.register-head{
+    background: url("../img/reg-must.png") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    top: 60px;;
+    left: 130px;
+    height: 80px;
+    width: 180px;
+}
+.register-head-3{
+    background: url("../img/reg-per.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.contents{
+    margin: 0 auto;
+    text-align: center;
+    width: 400px;
+}
+
+.input-out{/*input 外观*/
+    border: 2px solid;
+    border-color: #fafafa;
+    border-collapse: collapse;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #fafafa;
+}
+
+.block{/*注册中间一大块*/
+    height: 500px;
+    border-width: 3px;
+    position: relative;
+    top: 95px;
+}
+
+.input-in-login{
+    display: inline-block;
+    height: 60px;
+    position: relative;
+    top: 180px;
+    margin-top: 30px;
+    width: 100%;
+    font-size: 180%;
+}
+.block-in-reg{
+    top: 45px;
+    margin-top: 60px;
+    font-size: 160%;
+}
+.block-in-reg-2{
+    top: 80px;
+    margin-top: 25px;
+    font-size: 160%;
+}
+.input-in-reg{
+    display: inline;
+    height: 45px;
+    width: 260px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.btn-login{
+    text-align: center;
+    background-color: #fafafa;
+    color: #f0c040;
+}
+.btn-login:hover{
+    color: #9B410E;
+}
+.btn-reg{
+    top: 80px;
+    height: 50px;
+}
+
+.login-bot{/*忘记密码和立即注册的部分*/
+    position: relative;
+    top: 180px;
+    margin: 10px;
+}
+
+.a-common{
+    color: #fafafa;
+    font-size: 20px;
+}
+.forget{
+    float: left;
+}
+.reg{
+    float: right;
+}
+
+.footer{
+    position: absolute;
+    left: 27%;
+    bottom: 12px;
+    color: #fafafa;
+    font-size: 20px;
+}
