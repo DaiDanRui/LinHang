@@ -21,7 +21,7 @@ class Config_commodity
          
         'title',
         'description'  	,
- //       'pic_path'  	,
+        'pic_path'  	,
         'commodity_state' ,
         'praise'  ,
          
@@ -44,7 +44,7 @@ class Config_commodity
     
     const title = 'title';
     const description = 'description'  	;
-   // const pic_path = 'pic_path'  	;
+    const pic_path = 'pic_path'  	;
     const commodity_state =  'commodity_state' ;
     const praise = 'praise';
 

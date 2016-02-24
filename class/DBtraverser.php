@@ -28,7 +28,7 @@ class DBtraverser extends DBexcutor
      */
     protected function getSQL()
     {
-        return  'select * '.$this->table_name.' '.$this->where;
+        return  'select * from'.$this->table_name.' where '.$this->where;
     }
 }
 
