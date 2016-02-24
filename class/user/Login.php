@@ -5,6 +5,7 @@
  * @author darxan 
  * @version 2016年2月15日
  * @date    
+ * @deprecated
  */
 class Login
 {

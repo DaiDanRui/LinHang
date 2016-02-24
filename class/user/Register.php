@@ -4,7 +4,8 @@
  * created by zend
  * @author darxan 
  * @version 2016年2月15日
- * @date    
+ * @date  
+ * @deprecated  
  */
 class Register
 {

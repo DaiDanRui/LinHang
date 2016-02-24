@@ -2,13 +2,28 @@
 session_start();
 include_once ('smarty_init.php');
 include_once 'class/Config_user.php';
-include_once 'class/user/Is_user_exist.php';
 require_once 'class/Injection.php';
+
+/**
+ * 
+ * @param string $username
+ */
+function is_username_exist($username)
+{
+    include_once('class/DBtraverser.php');
+    include_once('class/Config.php');
+    include_once('class/Config_user.php');
+    $ary = Config_user::log_name." = '$username' ";
+    $myDBtraverser = new DBtraverser(Config_user::table_name, $ary);
+    $retval = $myDBtraverser->excute_without_conn();
+    return mysqli_num_rows($retval)!=0;
+
+}
 
 if (isset($_POST['next'])  
     && $_POST['next']=="true" 
     ){
-  //  echo $_POST['next'];
+
     $register_user =  Array(
         Config_user::is_seller => 1,
         Config_user::is_active => 1,
@@ -27,8 +42,7 @@ if (isset($_POST['next'])
         Config_user::password => Injection::excute('input_pwd')
         );
    
-    $is_user_exist = new Is_user_exist(Injection::excute('input_user'));
-    if($is_user_exist->is_exist()){
+    if(is_username_exist(Injection::excute('input_user'))){
         //if already exist
         $smarty->display("Login&Register/register-1.html");
         /* echo '<script type="text/javascript">
@@ -37,7 +51,6 @@ if (isset($_POST['next'])
                          history.go(-1);
                      }</script>'; */
     }else{
-        //<=> if($register_user->is_exist() == ResultReturn::log_name_not_exist)
         $_SESSION['register_user'] = $register_user;
         $smarty->display("Login&Register/register-2.html");
     }
@@ -50,4 +63,3 @@ if (isset($_POST['next'])
 }else {
     $smarty->display("Login&Register/register-1.html");
 }
-

@@ -6,7 +6,8 @@
   * 根据用户唯一名判断是否存在
   * @author darxan 
   * @version 2016年2月15日
-  * @date     
+  * @date 
+  * @deprecated    
   */
 class Is_user_exist
 {
@@ -15,7 +16,9 @@ class Is_user_exist
     {
         $this->user_name = $user_name;
     }
-    
+    /**
+     * @deprecated
+     */
     public function is_exist() {
         $path = dirname(dirname(__FILE__));
         include_once($path.'/DBtraverser.php');
@@ -24,12 +27,12 @@ class Is_user_exist
         $ary = 'where '.Config_user::log_name.' =  ' ." '$this->user_name' ";
         $myDBfinder = new DBtraverser(Config_user::table_name, $ary);
         $retval = $myDBfinder->excute_without_conn();
-        if($retval){
-            return true;
+        if(mysqli_num_rows($retval)==0){
+            return false;
         }
         else 
         {
-            return false;
+            return true;
         }
         
     }
