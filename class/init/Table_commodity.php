@@ -36,7 +36,11 @@ class Table_commodity extends Table
     
             PRIMARY KEY (id),
             INDEX index_publisher(publisher),
-            INDEX index_type(type)
+            INDEX index_type(type),
+            INDEX index_surf(surf_time),
+            INDEX index_praise(praise),
+            INDEX index_date(release_date),
+            INDEX index_course_or_reward(course_or_reward)
         ';
     }
 }
