@@ -5,14 +5,14 @@ include_once 'class/Config_user.php';
 
 if (isset($_POST['next'])){
     
-    $_SESSION['register_user'][Config_user::school] = $_POST['input_sch'];
-    $_SESSION['register_user'][Config_user::school_id] = $_POST['input_stu_id'];
-    $_SESSION['register_user'][Config_user::legal_name] = $_POST['input_name'];
-    $_SESSION['register_user'][Config_user::sex] = $_POST['sex'];
+    $_SESSION['register_user'][Config_user::school] = Injection::excute('input_sch');
+    $_SESSION['register_user'][Config_user::school_id] = Injection::excute('input_stu_id');
+    $_SESSION['register_user'][Config_user::legal_name] = Injection::excute('input_name');
+    $_SESSION['register_user'][Config_user::sex] = Injection::excute('sex');
     $smarty->display("register3.html");
 }else if (isset($_POST['return'])){
-    $smarty->display("register1.html");
+    $smarty->display("Login&Register/register-1.html");
 
 }else {
-    $smarty->display("register2.html");
+    $smarty->display("Login&Register/register-2.html");
 }

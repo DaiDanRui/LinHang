@@ -25,7 +25,7 @@ class Table_commodity extends Table
            
             title	         VARCHAR(20)	   CHARACTER SET utf8 COLLATE utf8_general_ci    	not null,
             description	     VARCHAR(100)   CHARACTER SET utf8 COLLATE utf8_general_ci    		not null,	
-           
+            pic_path	     VARCHAR(100)   CHARACTER SET utf8 COLLATE utf8_general_ci    		not null,
             
             commodity_state	     tinyint	not null,	
             praise	         int	    not null	DEFAULT 0,
@@ -34,9 +34,14 @@ class Table_commodity extends Table
             surf_time	int	not null	DEFAULT 0,
             leave_message_time	int	not null	DEFAULT 0,
     
+            
             PRIMARY KEY (id),
             INDEX index_publisher(publisher),
-            INDEX index_type(type)
+            INDEX index_type(type),
+            INDEX index_surf(surf_time),
+            INDEX index_praise(praise),
+            INDEX index_date(release_date),
+            INDEX index_course_or_reward(course_or_reward)
         ';
     }
 }

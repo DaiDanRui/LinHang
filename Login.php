@@ -3,33 +3,47 @@ session_start();
 include_once ('smarty_init.php');
 include_once ('class/user/Login.php');
 include_once ('class/user/ResultReturn.php');
+require_once 'class/Injection.php';
+
+function try_to_login()
+{
+    $username = Injection::excute('username');
+    $password = Injection::excute('pwd');
+
+    include_once('class/DBtraverser.php');
+    include_once('class/Config.php');
+    include_once('class/Config_user.php');
+
+    $myDBtraveser = new DBfinder(Config_user::table_name, Config_user::log_name."='$username'");
+    $retval = $myDBtraveser->excuteWithoutConn();
+
+
+    //handle the login result
+    if (mysqli_num_rows($retval)==0){
+        echo 'wrong log name';
+    }else
+    {
+        $complete_ary = mysqli_fetch_array($retval, MYSQL_ASSOC);
+        if( $complete_ary[Config_user::password] == $this->password )
+        {
+            $_SESSION['current_login_user'] = $username;
+            $_SESSION['curennt_login_id'] = $complete_ary[Config_user::id];
+        }
+        else
+        {
+            echo 'wrong password';
+        }
+    }
+}
 
 if (isset($_POST['login'])){
-   
-    $login = new Login( $_POST['username'], $_POST['pwd']);
-    
-    $login_result = $login->login();
-    //save the login information
-    $_SESSION['is_verified_pass'] = false;
-    $_SESSION['current_login_user'] = $_POST['username'];
-    
-    //handle the login result
-    if ($login_result  == ResultReturn::log_verify_pass){
-        $_SESSION['is_verified_pass'] = true;
-        $_SESSION['current_login_user'] = $_POST['username'];
-        echo "succed to login";
-    }else if($login_result == ResultReturn::log_name_not_exist){
-        echo "login failed:log_name_not_exist";
-    }else if($login_result == ResultReturn::password_wrong){
-        echo "wrong password";
-    }
-    
+    try_to_login();
 }else if (isset($_POST['reg'])){
-    $smarty->display("register1.html");
-
+    $smarty->display("Login&Register/register1.html");
 }else if (isset($_POST['forget'])){
     $smarty->display("forget.html");
-
 }else{
-    $smarty->display("login.html");
+    $smarty->display("Login&Register/login.html");
 }
+
+
