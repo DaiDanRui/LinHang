@@ -3,28 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <link href="../../css/common.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="../../js/main.js"></script>
     <title>注册-必填-1</title>
 </head>
 <body>
-    <div class="register-head"></div>
+<div class="next">
+    <a id="next" href="Register-2.html">
+        <img src="../../img/right.png">
+    </a>
+</div>
     <div class="contents">
-        <div class="input-out block">
-            <div class="block-in-reg input-in-login">
-                用户名<input class="input-out input-in-reg"/>
+        <div class="register-head">
+            <img src="../../img/reg-must.png">
+        </div>
+        <div class="content register-content">
+            <div class="input-out block">
+                <div class="block-in-reg input-in-login">
+                    用户名&nbsp;
+                    <input class="input-out input-in-reg" id="user_name"/>
+                </div>
+                <div class="block-in-reg input-in-login">
+                    密码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input class="input-out input-in-reg" id="pwd"/>
+                </div>
+                <div class="block-in-reg input-in-login">
+                    再次&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input class="input-out input-in-reg" id="pwd_again"/>
+                    <div id="erroro">error</div>
+                </div>
             </div>
-            <div class="block-in-reg input-in-login">
-                密码&nbsp;&nbsp;&nbsp;&nbsp;<input class="input-out input-in-reg"/>
-            </div>
-            <div class="block-in-reg input-in-login">
-                再次&nbsp;&nbsp;&nbsp;&nbsp;<input class="input-out input-in-reg"/>
+            <div class="process">
+                <img src="../../img/pro-1.png">
             </div>
         </div>
-        <div class="next">
-
+        <div class="footer">
+            Designed &copy; 2016 LGDreamer
         </div>
-    </div>
-    <div class="footer">
-        Designed &copy; 2016 LGDreamer
     </div>
 </body>
 </html>
