@@ -34,6 +34,7 @@ class Table_commodity extends Table
             surf_time	int	not null	DEFAULT 0,
             leave_message_time	int	not null	DEFAULT 0,
     
+            
             PRIMARY KEY (id),
             INDEX index_publisher(publisher),
             INDEX index_type(type),
