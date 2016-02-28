@@ -19,19 +19,21 @@
 112 号码不正确
 120 系统升级
 --------------------------------*/
-$uid = '106381';		//用户账号
+/* $uid = '106381';		//用户账号
 $pwd = 'qwER19960808';		//密码
 $mobile	 = '18795855867';	//号码
 $content = '企信通PHP HTTP接口';		//内容
 //即时发送
 $res = sendSMS($uid,$pwd,$mobile,$content);
-echo $res;
+echo $res; */
 /*
  //定时发送
  $time = '2010-05-27 12:11';
  $res = sendSMS($uid,$pwd,$mobile,$content,$time);
  echo $res;
  */
+
+
 function sendSMS($uid,$pwd,$mobile,$content,$time='',$mid='')
 {
     $http = 'http://api.cnsms.cn/';

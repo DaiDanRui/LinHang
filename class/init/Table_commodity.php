@@ -27,7 +27,7 @@ class Table_commodity extends Table
             description	     VARCHAR(100)   CHARACTER SET utf8 COLLATE utf8_general_ci    		not null,	
             pic_path	     VARCHAR(100)   CHARACTER SET utf8 COLLATE utf8_general_ci    		not null,
             
-            commodity_state	     tinyint	not null,	
+            commodity_state	     tinyint	not null DEFAULT 0,	
             praise	         int	    not null	DEFAULT 0,
             communication_way	tinyint	not null	,
             communication_number	VARCHAR(40)	not null	,

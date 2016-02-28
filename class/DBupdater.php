@@ -20,28 +20,19 @@ class DBupdater extends DBexcutor
      */
     private $ary;
     
+    private $where;
+    
     /**
      * @param unknown $name
      * @param ArrayObject $ary 关联数组所有键都必须是数据库中 字段名 也就是在Config_文件中存在
      */
-    public function __construct($name,$ary){
+    public function __construct($name,$ary,$where){
         $this->ary = $ary;
         $this->table_name = $name;
+        $this->where = $where;
     }
     
-   /*  public function excute_without_conn() {
-        
-        include_once('SQLexcute.php');
-        $excute = new SQLexcute($this->getSQL());
-        return $excute->excute();
-    }
-    
-    
-    
-    public function excute($conn) 
-    {
-        return mysqli_query($conn, $this->getSQL());
-    } */
+  
     
     
     /**
@@ -63,7 +54,7 @@ class DBupdater extends DBexcutor
             }
             $q = $q." $key = '$value' ";
         }
-        return $q;
+        return $q.$this->where;
     }
 }
 

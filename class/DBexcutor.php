@@ -17,8 +17,9 @@ abstract class DBexcutor
     public function excute_without_conn() {
     
         include_once('SQLexcute.php');
-        $excute = new SQLexcute($this->getSQL());
-        return $excute->excute();
+        /* $excute = new SQLexcute($this->getSQL());
+        return $excute->excute(); */
+        return SQLexcute::excute($this->getSQL());
     }
     
     

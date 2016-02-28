@@ -4,7 +4,9 @@ include_once ('smarty_init.php');
 include_once ('class/user/Login.php');
 include_once ('class/user/ResultReturn.php');
 require_once 'class/Injection.php';
-
+define('CURRENT_LOGIN_USER', 987);
+define('CURENNT_LOGIN_ID', 789);
+echo 'login';
 function try_to_login()
 {
     $username = Injection::excute('username');
@@ -14,7 +16,7 @@ function try_to_login()
     include_once('class/Config.php');
     include_once('class/Config_user.php');
 
-    $myDBtraveser = new DBfinder(Config_user::table_name, Config_user::log_name."='$username'");
+    $myDBtraveser = new DBtraverser(Config_user::table_name, ' where '.Config_user::log_name."='$username'");
     $retval = $myDBtraveser->excuteWithoutConn();
 
 
@@ -26,14 +28,15 @@ function try_to_login()
         $complete_ary = mysqli_fetch_array($retval, MYSQL_ASSOC);
         if( $complete_ary[Config_user::password] == $this->password )
         {
-            $_SESSION['current_login_user'] = $username;
-            $_SESSION['curennt_login_id'] = $complete_ary[Config_user::id];
+            $_SESSION['CURRENT_LOGIN_USER'] = $username;
+            $_SESSION['CURENNT_LOGIN_ID'] = $complete_ary[Config_user::id];
         }
         else
         {
             echo 'wrong password';
         }
     }
+    mysqli_free_result($retval);
 }
 
 if (isset($_POST['login'])){

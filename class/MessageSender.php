@@ -8,26 +8,16 @@
  */
 class MessageSender
 {
-    const uid = '';
-    const psw = '';
+    const uid = '106381';
+    const psw = 'qwER19960808';
+   
     
-    private $content;
-    private $mobile;
-    
-    /**
-     * 
-     * @param unknown $content
-     * @param unknown $mobile
-     */
-    public function __construct($content,$mobile)
+    public static function send($content,$mobile)
     {
-        $this->content = $content;
-        $this->mobile  = $mobile;
-    }
-    
-    public function send()
-    {
-        
+        require_once 'sender_qixintong.php';
+        //即时发送
+        $res = sendSMS(self::uid,self::pwd,$mobile,$content);
+        return  $res;
     }
 }
 

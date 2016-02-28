@@ -30,9 +30,7 @@ class DBincrement extends DBexcutor
     {
         $q = 'update '.$this->table_name.
              ' set '.$this->field_name.' = '.$this->field_name.' + 1 '.
-             ' where '.$this->where;
-    
-        
+              $this->where;
         return $q;
     }
 }

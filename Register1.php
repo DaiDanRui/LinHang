@@ -2,7 +2,7 @@
 session_start();
 include_once ('smarty_init.php');
 include_once 'class/Config_user.php';
-require_once 'class/Injection.php';
+
 
 /**
  * 
@@ -13,17 +13,17 @@ function is_username_exist($username)
     include_once('class/DBtraverser.php');
     include_once('class/Config.php');
     include_once('class/Config_user.php');
-    $ary = Config_user::log_name." = '$username' ";
-    $myDBtraverser = new DBtraverser(Config_user::table_name, $ary);
-    $retval = $myDBtraverser->excute_without_conn();
-    return mysqli_num_rows($retval)!=0;
+    include_once 'class/DBcount.php';
+    $ary = ' where '.Config_user::log_name." = '$username' ";
+    $myDBcount = new DBcount(Config_user::table_name, $ary);
+    return $myDBcount->excute_without_conn();
 
 }
 
 if (isset($_POST['next'])  
     && $_POST['next']=="true" 
     ){
-
+    require_once 'class/Injection.php';
     $register_user =  Array(
         Config_user::is_seller => 1,
         Config_user::is_active => 1,
