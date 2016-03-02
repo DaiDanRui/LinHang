@@ -1,15 +1,14 @@
 <?php
 session_start();
-require_once 'class/Config_commodity.php';
-
-
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
+    require_once 'class/Config_commodity.php';
     require_once 'class/Injection.php';
     require_once 'class/Picture_upload.php';
     if(Picture_upload::error_message()>0)
     {
-        return;
+       echo '<script language="javascript">alert("图片上传错误");</script>'; 
+        
     }
     else 
     {
@@ -17,11 +16,11 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     }
     $commodity_message = Array
     (
-        Config_commodity::course_or_reward  => Injection::excute('course_or_reward'),
-        Config_commodity::type => Injection::excute('type')  ,
-        Config_commodity::publisher => Injection::excute('publisher')     ,
+        Config_commodity::course_or_reward  => (int)$_GET['course_or_reward'],
+        Config_commodity::type => (int)$_GET['type']  ,
+        Config_commodity::publisher => (int)$_GET['publisher']     ,
         
-        Config_commodity::price => Injection::excute('price')  ,
+        Config_commodity::price => (int)$_GET['price'] ,
         Config_commodity::place => Injection::excute('place')  ,
         Config_commodity::release_date => Injection::excute('release_date') ,
         
@@ -34,6 +33,8 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     include_once('class/DBadder.php');
     $myDBadder = new DBadder(Config_commodity::table_name, $commodity_message);
     $myDBadder->excute_without_conn();
+    
+    
 }else 
 {
     include 'Login.php';
