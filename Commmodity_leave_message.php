@@ -1,12 +1,12 @@
 <?php
-
+session_start();
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
     require_once 'class/Config.php';
    
     $conn = Config::connect();
-    add_message_to_DB($conn);
-    update_message_time($conn);
+    add_message_to_DB($conn);//存储信息
+    update_message_time($conn);//留言数增1
     mysqli_close($conn);
 }
 else 
@@ -34,7 +34,7 @@ function add_message_to_DB($conn)
     );
     
     $DBadder = new DBadder(Config_leave_message::tbl_name, $array);
-    $DBadder->excute($conn);
+    return $DBadder->excute($conn);
 }
 /**
  * 前置： 必须满足已经判断确定用户已经登陆
@@ -49,5 +49,5 @@ function update_message_time($conn)
         Config_commodity::leave_message_time,
         ' where '.Config_commodity::id.' = '.$_SESSION['CURENNT_LOGIN_ID']
     );
-    $DBincrement->excute($conn);
+    return $DBincrement->excute($conn);
 }
