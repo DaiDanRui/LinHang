@@ -1,9 +1,12 @@
 <?php
-/**
- * 执行更新操作
- * @param u nknown $conn
- * @return 返回查询结果
- */
+
+ /**
+  * 执行更新操作更新商品信息，并根据商品ID查询商品信息
+  * @param 数据库连接 $conn
+  * @param bigint $commodity_id
+  * @param tinyint $state
+  * @return array 以数组形式返回查询结果
+  */
 function update_commodity_state_and_return_commodity($conn,$commodity_id, $state)
 {
     require_once 'class/commodity/Transaction_state_config.php';
@@ -21,5 +24,6 @@ function update_commodity_state_and_return_commodity($conn,$commodity_id, $state
     );
     $DBupdater->excute($conn);
     $DBtraveser = new DBtraverser(Config_commodity::table_name,$where);
-    return $DBtraveser->excute($conn);
+    $retval =  $DBtraveser->excute($conn);
+    return mysqli_fetch_array($retval, MYSQLI_ASSOC);
 }
