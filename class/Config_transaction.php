@@ -20,7 +20,8 @@ class Config_transaction
         'date_confirm',
         
        
-        'pay_id'
+        'pay_id',
+        'course_or_reward'
     );
     
     const table_name = 'tbl_transaction';
@@ -42,6 +43,7 @@ class Config_transaction
     const date_confirm = 'date_confirm'  	;
     
     const pay_id = 'pay_id';
+    const course_or_reward = 'course_or_reward';
 }
 
 ?>
