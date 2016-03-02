@@ -27,7 +27,7 @@
     $dbcount = new DBcount(Config_commodity::table_name,$where);
     $count = 1+((int)($dbcount->excute($conn)/SIZE_EACH_PAGE));
 
-    $page = isset($_GET['page'])?  (int)$_POST['page'] : 1;
+    $page = isset($_GET['page'])?  (int)$_GET['page'] : 1;
     $page = $page>$count? $count : $page;
 
     $choosed_fields = array( //被选择的字段
