@@ -3,10 +3,10 @@ session_start();
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
     require_once 'class/Config.php';
-   
+    $commodity_id = (int) $_GET['id'];
     $conn = Config::connect();
-    add_message_to_DB($conn);//存储信息
-    update_message_time($conn);//留言数增1
+    add_message_to_DB($conn,$commodity_id);//存储信息
+    update_message_time($conn,$commodity_id);//留言数增1
     mysqli_close($conn);
 }
 else 
@@ -17,12 +17,11 @@ else
  * 前置： 必须满足已经判断确定用户已经登陆
  * @param unknown $conn 数据库连接
  */
-function add_message_to_DB($conn)
+function add_message_to_DB($conn,$commodity_id)
 {
-    require_once 'class/Injection.php';
     require_once 'class/DBadder.php';
     require_once 'class/Config_leave_message.php';
-    $commodity_id = Injection::excute('id');
+    
     $talker_id = $_SESSION['CURENNT_LOGIN_ID'];
     $talker_content = Injection::excute('content');
     
@@ -40,14 +39,14 @@ function add_message_to_DB($conn)
  * 前置： 必须满足已经判断确定用户已经登陆
  * @param unknown $conn
  */
-function update_message_time($conn)
+function update_message_time($conn,$commodity_id)
 {
     require_once 'class/DBincrement.php';
     require_once 'class/Config_commodity.php';
     $DBincrement = new DBincrement(
         Config_commodity::table_name,
         Config_commodity::leave_message_time,
-        ' where '.Config_commodity::id.' = '.$_SESSION['CURENNT_LOGIN_ID']
+        ' where '.Config_commodity::id.' = '.$commodity_id
     );
     return $DBincrement->excute($conn);
 }
