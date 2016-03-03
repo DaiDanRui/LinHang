@@ -69,7 +69,7 @@ class Start_transaction
         $this->send_msg();
     }
     
-    private function generate_pay_id()
+    public static function generate_pay_id()
     {
         return substr(md5(time()), 0, self::pay_id_length);
     }
