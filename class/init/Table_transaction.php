@@ -18,15 +18,17 @@ class Table_transaction extends Table
             id                  BIGINT         not null   AUTO_INCREMENT,
             choosed_id          BIGINT         not null,
             state               tinyint         not null,
-            commodity_holder_id            BIGINT         not null,
-            commodity_buyer_id           BIGINT         not null,
+            commodity_holder_id BIGINT         not null,
+            commodity_buyer_id  BIGINT         not null,
             
             price               FLOAT(7,3)         not null,
             date_choose         DATETIME         not null,
-            date_confirm            DATETIME                 ,
+            date_confirm        DATETIME                 ,
             
             pay_id              VARCHAR(20)   CHARACTER SET utf8 COLLATE utf8_general_ci  not null,
     
+            course_or_reward    tinyint not null	,
+            
             PRIMARY KEY (id),
             INDEX index_commodity_holder_id(commodity_holder_id),
             INDEX index_commodity_buyer_id(commodity_buyer_id),

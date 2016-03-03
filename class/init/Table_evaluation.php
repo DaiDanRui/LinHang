@@ -2,6 +2,11 @@
 include('Table.php');
 class Table_evaluation extends Table
 {
+    public function __construct($conn){
+    
+        parent::__construct($conn, 'tbl_evaluation');
+    }
+    
     public function get_field_name(){
         return '
             evaluation_id	BIGINT	not null	AUTO_INCREMENT,
