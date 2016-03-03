@@ -35,7 +35,7 @@ class DBfinder extends DBexcutor
      */
     protected function getSQL()
     {
-        $q = 'select * from '.$this->table_name.' where ';
+        $q = 'select * from '.$this->table_name;
         
         $is_first_value = true;
         foreach ($this->ary as $key => $value) {
@@ -45,6 +45,7 @@ class DBfinder extends DBexcutor
             }
             else
             {
+                $q.=' where ';
                 $is_first_value = false;
             }
             $q = $q." $key = '$value' ";
