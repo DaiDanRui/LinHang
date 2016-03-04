@@ -2,49 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82adccc1-c1d3-4766-84db-fd4a189df73f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/raychen.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/old/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl-c/%%1A^1AB^1AB9BADF%%login.html.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl-c/%%28^28D^28DA4A58%%register3.html.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl-c/%%65^651^6512EB53%%register1.html.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl-c/%%E3^E38^E38699FD%%register2.html.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/Login&amp;Register/footer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/My/my-about-us.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/My/my-accepted.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/My/my-account-set.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/My/my-account.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/My/my-change-pwd.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/My/my-main.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/My/my-personal-modify.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/My/my-personal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/My/my-review.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/My/my-set.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/My/my-star.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/My/my-topic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/Reword&amp;Market/market-skill-publish.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/new_main.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/reward_get.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/reward_info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/reward_pub.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpl/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/sets-back.png" afterPath="$PROJECT_DIR$/img/sets-back.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/common.css" afterPath="$PROJECT_DIR$/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Login&amp;Register/Login.html" afterPath="$PROJECT_DIR$/tpl/Login&amp;Register/Login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Login&amp;Register/Register-1.html" afterPath="$PROJECT_DIR$/tpl/Login&amp;Register/Register-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Login&amp;Register/Register-2.html" afterPath="$PROJECT_DIR$/tpl/Login&amp;Register/Register-2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Login&amp;Register/Register-3.html" afterPath="$PROJECT_DIR$/tpl/Login&amp;Register/Register-3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Reword&amp;Market/market-main.html" afterPath="$PROJECT_DIR$/tpl/Reword&amp;Market/market-main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Reword&amp;Market/market-skill-buy.html" afterPath="$PROJECT_DIR$/tpl/Reword&amp;Market/market-skill-buy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Reword&amp;Market/market-skill.html" afterPath="$PROJECT_DIR$/tpl/Reword&amp;Market/market-skill.html" />
     </list>
-    <list id="753eddab-0d81-40a7-a0f9-91702f8458cf" name="New changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/blade.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tpl-c/%%BE^BE8^BE89815B%%Main.html.php" afterPath="" />
-    </list>
+    <list id="753eddab-0d81-40a7-a0f9-91702f8458cf" name="New changelist" comment="" />
     <ignored path="LinHang.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -67,11 +28,41 @@
     <splitter split-orientation="horizontal" split-proportion="0.44504023">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/main.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.16253869">
+                <state vertical-scroll-proportion="-1.8103448">
                   <caret line="106" column="33" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Login.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tpl/Login&amp;Register/Login.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-3.548387">
+                  <caret line="5" column="71" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Register-1.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tpl/Login&amp;Register/Register-1.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-3.064516">
+                  <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Register-2.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/tpl/Login&amp;Register/Register-2.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.35958394">
+                  <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
@@ -103,10 +94,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="my-account.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="my-account.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tpl/My/my-account.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="2.1575036">
+                <state vertical-scroll-proportion="-48.258064">
                   <caret line="68" column="7" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
                   <folding />
                 </state>
@@ -123,10 +114,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Register-3.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Register-3.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tpl/Login&amp;Register/Register-3.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
+                <state vertical-scroll-proportion="0.44427934">
                   <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="81" />
                   <folding />
                 </state>
@@ -176,8 +167,6 @@
         <option value="$PROJECT_DIR$/tpl/Login&amp;Register/footer.html" />
         <option value="$PROJECT_DIR$/tpl/Reword&amp;Market/main-search.html" />
         <option value="$PROJECT_DIR$/css/general.css" />
-        <option value="$PROJECT_DIR$/tpl/Login&amp;Register/Login.html" />
-        <option value="$PROJECT_DIR$/tpl/Login&amp;Register/Register-1.html" />
         <option value="$PROJECT_DIR$/tpl/Login&amp;Register/Register-3.html" />
         <option value="$PROJECT_DIR$/css/common.css" />
         <option value="$PROJECT_DIR$/tpl/Login&amp;Register/Register-2.html" />
@@ -203,6 +192,8 @@
         <option value="$PROJECT_DIR$/tpl/My/my-change-pwd.html" />
         <option value="$PROJECT_DIR$/tpl/My/my-account.html" />
         <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/tpl/Login&amp;Register/Login.html" />
+        <option value="$PROJECT_DIR$/tpl/Login&amp;Register/Register-1.html" />
       </list>
     </option>
   </component>
@@ -294,7 +285,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="tpl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -308,25 +299,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinHang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinHang" />
+              <option name="myItemId" value="tpl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="old" />
+              <option name="myItemId" value="Login&amp;Register" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -715,27 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sender_qixintong.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6334662">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Login&amp;Register/Register-2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43004116">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Login&amp;Register/Login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43004116">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -848,13 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Login&amp;Register/Register-1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04112554">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.13095239">
@@ -877,26 +826,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/My/my-account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1575036">
-          <caret line="68" column="7" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/My/my-account-set.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/Login&amp;Register/Register-3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="81" />
           <folding />
         </state>
       </provider>
@@ -913,8 +846,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16253869">
+        <state vertical-scroll-proportion="-1.8103448">
           <caret line="106" column="33" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Login&amp;Register/Login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.548387">
+          <caret line="5" column="71" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Login&amp;Register/Register-1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.064516">
+          <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Login&amp;Register/Register-2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35958394">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/My/my-account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-48.258064">
+          <caret line="68" column="7" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/Login&amp;Register/Register-3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44427934">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="81" />
           <folding />
         </state>
       </provider>
