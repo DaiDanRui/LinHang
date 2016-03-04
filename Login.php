@@ -45,7 +45,7 @@ if (isset($_POST['login'])){
 }else if (isset($_POST['forget'])){
     $smarty->display("forget.html");
 }else{
+    echo "in";
+//    var_dump("$smarty");
     $smarty->display("Login&Register/login.html");
 }
-
-
