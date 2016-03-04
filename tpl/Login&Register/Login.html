@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../../css/common.css" type="text/css" rel="stylesheet">
+    <link href="css/common.css" type="text/css" rel="stylesheet">
     <title>登录</title>
 </head>
 <body>
@@ -11,15 +11,17 @@
         <div class="common-head">
             <img src="../../img/LG.png">
         </div>
+        <form method="post" action="Login.php">
         <div class="content">
-            <input class="input-out input-in-login" placeholder="用户名"/>
-            <input class="input-out input-in-login" placeholder="密码"/>
-            <button class="input-out input-in-login btn-login" >登录</button>
+            <input class="input-out input-in-login" name="username" placeholder="用户名"/>
+            <input class="input-out input-in-login" name="pwd" placeholder="密码"/>
+            <button class="input-out input-in-login btn-login" type="submit" name="login">登录</button>
             <div class="login-bot">
                 <a class="a-common forget">忘记密码?</a>
                 <a class="a-common reg" href="Register-1.html">立即注册-></a>
             </div>
         </div>
+        </form>
     </div>
     <div class="footer">
         Designed &copy; 2016 LGDreamer
