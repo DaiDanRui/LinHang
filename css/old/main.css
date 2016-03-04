@@ -1,0 +1,251 @@
+/*标签*/
+body{  background-color: #fafafa;  }
+/*table{  border-collapse: collapse;  }*/
+/*button{  border-style: none;  }*/
+/*a{  text-decoration: none;  }*/
+
+/*!*主要模块*!*/
+/*.main_part{*/
+    /*position: relative;*/
+    /*left: 0; right: 0; top: 70px;*/
+    /*background-size: cover;*/
+    /*!*background-image: url("../img/login.png");*!*/
+    /*background-color: #859987;*/
+    /*margin-left: auto; margin-right: auto;*/
+    /*width: 320px;*/
+    /*height: 520px;*/
+
+    /*text-align: center;*/
+/*}*/
+/*.main_head{*/
+    /*text-align: left;*/
+    /*height: 8%;*/
+    /*background-color: #292c37;*/
+/*}*/
+/*.main_mid{*/
+    /*height: 84%;*/
+    /*background-color: #f0ead8;*/
+/*}*/
+/*.main_part_mid1_head{*/
+    /*height: 40%;*/
+    /*background-color: #cccc99;*/
+/*}*/
+/*.main_part_mid1_mid{*/
+    /*height: 10%;*/
+    /*background-color: #ff7d10;*/
+/*}*/
+/*.main_part_mid1_bottom{*/
+    /*height: 50%;*/
+    /*background-color: #fefeeb;*/
+/*}*/
+/*.main_part_mid2_top{*/
+    /*height: 10%;*/
+    /*background-color: #ff1f4c;*/
+/*}*/
+/*.main_part_mid2_mid{*/
+    /*border: 2px dashed;*/
+    /*height: 90%;*/
+    /*background-color: #fafafa;*/
+/*}*/
+/*.main_mid5_1{*/
+    /*!*border: 1px dashed;*!*/
+    /*width: 100%;*/
+    /*height: 20%;*/
+/*}*/
+/*.main_mid5_2{*/
+
+/*}*/
+/*.main_bottom{*/
+    /*height: 8%;*/
+    /*background-color: #292c37;*/
+/*}*/
+/*#skill_1{*/
+    /*border: 1px solid;*/
+    /*height: 20%;*/
+    /*background-color: #cfc89a;*/
+/*}*/
+/*#skill_2{*/
+    /*border: 1px solid;*/
+    /*height: 10%;*/
+    /*background-color: #cfc89a;*/
+/*}*/
+/*#skill_3{*/
+    /*border: 1px solid;*/
+    /*height: 40%;*/
+    /*background-color: #cfc89a;*/
+/*}*/
+/*#skill_4{*/
+    /*border: 1px solid;*/
+    /*height: 30%;*/
+    /*background-color: #cfc89a;*/
+/*}*/
+/*#publish_1{*/
+    /*margin-left: 10%;*/
+    /*background-color: #fafafa;*/
+    /*border: 1px solid #d9d9d9;*/
+    /*width: 80%;*/
+    /*height: 8%;*/
+    /*text-align: left;*/
+    /*padding-top: 2%;*/
+/*}*/
+/*!*按钮*!*/
+/*.main_bt1,.skill_bt{*/
+    /*background-color: #292c37;*/
+    /*color: #fafafa;*/
+    /*float: left;*/
+    /*padding: 8px;*/
+    /*width: 33%;*/
+    /*!*border: 1px solid;*!*/
+/*}*/
+/*.main_bt_mid1{*/
+    /*background-color: #f2e3c6;*/
+    /*width: 30%;*/
+    /*height: 80%;*/
+    /*margin-top: 3px;*/
+/*}*/
+/*.main_bt_set{*/
+    /*background-color: #292c37;*/
+    /*color: #fafafa;*/
+    /*float: left;*/
+    /*text-align: left;*/
+    /*padding: 0px;*/
+    /*!*border: 1px solid #fafafa;*!*/
+    /*width: 10%;*/
+    /*margin-top: 3%;*/
+    /*margin-left: 3%;*/
+/*}*/
+/*.main_bt_mid2{*/
+    /*width: 30%;*/
+    /*height: 60%;*/
+    /*float: left;*/
+    /*margin-top: 8px;*/
+    /*margin-left: 8px;*/
+/*}*/
+/*#skill_1_info{*/
+    /*float: left;*/
+    /*width: 20%;*/
+    /*height: 80%;*/
+    /*border: 1px dashed;*/
+    /*margin-left: 4%;*/
+    /*margin-top: 3%;*/
+/*}*/
+/*.publish_ok{*/
+    /*float: right;*/
+    /*color: #fafafa;*/
+    /*background-color: #292c37;*/
+    /*text-align: right;*/
+    /*padding: 0px;*/
+    /*!*border: 1px solid #fafafa;*!*/
+    /*width: 10%;*/
+    /*margin-top: 3%;*/
+    /*margin-right: 4%;*/
+/*}*/
+/*!*列表*!*/
+/*.main_ul1{*/
+    /*float: left;*/
+    /*margin-left: 40px;*/
+    /*margin-top: 10px;*/
+    /*padding-left: 0;*/
+/*}*/
+/*.main_ul2{*/
+    /*list-style: none;*/
+    /*float: left;*/
+    /*margin-left: 20px;*/
+    /*padding-left: 0;*/
+    /*margin-top: 0;*/
+/*}*/
+/*!*列表项*!*/
+/*.main_li1{*/
+    /*border: 1px solid #bac9a9;*/
+    /*width: 270px;*/
+    /*height: 50px;*/
+    /*margin-top: 20px;*/
+/*}*/
+/*!*输入*!*/
+/*.main_mid2_inp1,.main_mid2_inp2,.main_mid2_pr{*/
+    /*float: left;*/
+    /*border: 1px dashed;*/
+    /*margin-top: 3%;*/
+    /*height: 70%;*/
+/*}*/
+/*.main_mid2_inp1{*/
+    /*margin-left: 2%;*/
+    /*width: 13%;*/
+/*}*/
+/*.main_mid2_inp2{*/
+    /*margin-left: 3%;*/
+    /*width: 40%;*/
+/*}*/
+/*!*其他模块*!*/
+/*.main_mid2_pr{*/
+    /*border: none;*/
+    /*font-family: "Microsoft YaHei";*/
+    /*font-size: 20px;*/
+    /*color: #f2d680;*/
+    /*margin-left: 5%;*/
+    /*padding-top: 2%;*/
+    /*width: 20%;*/
+/*}*/
+/*.main_mid2_ind{*/
+    /*border: 1px solid;*/
+    /*width: 20px;*/
+    /*height: 10px;*/
+    /*font-size: 8px;*/
+    /*color: #fafafa;*/
+    /*float: right;*/
+    /*margin-right: -2px;*/
+    /*background-color: #00a0b0;*/
+/*}*/
+/*.skill_head_info{*/
+    /*float: left;*/
+    /*font-family: "Microsoft YaHei";*/
+    /*font-size: 22px;*/
+    /*color: #fafafa;*/
+    /*margin-left: 7%;*/
+    /*margin-top: 2%;*/
+/*}*/
+/*#skill_1_info_text{*/
+    /*float: left;*/
+    /*border: 1px dashed;*/
+    /*margin-top: 5%;*/
+    /*margin-left: 10%;*/
+    /*padding-top: 5%;*/
+    /*height: 50%;*/
+    /*width: 50%;*/
+    /*font-family: "Microsoft YaHei";*/
+    /*font-size: 20px;*/
+    /*color: #fafafa;*/
+/*}*/
+/*#skill_2_pr{*/
+    /*margin-top: 3%;*/
+    /*font-size: 15px;*/
+    /*font-family: "Microsoft YaHei";*/
+    /*color: #292c37;*/
+/*}*/
+/*#publish_title{*/
+    /*float: left;*/
+    /*color: #fafafa;*/
+    /*margin-top: 2%;*/
+    /*margin-left: 25%;*/
+/*}*/
+/*.main_img{*/
+    /*float: left;*/
+    /*width: 80px;*/
+    /*height: 80px;*/
+    /*!*border: 1px dashed;*!*/
+    /*margin-left: 8%;*/
+    /*margin-top: 2%;*/
+    /*background-size: cover;*/
+    /*!*background-image: url("../img/头像.png");*!*/
+/*}*/
+/*.main_mid5_1_1{*/
+    /*float: left;*/
+    /*width: 60%;*/
+    /*height: 80%;*/
+    /*margin-left: 2%;*/
+    /*margin-top: 5%;*/
+    /*padding-top: 3%;*/
+    /*font-size: 15px;*/
+    /*font-family: "Microsoft YaHei";*/
+    /*!*border: 1px dashed;*!*/
+/*}*/
