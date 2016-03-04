@@ -32,7 +32,7 @@ class Table_transaction extends Table
             PRIMARY KEY (id),
             INDEX index_commodity_holder_id(commodity_holder_id),
             INDEX index_commodity_buyer_id(commodity_buyer_id),
-            INDEX index_date_choose(date_choose),
+            INDEX index_date_choose(date_choose)
             
         ';
     }

@@ -19,6 +19,7 @@ abstract class Table
     public function initTable(){
         $names = $this->get_field_name();
         $query = "create table $this->table_name ($names)";//sql语句
+        echo $query;
         if(!mysqli_query($this->conn, $query)){
             echo 'error to create table'.$this->conn->mysqli_error;
         }else {
