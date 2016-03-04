@@ -9,7 +9,9 @@ function try_to_login()
     $username = Injection::excute('username');
     $password = Injection::excute('pwd');
 
-    include_once('class/DBtraverser.php');
+    echo $username;
+    echo $password;
+  /*   include_once('class/DBtraverser.php');
     include_once('class/Config.php');
     include_once('class/Config_user.php');
 
@@ -33,7 +35,7 @@ function try_to_login()
             echo 'wrong password';
         }
     }
-    mysqli_free_result($retval);
+    mysqli_free_result($retval); */
 }
 
 if (isset($_POST['login'])){
