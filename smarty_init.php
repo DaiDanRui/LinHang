@@ -11,5 +11,4 @@ $smarty->cache_dir = "caches"; //缓存文件夹
 
 $smarty->left_delimiter = "{%";
 $smarty->right_delimiter = "%}";
-$smarty->security_settings['MODIFIER_FUNCS'] = array('truncate_cn');
 ?>
