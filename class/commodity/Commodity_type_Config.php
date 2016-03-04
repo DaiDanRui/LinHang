@@ -16,6 +16,9 @@ class Commodity_type_Config
      * @var tinyint
      */
     const course = 2;
+    
+    
+    const all = 0;
 }
 
 ?>

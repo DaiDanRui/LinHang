@@ -34,7 +34,9 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
                         Config_commodity::table_name.".".Config_commodity::course_or_reward.','.
                         Config_commodity::table_name.".".Config_commodity::description.','.
                         Config_commodity::table_name.".".Config_commodity::id.','.
-                        Config_commodity::table_name.".".Config_commodity::type.
+                        Config_commodity::table_name.".".Config_commodity::type.','.
+                        Config_transaction::table_name.".".Config_transaction::commodity_buyer_id.','.
+                        Config_transaction::table_name.".".Config_transaction::commodity_holder_id.
             ' from '.Config_transaction::table_name.','.Config_commodity::table_name.' '.
             $where.' AND '.Config_commodity::table_name.'.'.Config_commodity::id.'='.
                        Config_transaction::table_name.'.'.Config_transaction::choosed_id.

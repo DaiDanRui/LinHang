@@ -19,6 +19,14 @@ class MessageSender
         $res = sendSMS(self::uid,self::pwd,$mobile,$content);
         return  $res;
     }
+    
+    public static function send_by_user_id($content,$mobile)
+    {
+        require_once 'sender_qixintong.php';
+        //即时发送
+        $res = sendSMS(self::uid,self::pwd,$mobile,$content);
+        return  $res;
+    }
 }
 
 ?>

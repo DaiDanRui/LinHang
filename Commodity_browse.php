@@ -7,7 +7,7 @@
     
 
     //1.获取限定条件
-        $where = 'where '.Config_commodity::commodity_state." = '0'";
+        $where = 'where '.Config_commodity::commodity_state." = '2'";
         if(($_GET['course_or_reward']))//when $_GET['course_or_reward'] isset && $_GET['course_or_reward']!=0
         {
             $where.='AND'. Config_commodity::course_or_reward.' = '."'".Injection::excute('course_or_reward')."'";

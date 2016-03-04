@@ -4,40 +4,33 @@ session_start();
 if(isset($_SESSION['CURRENT_LOGIN_ID']) && isset($_SESSION['CURRENT_LOGIN_USER']))
 {
     require_once 'class/Config.php';
-    require_once 'class/Injection.php';
-    require_once 'Included_update_state.php';
+    require_once 'class/Transaction_commodity.php';
     require_once 'class/commodity/Transaction_state_config.php';
     
+    $commodity_id = (int)$_GET['commodity_id'];
     //连接数据库
     $conn = Config::connect();
-    //1. 更新商品状态
-    $commodity_ary = update_commodity_state_and_return_commodity(
-        $conn, 
-        (int)$_GET['commodity_id'],
-        Transaction_state_config::acceptor_comfirmed
-        );
-    if($commodity_ary && create_transaction($conn, $commodity_ary))
+    
+    
+    $commodity = new Transaction_commodity($conn, $commodity_id);
+    $commodity_ary = $commodity->get_commodity();
+    //判断当前用户是否具有权限: 当当前用户不是发布者
+    if($commodity_ary[Config_commodity::publisher]!=$_SESSION['CURRENT_LOGIN_ID'])
     {
-        if($commodity_ary[Config_commodity::type] == Commodity_type_Config::course)
+        //更新商品状态
+        $commodity->update(Transaction_state_config::acceptor_comfirmed);
+        //创建订单
+        if(create_transaction($conn, $commodity_ary))
         {
-            $content = '尊敬的用户您好，您发布的课程 '.$commodity_ary[Config_commodity::title].
-                       '已被客户 '.$_SESSION['CURRENT_LOGIN_USER'].'选中。请前往领行客户中心查看详情并于客户联系';
+            send_msg($commodity_ary);
         }
         else 
         {
-            $content = '尊敬的用户您好，您发布的悬赏 '.$commodity_ary[Config_commodity::title].
-                       '已被客户 '.$_SESSION['CURRENT_LOGIN_USER'].'选中。请前往领行客户中心查看详情并于客户联系';
         }
-        require_once 'class/MessageSender.php';
-        MessageSender::send($content, $mobile);
     }
     else 
     {
-        
     }
-    
-    mysqli_free_result($retval);
-    mysqli_close($conn);
     
 }
 else
@@ -45,7 +38,22 @@ else
     include  'Login.php';
 }
 
-
+function send_msg($commodity_ary)
+{
+        if($commodity_ary[Config_commodity::course_or_reward] == Commodity_type_Config::course)
+        {
+            $content = '尊敬的用户您好，您发布的课程 '.$commodity_ary[Config_commodity::title].
+            '已被客户 '.$_SESSION['CURRENT_LOGIN_USER'].'选中。请前往领行客户中心查看详情并于客户联系';
+        }
+        else
+        {
+            $content = '尊敬的用户您好，您发布的悬赏 '.$commodity_ary[Config_commodity::title].
+            '已被客户 '.$_SESSION['CURRENT_LOGIN_USER'].'选中。请前往领行客户中心查看详情并于客户联系';
+        }
+        require_once 'class/MessageSender.php';
+        MessageSender::send_by_acceptor_id($content, $commodity_ary[Config_commodity::publisher]);
+    
+}
 
 function create_transaction($conn,$commodity_ary)
 {

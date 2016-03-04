@@ -6,20 +6,20 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     require_once 'Included_update_state.php';
     require_once 'class/commodity/Transaction_state_config.php';
     require_once 'class/Config_commodity.php';
-    
+
     $commodity_id = (int)$_GET['commodity_id'];
     $conn = Config::connect();
-    
+
     $commodity = new Transaction_commodity($conn, $commodity_id);
     $commodity_ary = $commodity->get_commodity();
-    
+
     if($commodity_ary[Config_commodity::publisher]==$_SESSION['CURRENT_LOGIN_ID'])
     {
-        $commodity->update(Transaction_state_config::both_comfirmed);
+        $commodity->update(Transaction_state_config::refused);
         if($commodity_ary && update_transaction_state($conn, $commodity_id))
         {
-            $buyer_or_holder_id = $_GET['buyer_or_holder'];
-            sendMessage($commodity_ary,$buyer_or_holder_id);
+            $bussinessman = $_GET['mobile'];
+            sendMessage($commodity_ary,$bussinessman);
         }
         else
         {
@@ -33,7 +33,7 @@ else
     require  'Login.php';
 }
 
-function sendMessage($commodity_ary,$buyer_or_holder_id)
+function sendMessage($commodity_ary,$mobile)
 {
     if($commodity_ary[Config_commodity::course_or_reward] == Commodity_type_Config::course)
     {
@@ -46,7 +46,7 @@ function sendMessage($commodity_ary,$buyer_or_holder_id)
         '客户 '.$_SESSION['CURRENT_LOGIN_USER'].' 已确认。请前往领行客户中心查看详情并于客户联系';
     }
     require_once 'class/MessageSender.php';
-    MessageSender::send_by_user_id($content, $buyer_or_holder_id);
+    MessageSender::send($content, $mobile);
 }
 
 function update_transaction_state($conn,$commodity_id)
@@ -55,12 +55,12 @@ function update_transaction_state($conn,$commodity_id)
     include_once('class/DBupdater.php');
     include_once('class/Config_transaction.php');
     include_once 'class/commodity/Transaction_state_config.php';
-    
+
     $ary = array(
         Config_transaction::state => Transaction_state_config::both_comfirmed
     );
     $where = ' where '.Config_transaction::choosed_id.' = '.
-             "'".$commodity_id."'";
+        "'".$commodity_id."'";
     $DBupdater = new DBupdater(Config_commodity::table_name, $ary, $where);
     return $DBupdater->excute($conn);
 }

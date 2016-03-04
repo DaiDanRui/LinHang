@@ -9,10 +9,21 @@
  */
 class Transaction_state_config
 {
+    
+    public static function  can_be_choose($state)
+    {
+        return $state<2;
+    }
+    /**
+     * 开始状态
+     */
+    const just_publish = 0;
     /**一方接单，向另一方请求
      */
     const acceptor_comfirmed = 1;
     /**双方确认，开始授课
+     * 此时课程不可以被其他人选择
+     * @var unknown
      */
     const both_comfirmed = 2;
     /**授课完成
@@ -43,6 +54,11 @@ class Transaction_state_config
     /**平台处理结束
      */
     const platform_intervention_end = 26;
+    /**
+     * 没有开始交易，商品被用户选择删除
+     * @var unknown
+     */
+    const commodity_deleted = 27;
 }
 
 ?>
