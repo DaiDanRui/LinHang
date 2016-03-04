@@ -1,4 +1,8 @@
 <?php
+/**
+ * id
+ * 
+ */
 session_start();
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {

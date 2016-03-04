@@ -8,6 +8,7 @@
  */
 class Config_commodity_type
 {
+    const tbl_name = 'tbl_commodity_type';
     const type_id = 'type_id';
     const type_name = 'type_name';
     

@@ -4,9 +4,6 @@ include_once ('smarty_init.php');
 include_once ('class/user/Login.php');
 include_once ('class/user/ResultReturn.php');
 require_once 'class/Injection.php';
-define('CURRENT_LOGIN_USER', 987);
-define('CURENNT_LOGIN_ID', 789);
-echo 'login';
 function try_to_login()
 {
     $username = Injection::excute('username');

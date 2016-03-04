@@ -5,14 +5,12 @@ define('SIZE_EACH_PAGE', 10);
  * @param string $where
  * @return array 返回数据库查询后的数组:
  */
-function pagination($where)
+function pagination($where,$conn)
 {
     require_once 'class/Config_commodity.php';
     require_once 'class/DBpagination.php';
     require_once 'class/DBcount.php';
-    require_once 'class/Config.php';
-    //1.连接数据库
-    $conn = Config::connect();//多次使用的数据库连接
+    
     //2.向数据库查询符合条件数，以计算显示分页数目
     $dbcount = new DBcount(Config_commodity::table_name,$where);
     $count = 1+((int)($dbcount->excute($conn)/SIZE_EACH_PAGE));
@@ -40,7 +38,6 @@ function pagination($where)
         }
         
        //5.释放资源
-        mysqli_close($conn);
         mysqli_free_result($reval);
     return array('page'=>$page,'array'=>$array);
 }
