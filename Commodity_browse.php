@@ -36,7 +36,7 @@
     //3.显示数据
     $smarty->assign('page',$list['page']);
     $smarty->assign('array',$list['array']);
-    $smarty->display('');
+    $smarty->display('Reward&Market/market-main.html');
     //4.释放资源
     mysqli_close($conn);
     

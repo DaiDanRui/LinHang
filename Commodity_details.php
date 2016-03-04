@@ -14,7 +14,7 @@ include_once ('smarty_init.php');
     if($array)
     {
         $smarty->assign('array',$array);
-        $smarty->display('');
+        $smarty->display('Reward&Market/market-skill');
     }
     else 
     {
