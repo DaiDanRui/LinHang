@@ -14,34 +14,36 @@
         <h1 class="nav-title">发布技能</h1>
     </div>
     <div class="contents-4">
+        <form method="post" action="Commodity_upload.php">
         <div class="content-wrapper">
             <div class="topic">
                 <h1>主题</h1>
-                <input class="publish-input-out" placeholder="请输入">
+                <input class="publish-input-out" placeholder="请输入" name="topic" id="topic">
             </div>
-            <textarea class="publish-input-out area" placeholder="简要描述~"></textarea>
+            <textarea class="publish-input-out area" placeholder="简要描述~" name="description" id="description"></textarea>
             <div class="imgs">
                 <img src="img/test-1.jpg">
             </div>
             <div class="topic cont-bottom">
                 <h1>截止日期</h1>
-                <input class="publish-input-out">
+                <input class="publish-input-out" name="time" id="time">
             </div>
             <div class="topic cont-bottom">
                 <h1>报酬</h1>
-                <input class="publish-input-out">
+                <input class="publish-input-out" name="price" id="price">
             </div>
             <div class="topic cont-bottom">
                 <h1>联系方式</h1>
-                <input class="publish-input-out">
+                <input class="publish-input-out" name="phone" id="phone">
             </div>
         </div>
 
         <div class="confirm-bottom">
-            <button>
+            <button name="confirm" id="confirm" type="submit">
                 确认
             </button>
         </div>
+        </form>
     </div>
 </div>
 </body>
