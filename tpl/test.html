@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>test</title>
 </head>
-<body>
-    just a test!
+<br>
+    just a test!<br>
+    <{$test}><br>
+    <{foreach $users as $user}>
+        <{$user['username']}><br>
+    <{/foreach}>
 </body>
 </html>

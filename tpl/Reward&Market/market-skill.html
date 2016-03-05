@@ -13,50 +13,36 @@
             <a class="sets">
                 <img src="img/sets-back.png">
             </a>
-            <h1 class="nav-title">Dannini的技能</h1>
+            <h1 class="nav-title"><{$skill['nickname']}>的技能</h1>
         </div>
 
         <div class="contents">
             <div class="item-header">
-                <img src="img/test-2.jpg">
+                <img src="<{$skill['img']}>">
                 <div class="titles">
-                    <h1>一小时初步PS入门</h1>
-                    <h3 class="sub-info">Dannini(30天前)</h3>
+                    <h1><{$skill['title']}></h1>
+                    <h3 class="sub-info"><{$skill['nickname']}>(<{$skill['time']}>天前)</h3>
                 </div>
-                <div class="price price-2">$70</div>
+                <div class="price price-2"><{$skill['price']}></div>
             </div>
 
             <div class="item-content">
                 <p>
-                    此次项目研究报告,我们编写的主要目标有两个，第一，是要确认项目的可行性并且做好准备工作，未雨绸缪是十分必要的；第二，是希望能在外汇市场上为使用者提供科学而又实用的建议，从而使其获得收益。
-                    项目研究报告是联结开发团队与客户的重要纽带。我们相信，一份好的项目研究报告（可行性报告），既是对开发团队的肯定与鼓励，不仅能够激发他们的信心和斗志，还能使客户更加信服，从而加大投入使用率。
-                    在本项目中，我们的项目研究报告包含以下几方面内容：
+                    <{$skill['description']}>
                 </p>
             </div>
             <div class="picture">
-                <img src="img/test-1.jpg">
+                <img src="<{$skill['description-img']}>">
             </div>
 
             <div class="msg-total">
-                <h2 class="img-num">3</h2>
+                <h2 class="img-num"><{$skill['star_numbers']}></h2>
                 <img src="img/icon-save.png">
-                <h2 class="img-num">3</h2>
+                <h2 class="img-num"><{$skill['message_numbers']}></h2>
                 <img src="img/icon-msg.png">
             </div>
             <div class="msg-item-head">
-                <div class="icon msg-icon"></div>
-                <h2 class="msg-name">CR14</h2>
-                <h2 class="msg-time">3天前</h2>
-            </div>
-            <div class="msg-item-content">
-                <p>
-                    此次项目研究报告,我们编写的主要目标有两个，第一，是要确认项目的可行性并且做好准备工作，未雨绸缪是十分必要的；第二，是希望能在外汇市场上为使用者提供科学而又实用的建议，从而使其获得收益。
-                    项目研究报告是联结开发团队与客户的重要纽带。我们相信，一份好的项目研究报告（可行性报告），既是对开发团队的肯定与鼓励，不仅能够激发他们的信心和斗志，还能使客户更加信服，从而加大投入使用率。
-                    在本项目中，我们的项目研究报告包含以下几
-                </p>
-            </div>
-            <div class="msg-item-head">
-                <div class="icon msg-icon"></div>
+                <img class="msg-icon" src="img/test-2.jpg">
                 <h2 class="msg-name">CR14</h2>
                 <h2 class="msg-time">3天前</h2>
             </div>

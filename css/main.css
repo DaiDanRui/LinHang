@@ -257,7 +257,8 @@ a img{
     border-top: 1px solid gray;
 }
 .msg-icon{
-    background-image: url("../img/test-2.jpg");
+    float: left;
+    border-radius: 50%;
     width: 9.375%;
     height: 83.3%;
     margin-top: 2%;
