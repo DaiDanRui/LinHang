@@ -30,6 +30,6 @@ $arr[1] = $arr_sub2;
 
 $test = "hi";
 
-$smarty->assign('skill',$arr);
+//$smarty->assign('skill',$arr);
 //$smarty->assign('test',$test);
-$smarty->display('Reward&Market/market-skill.html');
+$smarty->display('Reward&Market/market-main.html');
