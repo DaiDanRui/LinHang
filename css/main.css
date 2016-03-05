@@ -465,6 +465,15 @@ form{
     float: left;
     margin-left: 10%;
 }
+.right-cover{
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    background-color: black;
+    opacity: 0;
+    z-index: -1;
+}
 
 /*我的部分------------------------------------------------------------------------------------*/
 /*我的(个人信息)头部-------*/

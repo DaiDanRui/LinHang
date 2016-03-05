@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <title>市场-主页</title>
 </head>
 <body>
@@ -17,13 +19,13 @@
             </a>
         </div>
         <div class="nav">
-            <a class="sets sets-2">
+            <a class="sets sets-2" id="ser-3">
                 <img src="img/sets.png">
             </a>
-            <a class="sets sets-2 sets-price">
+            <a class="sets sets-2 sets-price" id="ser-1">
                 <img src="img/sets-price.png">
             </a>
-            <a class="sets sets-2 sets-time">
+            <a class="sets sets-2 sets-time" id="ser-2">
                 <img src="img/sets-time.png">
             </a>
         </div>
@@ -60,7 +62,7 @@
             <a class="bt-bottom"><h2>悬赏</h2></a>
             <a class="bt-bottom"><h2>我的</h2></a>
         </div>
-        <div class="menu-left">
+        <div class="menu-left" tabindex="0" style="width: 0">
             <div class="head">
                 <a><img src="img/sets-back.png"></a>
             </div>
@@ -100,7 +102,7 @@
                     <a><h1>半年内</h1></a>
                 </div>
             </div>
-            <div class="content" id="con3">
+            <div class="content" id="con3" style="display: none;">
                 <div class="menu-item">
                     <img src="img/sets.png">
                     <a><h1>价格最高</h1></a>
@@ -110,6 +112,9 @@
                     <a><h1>价格最高</h1></a>
                 </div>
             </div>
+        </div>
+        <div class="right-cover">
+
         </div>
     </div>
 </body>

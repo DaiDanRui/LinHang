@@ -3,16 +3,35 @@
  */
 
 $(document).ready(function(){
-    //var $p1 = $("#user_name").val();
-    //var $p2 = $("#pwd_again").val();
-    //var $p3 = $("#pwd").val();
-    //
-    //$("#next").click(function(){
-    //    if (($p1=="")||($p2=="")||($p3=="")){
-    //        $("#next").removeAttr("href");
-    //    }else
-    //        $("#next").attr("href","Register-2.html");
-    //});
-    //var $img_width = $(".msg-icon").width();
-    //$(".msg-icon").css({'height':$img_width});
+    $(".sets-2").click(function(){
+        $(".right-cover").css({
+            "opacity":"0.5",
+            "zIndex":"0"
+        });
+        $(".menu-left").animate({
+            width: "45%"
+        },"fast");
+        $(".menu-left").focus();
+    });
+
+    $(".menu-left").blur(function(){
+        $(".right-cover").css({
+            "opacity":"0",
+            "zIndex":"-1"
+        });
+        $(".menu-left").animate({
+            width: "0%"
+        });
+        $(".menu-left").children(".content").css("display","none");
+    });
+
+    $("#ser-1").click(function(){
+        $("#con1").css("display","block");
+    });
+    $("#ser-2").click(function(){
+        $("#con2").css("display","block");
+    });
+    $("#ser-3").click(function(){
+        $("#con3").css("display","block");
+    });
 });
