@@ -40,7 +40,7 @@
                     <p>
                         <{$item['description']}>
                     </p>
-                    <{foreach $imgs as $url}>
+                    <{foreach $item['imgs'] as $url}>
                         <img src="<{$url}>">
                     <{/foreach}>
                 </div>
@@ -60,23 +60,57 @@
             <a class="bt-bottom"><h2>悬赏</h2></a>
             <a class="bt-bottom"><h2>我的</h2></a>
         </div>
-        <!--<div class="menu-left">-->
-            <!--<div class="head"></div>-->
-            <!--<div class="content">-->
-                <!--<div class="menu-item">-->
-                    <!--<div class="icon"></div>-->
-                    <!--<div class="icon-name">学习</div>-->
-                <!--</div>-->
-                <!--<div class="menu-item">-->
-                    <!--<div class="icon"></div>-->
-                    <!--<div class="icon-name">学习</div>-->
-                <!--</div>-->
-                <!--<div class="menu-item">-->
-                    <!--<div class="icon"></div>-->
-                    <!--<div class="icon-name">学习</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
+        <div class="menu-left">
+            <div class="head">
+                <a><img src="img/sets-back.png"></a>
+            </div>
+            <div class="content" id="con1" style="display: none">
+                <div class="menu-item">
+                    <img src="img/sets-price.png">
+                    <a><h1>价格最高</h1></a>
+                </div>
+                <div class="menu-item">
+                    <img src="img/sets-price.png">
+                    <a><h1>价格最高</h1></a>
+                </div>
+            </div>
+            <div class="content" id="con2" style="display: none">
+                <div class="menu-item">
+                    <img src="img/sets-time.png">
+                    <a><h1>最新</h1></a>
+                </div>
+                <div class="menu-item">
+                    <img src="img/sets-time.png">
+                    <a><h1>最旧</h1></a>
+                </div>
+                <div class="menu-item">
+                    <img src="img/sets-time.png">
+                    <a><h1>三天内</h1></a>
+                </div>
+                <div class="menu-item">
+                    <img src="img/sets-time.png">
+                    <a><h1>一周内</h1></a>
+                </div>
+                <div class="menu-item">
+                    <img src="img/sets-time.png">
+                    <a><h1>一月内</h1></a>
+                </div>
+                <div class="menu-item">
+                    <img src="img/sets-time.png">
+                    <a><h1>半年内</h1></a>
+                </div>
+            </div>
+            <div class="content" id="con3" style="display: none">
+                <div class="menu-item">
+                    <img src="img/sets.png">
+                    <a><h1>价格最高</h1></a>
+                </div>
+                <div class="menu-item">
+                    <img src="img/sets.png">
+                    <a><h1>价格最高</h1></a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
