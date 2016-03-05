@@ -16,39 +16,26 @@
         <h1 class="nav-title">被接受的</h1>
     </div>
 
-    <div class="contents contents-5">
-        <div class="item-3 item-4">
-            <div class="head">
-                <img src="img/test-3.jpg">
-                <h1>CR14</h1>
-            </div>
-            <div class="middle">
-                <img src="img/test-2.jpg">
-                <h1>重装系统WIN7/8/10</h1>
-                <h1 class="h1-price">$&nbsp;70</h1>
-            </div>
-            <div class="bottom">
-                <h2>2016-01-01</h2>
-                <a class="right"><h2>&nbsp;去评价</h2></a>
-                <img class="edit" src="img/icon-edit.png">
-            </div>
+    < class="contents contents-5">
+
+    <{foreach $accepts as accept}>
+    <div class="item-3 item-4">
+        <div class="head">
+            <img src="<{$accept['url_header']}>">
+            <h1><{$accept['acceptor']}></h1>
         </div>
-        <div class="item-3 item-4">
-            <div class="head">
-                <img src="img/test-3.jpg">
-                <h1>CR14</h1>
-            </div>
-            <div class="middle">
-                <img src="img/test-2.jpg">
-                <h1>重装系统WIN7/8/10</h1>
-                <h1 class="h1-price">$&nbsp;70</h1>
-            </div>
-            <div class="bottom">
-                <h2>2016-01-01</h2>
-                <a class="right"><h2>&nbsp;去评价</h2></a>
-                <img class="edit" src="img/icon-edit.png">
-            </div>
+        <div class="middle">
+            <img src="<{$accept['url_pic']}>">
+            <h1><{$accept['title']}></h1>
+            <h1 class="h1-price">$&nbsp;<{$accept['price']}></h1>
         </div>
+        <div class="bottom">
+            <h2>2016-01-01</h2>
+            <a class="right"><h2>&nbsp;去评价</h2></a>
+            <img class="edit" src="img/icon-edit.png">
+        </div>
+    </div>
+    <{/foreach}>
     </div>
 
     <div class="nav-bottom">

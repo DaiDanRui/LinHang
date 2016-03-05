@@ -15,72 +15,29 @@
     </div>
     <div class="contents-6">
         <div class="head">
-            <img src="img/icon-head-2.png">
+            <img src="<{$account['url_header']}>">
             <div class="right">
-                <h1>总收入&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;$390</h1>
-                <h1>总支出&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;$390</h1>
+                <h1>总收入&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;￥<{$account['income']}></h1>
+                <h1>总支出&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;￥<{$account['outcome']}></h1>
             </div>
         </div>
         <div class="middle">
             <div class="item-6">
                 <img src="img/icon-timeline.png">
+                <{foreach $accounts as account}>
                 <div class="card-2">
                     <div class="head">
-                        <h2 class="sp-3">2016-01-01</h2>
+                        <h2 class="sp-3"><{$account['time']}></h2>
                     </div>
                     <div class="middle">
-                        <h1>接单:有没有教计组的同学</h1>
+                        <h1><{$account['type']}>:<{$account['title']}></h1>
                     </div>
                     <div class="bottom">
-                        <h2 class="sp-3 sp-4">From Dannini</h2>
-                        <h2 class="sp-3 sp-4 sp-5">收入&nbsp;:&nbsp;&nbsp;$70</h2>
+                        <h2 class="sp-3 sp-4">From <{$account['trader']}></h2>
+                        <h2 class="sp-3 sp-4 sp-5"><{$account['price_type']}>&nbsp;:&nbsp;&nbsp;￥<{$account['price']}></h2>
                     </div>
                 </div>
-            </div>
-            <div class="item-6">
-                <img src="img/icon-timeline.png">
-                <div class="card-2">
-                    <div class="head">
-                        <h2 class="sp-3">2016-01-01</h2>
-                    </div>
-                    <div class="middle">
-                        <h1>接单:有没有教计组的同学</h1>
-                    </div>
-                    <div class="bottom">
-                        <h2 class="sp-3 sp-4">From Dannini</h2>
-                        <h2 class="sp-3 sp-4 sp-5">收入&nbsp;:&nbsp;&nbsp;$70</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="item-6">
-                <img src="img/icon-timeline.png">
-                <div class="card-2">
-                    <div class="head">
-                        <h2 class="sp-3">2016-01-01</h2>
-                    </div>
-                    <div class="middle">
-                        <h1>接单:有没有教计组的同学</h1>
-                    </div>
-                    <div class="bottom">
-                        <h2 class="sp-3 sp-4">From Dannini</h2>
-                        <h2 class="sp-3 sp-4 sp-5">收入&nbsp;:&nbsp;&nbsp;$70</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="item-6">
-                <img src="img/icon-timeline.png">
-                <div class="card-2">
-                    <div class="head">
-                        <h2 class="sp-3">2016-01-01</h2>
-                    </div>
-                    <div class="middle">
-                        <h1>接单:有没有教计组的同学</h1>
-                    </div>
-                    <div class="bottom">
-                        <h2 class="sp-3 sp-4">From Dannini</h2>
-                        <h2 class="sp-3 sp-4 sp-5">收入&nbsp;:&nbsp;&nbsp;$70</h2>
-                    </div>
-                </div>
+                <{/foreach}>
             </div>
         </div>
     </div>

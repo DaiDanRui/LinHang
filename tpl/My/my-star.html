@@ -11,66 +11,34 @@
         <a class="sets">
             <img src="img/sets-back.png">
         </a>
-        <h1 class="nav-title">Dannini的技能</h1>
+        <h1 class="nav-title">我的收藏</h1>
     </div>
 
     <div class="contents contents-5">
+        <{foreach $my_stars as $my_star}>
         <div class="item item-2">
             <div class="item-header-main">
-                <img src="img/test-3.jpg">
-                <h1>一小时初步PS入门</h1>
-                <div class="price price-2">$70</div>
+                <img src="<{$my_star['url']}>">
+                <h1><{$my_star['title']}></h1>
+                <div class="price price-2">￥<{$my_star['price']}></div>
             </div>
             <div class="item-content item-content-2">
                 <p>
-                    1  引 言
-                    ¬	1.1编写目的
-                    此次项目研究报告,我们编写的主要目标有两个，第一，是要确认项目的可行性并且做好准备工作，未雨绸缪是十分必要的；第二，是希望能在外汇市场上为使用者提供科学而又实用的建议，从而使其获得收益。
-                    项目研究报告是联结开发团队与客户的重要纽带。我们相信，一份好的项目研究报告（可行性报告），既是对开发团队的肯定与鼓励，不仅能够激发他们的信心和斗志，还能使客户更加信服，从而加大投入使用率。
-                    在本项目中，我们的项目研究报告包含以下几方面内容：
-
-
-                    ¬	1.2项目概述
-                    本项目开发软件的中文名称为外汇套利决策分析系统，英译名称为Foreign Exchange Arbitrage Decision Analysis System，研究领域属于服务质量和产品价值。
-                    FOREX（外汇交易）市场——银行同业市场，建立于1971年，当时国际贸易从固定汇率转向浮动汇率。从此，一种货币相对于另一种货币的汇率通常以显式的方式来表示：双方都同意的交换关系。该市场的交易量超过了其它所有的投资市场。由于不同的货币之间存在相关性，以及不同的货币的利息等不同，因此存在套利交易以及对冲交易的可能性。而且由于外汇的即期汇率与远期汇率之间、不同远期期限之间、不同市场之间存在利差，而人民币保持着较高存款利率，外币如美元、日元等在量化宽松的政策下，存款利率维持在较低水平，因而两者之间存在较大的套利空间。
-                    外汇套利决策分析系统旨在为机构、个人投资者的外汇套利交易提供科学可靠的分析及预测，从而帮助他们有效规避风险，实现盈利。本项目将统计分析等方法引入到当前的外汇套利实践中，通过连接校内购买的WIND数据库，获取实时即期与远期外汇价格、人民币存款利率、Libor等数据，计算彼此之间的兑换比率，显示套利空间和提示套利机会，参考股市的实时数据呈现并通过算法来预期一定期限的收益前景，并提供外汇资产组合，以友好的界面呈现给客户，对外汇套利提供科学的分析预测，并且为客户的外汇套利交易活动提供重要支持。
-                    2  可行性前提
+                    <{$my_star['description']}>
                 </p>
-                <img src="img/test-4.jpg">
-                <img src="img/test-5.jpg">
-                <img src="img/test-6.jpg">
+                <{foreach $imgs as $url}>
+                <img src="<{$url}>">
+                <{/foreach}>
             </div>
             <div class="item-bottom">
-                <h2>Dannini (30天前)</h2>
-                <h3>3</h3>
+                <h2><{$my_star['username']}> (<{$my_star['time']}>天前)</h2>
+                <h3><{$my_star['star']}></h3>
                 <img src="img/icon-save.png">
-                <h3>3</h3>
+                <h3><{$my_star['message']}></h3>
                 <img src="img/icon-msg.png">
             </div>
         </div>
-        <div class="item item-2">
-            <div class="item-header-main">
-                <img src="img/test-3.jpg">
-                <h1>一小时初步PS入门</h1>
-                <div class="price price-2">$70</div>
-            </div>
-            <div class="item-content item-content-2">
-                <p>
-                    1  引 言
-                    ¬	1.1编写目的此次项目研究报告,我
-                </p>
-                <img src="img/test-4.jpg">
-                <img src="img/test-5.jpg">
-                <img src="img/test-6.jpg">
-            </div>
-            <div class="item-bottom">
-                <h2>Dannini (30天前)</h2>
-                <h3>3</h3>
-                <img src="img/icon-save.png">
-                <h3>3</h3>
-                <img src="img/icon-msg.png">
-            </div>
-        </div>
+        <{/foreach}>
     </div>
 
     <div class="nav-bottom">

@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/main.css" type="text/css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="../../js/jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="../../js/validate.js"></script>
     <title>我的-修改密码</title>
 </head>
 <body>
 <div class="wrapper">
     <div class="nav">
         <a class="sets">
-            <img src="img/sets-back.png">
+            <img src="../../img/sets-back.png">
         </a>
         <h1 class="nav-title">密码修改</h1>
     </div>
@@ -21,14 +24,15 @@
         </div>
         <div class="item-5">
             <h1>新密码&nbsp;&nbsp;&nbsp;</h1>
-            <input class="sp-1" type="text">
+            <input class="sp-1" type="password" name="new_pwd" id="new_pwd">
         </div>
         <div class="item-5">
             <h1>再次输入</h1>
-            <input class="sp-2" type="text">
+            <input class="sp-2" type="password" name="new_pwd2" id="new_pwd2">
+            <span id="respond">不一致</span>
         </div>
 
-        <button class="bt" >完成修改</button>
+        <button class="bt" id="reset" >完成修改</button>
 
     </div>
 </div>

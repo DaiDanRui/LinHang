@@ -829,3 +829,10 @@ form{
     float: right;
     margin-right: 5%;
 }
+
+#respond{
+    display: none;
+    clear: both;
+    color: #fff
+;
+}
