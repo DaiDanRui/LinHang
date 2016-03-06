@@ -19,7 +19,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
         //在数据库里面加
         $ary = array(
             Config_praise::commodity_id => $commodity_id,
-            Config_praise::praiser_id => $_SESSION['CURRENT_LOGIN_ID']
+            Config_praise::praiser_id => $_SESSION['CURRENT_LOGIN_ID'],
         );
         $DBadder = new DBadder(Config_praise::tbl_name, $ary);
         $DBadder->excute($conn);

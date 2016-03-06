@@ -4,7 +4,20 @@ defined('TRANSACTION_EACH_PAGE',10);
 session_start();
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
-
+    require_once 'class/Config.php';
+    $retval = found_transactions();
+    //逐个配置 array 三级关联数组  供界面使用
+    $array = array();
+    while (($temp_database_row_array = mysqli_fetch_array($reval, MYSQL_ASSOC))!=null) {
+        $array[] = array(
+            'url_header' => $temp_database_row_array[Config_commodity::pic_path],
+            'url_pic' => $temp_database_row_array[Config_commodity::pic_path],
+            'acceptor' => 1,
+            'title'=> Config_commodity::title,
+            'price' => Config_commodity::price,
+            
+        );
+    }
 }
 //如果没有登陆
 else {
@@ -31,6 +44,7 @@ function found_transactions($conn)
                   ' = '."'".$_SESSION['CURRENT_LOGIN_ID']."'";
     }
     $choose_fields = array(
+        Config_commodity::table_name.".".Config_commodity::pic_path,
         
     );
     $DBpagination = new DBpagination(

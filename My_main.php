@@ -14,20 +14,35 @@
  * 
  * 我的收藏： 市场界面一样。 标题 描述  发布者头像 图片 价格 时间 赞  留言数 
  */
-
 session_start();
+$_SESSION['CURRENT_LOGIN_ID'] = 1;
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
-    if(isset($_POST['']))
+    
+    if(isset($_POST['next']))
     {
         
     }
     else {
+        include 'smarty_init.php';
         require_once 'class/Info_user.php';
         require_once 'class/Config.php';
+        require_once 'class/Config_user.php';
         $conn = Config::connect();
-        $user_array = Info_user::get_user_info($conn, $_SESSION['CURRENT_LOGIN_ID']);
+        $user_array = Info_user::get_user_info_by_id($conn, $_SESSION['CURRENT_LOGIN_ID']);
+        $array_for_html = array(
+            'url_header' => $user_array[Config_user::pic_path],
+            'good_buyer' => $user_array[Config_user::payer_credit],
+            'good_seller' => $user_array[Config_user::seller_credit],
+            'username' => $user_array[Config_user::log_name],
+     //       'url_header' => $user_array[Config_user::pic_path],
+      //      'url_header' => $user_array[Config_user::pic_path],
+       //     'url_header' => $user_array[Config_user::pic_path],
+        );
         
+        $smarty->assign('my_main',$array_for_html);
+        $smarty->display('My/my-main.html');
+        mysqli_close($conn);
     }
     
 }
