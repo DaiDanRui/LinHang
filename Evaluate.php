@@ -1,6 +1,9 @@
 <?php
 session_start();
-
+/**
+ * content
+ * transaction_id
+ */
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
     require_once 'class/Injection.php';
@@ -9,7 +12,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     require_once 'class/Config.php';
     
     $content = Injection::excute('content');  //评价内容
-    $transaction_id = (int)$_GET['transaction_id']; //评价交易单
+    $transaction_id = (int)$_REQUEST['transaction_id']; //评价交易单
     $evaluater_id = $_SESSION['CURRENT_LOGIN_ID']; //评价人ID
     
     $conn = Config::connect();

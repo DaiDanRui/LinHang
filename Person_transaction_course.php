@@ -43,11 +43,11 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
                        ' DESC LIMIT '.($page-1)*SIZE_EACH_PAGE.','.SIZE_EACH_PAGE;
     $retval = mysqli_query($conn, $query);
     
-    $array = array();
+    $array_commofity_info = array();
     while (($temp_database_row_array = mysqli_fetch_array($retval, MYSQL_ASSOC))!=null) {
         //array_push($array, $temp_database_row_array);
         //据说以下类似方法效率高一倍
-        $array[] = $temp_database_row_array;
+        $array_commofity_info[] = $temp_database_row_array;
     }
     
     mysqli_close($conn);

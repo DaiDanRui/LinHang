@@ -8,7 +8,7 @@ function transaction($course_and_reward,$user_id,$page)
     //0.where
     if($course_and_reward==Commodity_type_Config::all)
     {
-        $where = 'where '.Config_transaction::table_name.".".
+        $where = ' where '.Config_transaction::table_name.".".
                         Config_transaction::commodity_buyer_id.'='."'".$user_id."'".
                  ' OR '.Config_transaction::table_name.".".
                         Config_transaction::commodity_holder_id.'='."'".$user_id."'";
@@ -16,12 +16,12 @@ function transaction($course_and_reward,$user_id,$page)
     }
     else if($course_and_reward==Commodity_type_Config::course)
     {
-        $where = 'where '.Config_transaction::table_name.".".
+        $where = ' where '.Config_transaction::table_name.".".
             Config_transaction::commodity_buyer_id.'='."'".$user_id."'";
     }
     else
     {
-        $where = 'where '.Config_transaction::table_name.".".
+        $where = ' where '.Config_transaction::table_name.".".
             Config_transaction::commodity_holder_id.'='."'".$user_id."'";
     }
     //    $where = 'select   a.*,b.*   from   a   inner   join   b     on   a.id=b.parent_id       ';

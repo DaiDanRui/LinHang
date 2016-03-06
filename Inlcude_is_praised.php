@@ -14,6 +14,8 @@ function is_praised($conn,$commodity_id,$praiser_id)
         'where '.Config_praise::commodity_id.' = '."'".$commodity_id."'".
         ' AND '.Config_praise::praiser_id.' = '."'".$praiser_id."'"
     );
-    return $DBcount->excute($conn)>0;
+    $retval = ($DBcount->excute($conn));
+    $row = mysqli_fetch_array($retval,MYSQLI_NUM);
+    return $row? $row[0]:0 ;
     
 }

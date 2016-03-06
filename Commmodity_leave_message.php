@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['CURRENT_LOGIN_ID'] = 1;
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
     require_once 'class/Config.php';
@@ -21,8 +22,9 @@ function add_message_to_DB($conn,$commodity_id)
 {
     require_once 'class/DBadder.php';
     require_once 'class/Config_leave_message.php';
-    
-    $talker_id = $_SESSION['CURENNT_LOGIN_ID'];
+    require_once 'class/Config.php';
+    require_once 'class/Injection.php';
+    $talker_id = $_SESSION['CURRENT_LOGIN_ID'];
     $talker_content = Injection::excute('content');
     
     $array = array(
@@ -43,6 +45,7 @@ function update_message_time($conn,$commodity_id)
 {
     require_once 'class/DBincrement.php';
     require_once 'class/Config_commodity.php';
+    require_once 'class/Config_leave_message.php';
     $DBincrement = new DBincrement(
         Config_commodity::table_name,
         Config_commodity::leave_message_time,

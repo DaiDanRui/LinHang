@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['CURRENT_LOGIN_ID'] =1; 
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
     require_once 'class/Config.php';
@@ -8,7 +9,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     
     //判断是否已赞
     require_once 'Inlcude_is_praised.php';
-    if(is_praised($conn, $commodity_id, $_SESSION['CURRENT_LOGIN_ID']))
+    if(!is_praised($conn, $commodity_id, $_SESSION['CURRENT_LOGIN_ID']))
     {
         require_once 'class/DBincrement.php';
         require_once 'class/Config_commodity.php';
@@ -22,11 +23,11 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
         );
         $DBadder = new DBadder(Config_praise::tbl_name, $ary);
         $DBadder->excute($conn);
-        
+        //更新商品被赞数
         $DBincrement = new DBincrement(
             Config_commodity::table_name,
             Config_commodity::praise,
-            ' where '.Config_commodity::id.' = '.$commodity_id
+            ' where '.Config_commodity::id.' = '."'".$commodity_id."'"
         );
         $DBincrement->excute($conn);
     }

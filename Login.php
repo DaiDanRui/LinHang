@@ -9,14 +9,14 @@ function try_to_login()
     $username = Injection::excute('username');
     $password = Injection::excute('pwd');
 
-    echo $username;
-    echo $password;
-  /*   include_once('class/DBtraverser.php');
+  //  echo $username;
+   // echo $password;
+    include_once('class/DBtraverser.php');
     include_once('class/Config.php');
     include_once('class/Config_user.php');
 
     $myDBtraveser = new DBtraverser(Config_user::table_name, ' where '.Config_user::log_name."='$username'");
-    $retval = $myDBtraveser->excuteWithoutConn();
+    $retval = $myDBtraveser->excute_without_conn();
 
 
     //handle the login result
@@ -25,17 +25,18 @@ function try_to_login()
     }else
     {
         $complete_ary = mysqli_fetch_array($retval, MYSQL_ASSOC);
-        if( $complete_ary[Config_user::password] == $this->password )
+        if( $complete_ary[Config_user::password] == $password )
         {
             $_SESSION['CURRENT_LOGIN_USER'] = $username;
             $_SESSION['CURENNT_LOGIN_ID'] = $complete_ary[Config_user::id];
+            header("Commodity_browse");
         }
         else
         {
             echo 'wrong password';
         }
     }
-    mysqli_free_result($retval); */
+    mysqli_free_result($retval);
 }
 
 if (isset($_POST['login'])){
