@@ -80,9 +80,9 @@ class Install
          $table_commodity = new Table_transaction($this->conn);
          $table_commodity->initTable(); */
         
-        require_once 'Table_praise.php';
+        /* require_once 'Table_praise.php';
         $table_commodity = new Table_praise($this->conn);
-        $table_commodity->initTable();
+        $table_commodity->initTable(); */
         
         /* require_once 'Table_leave_message.php';
         $table_commodity = new Table_leave_message($this->conn);

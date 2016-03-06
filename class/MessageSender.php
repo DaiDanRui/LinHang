@@ -20,13 +20,13 @@ class MessageSender
         return  $res;
     }
     
-    public static function send_by_user_id($content,$mobile)
+    /* public static function send_by_user_id($content,$user_id)
     {
         require_once 'sender_qixintong.php';
         //即时发送
-        $res = sendSMS(self::uid,self::pwd,$mobile,$content);
+        $res = sendSMS(self::uid,self::pwd,$user_id,$content);
         return  $res;
-    }
+    } */
 }
 
 ?>

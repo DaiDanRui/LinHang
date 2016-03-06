@@ -7,6 +7,7 @@
  * @version 2016年2月26日
  * @date    2016年2月26日
  */
+include_once 'DBexcutor.php';
 class DBcount extends DBexcutor
 {
     private $table_name;
@@ -28,7 +29,7 @@ class DBcount extends DBexcutor
      */
     protected function getSQL()
     {
-        return  'select count(*) from'.$this->table_name.'  '.$this->where;
+        return  'select count(*) from '.$this->table_name.'  '.$this->where;
     }
     
     

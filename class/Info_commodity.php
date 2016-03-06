@@ -1,6 +1,6 @@
 <?php
-
-class Transaction_commodity
+require_once 'Config_commodity.php';
+class Info_commodity
 {
     private $conn;
     private $commodity_id;
@@ -15,9 +15,9 @@ class Transaction_commodity
     /**
      * @return array
      */
-    public function get_commodity()
+    public function get_commodity($conn)
     {
-        require_once 'class/DBtraverser.php';
+        require_once 'DBtraverser.php';
         $DBtraveser = new DBtraverser(Config_commodity::table_name,$this->where);
         $retval =  $DBtraveser->excute($conn);
         $result_array = mysqli_fetch_array($retval, MYSQLI_ASSOC);
@@ -30,7 +30,7 @@ class Transaction_commodity
      * @param int $state :state in Transaction_state_config
      * @return 
      */
-    public function update($state)
+    public function update($state,$conn)
     {
         require_once 'class/Config_commodity.php';
         require_once 'class/DBupdater.php';

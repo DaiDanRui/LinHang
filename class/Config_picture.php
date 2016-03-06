@@ -12,14 +12,6 @@ class Config_picture
     const id = 'id';
     const commodity_id = 'commodity_id';
     const path = 'path';
-    const name = 'name';
-    public  $picture_field = array(
-        'id',
-        'commodity_id',
-        'path',
-        'name'
-       
-    );
 }
 
 ?>

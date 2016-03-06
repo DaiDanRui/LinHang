@@ -17,12 +17,11 @@ class Table_picture extends Table
     
     public function get_field_name(){
         return'
-            id	            bigint	not null	AUTO_INCREMENT
-            commodity_id	bigint	not null	
-            path	        tinyint	not null	default 0
-            name	        CHAR(13)	not null	
+            id	            bigint	not null	AUTO_INCREMENT,
+            commodity_id	bigint	not null	,
+            path	        tinyint	not null	,
             
-            PRIMARY KEY (id),
+            PRIMARY KEY (commodity_id),
             INDEX index_commodity(commodity_id)			
             ';
     }

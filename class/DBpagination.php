@@ -47,13 +47,14 @@ class DBpagination extends  DBexcutor
         }
         else 
         {
-            $fields = join(',', array_values($fields));
+            $fields = join(',', array_values($this->choose_fields));
         }
         $page_start = ($this->page-1)*$this->page_size;
         
         $q = 'select '.$fields.' from '.$this->table_name. 
              $this->limit_querl_part.
-             ' DESC LIMIT '.$page_start.','.$this->page_size;
+             '  LIMIT '.$page_start.','.$this->page_size;
+        //echo $q;
         return $q;
     }
 }

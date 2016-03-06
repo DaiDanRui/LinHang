@@ -39,8 +39,9 @@ class Config_commodity
     const publisher = 'publisher'     ;
     
     const price =  'price'  ;
-    const place = 'place'  ;
+  //  const place = 'place'  ;
     const release_date = 'release_date' ;
+    const deleted_date = 'deleted_date';
     
     const title = 'title';
     const description = 'description'  	;
@@ -48,13 +49,10 @@ class Config_commodity
     const commodity_state =  'commodity_state' ;
     const praise = 'praise';
 
-    const communication_way = 'communication_way';
+  //  const communication_way = 'communication_way';
     const communication_number= 'communication_number';
     const surf_time = 'surf_time';
     const leave_message_time = 'leave_message_time';
-    
-  
-    
 }
 
 ?>

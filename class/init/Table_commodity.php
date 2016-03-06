@@ -16,23 +16,23 @@ class Table_commodity extends Table
     protected function get_field_name(){
         return'
             id	             BIGINT	not null	AUTO_INCREMENT,
-            course_or_reward tinyint not null	,
-            type	         tinyint	not null	,
+            course_or_reward tinyint DEFAULT 0	,
+            type	         VARCHAR(20)	,
             publisher	     BIGINT	not null,	
-            price	         FLOAT(7,3)	not null,	
-            place	         VARCHAR(100)   CHARACTER SET utf8 COLLATE utf8_general_ci    	not null,	
+            price	         FLOAT(7,3)	DEFAULT 0,	
+
             release_date	 DATETIME	not null,
+            deleted_date     DATETIME	not null,
            
-            title	         VARCHAR(20)	   CHARACTER SET utf8 COLLATE utf8_general_ci    	not null,
-            description	     VARCHAR(100)   CHARACTER SET utf8 COLLATE utf8_general_ci    		not null,	
-            pic_path	     VARCHAR(100)   CHARACTER SET utf8 COLLATE utf8_general_ci    		not null,
+            title	         VARCHAR(20)	CHARACTER SET utf8 COLLATE utf8_general_ci    	,
+            description	     VARCHAR(100)   CHARACTER SET utf8 COLLATE utf8_general_ci    		,	
             
-            commodity_state	     tinyint	not null DEFAULT 0,	
-            praise	         int	    not null	DEFAULT 0,
-            communication_way	tinyint	not null	,
-            communication_number	VARCHAR(40)	not null	,
-            surf_time	int	not null	DEFAULT 0,
-            leave_message_time	int	not null	DEFAULT 0,
+            commodity_state	     tinyint	 DEFAULT 0,	
+            praise	         int	    	DEFAULT 0,
+            
+            communication_number VARCHAR(20)	   CHARACTER SET utf8 COLLATE utf8_general_ci    	,
+            surf_time	int		DEFAULT 0,
+            leave_message_time	int		DEFAULT 0,
     
             
             PRIMARY KEY (id),

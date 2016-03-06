@@ -74,6 +74,7 @@ class DBadder extends DBexcutor
         $value_string = "'".join("','", array_values($this->commodity_array))."'";
         $sql = 'insert  into '.$this->table_name. 
         ' ('.$key_string. ')'.' values '. '(' . $value_string . ')';
+        return $sql;
     }
     
     

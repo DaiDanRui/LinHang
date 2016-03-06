@@ -20,7 +20,7 @@ class Transaction_state_config
     const just_publish = 0;
     /**一方接单，向另一方请求
      */
-    const acceptor_comfirmed = 1;
+    const one_want_accept = 1;
     /**双方确认，开始授课
      * 此时课程不可以被其他人选择
      * @var unknown
