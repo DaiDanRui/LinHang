@@ -23,11 +23,12 @@ require_once 'class/Config.php';
     if($array_commofity_info)
     {
         require_once 'Include_picture.php';
+        require_once 'class/Info_user.php';
         $array_pictures = get_commodity_pic($conn, $commodity_id);
         $array_message = get_leave_message($commodity_id, $conn);
-        
+        $userInfo = new Info_user();
         $commodity_array_for_display = array(
-            'nickname' => $array_commofity_info[Config_commodity::publisher],
+            'nickname' => $userInfo::get_user_logname($conn, $array_commofity_info[Config_commodity::publisher]),
             'title' => $array_commofity_info[Config_commodity::title],
             'time' => get_time($array_commofity_info[Config_commodity::release_date]),
             'price' => $array_commofity_info[Config_commodity::price],
@@ -68,7 +69,7 @@ require_once 'class/Config.php';
             $page,
             MESSAGE_EACH_PAGE,
             array(
-                Config_leave_message::content,Config_leave_message::time
+                Config_leave_message::content,Config_leave_message::time,Config_leave_message::talker 
             )
          );
         $retval = $dbtraerser->excute($conn);

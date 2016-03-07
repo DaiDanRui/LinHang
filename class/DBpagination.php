@@ -54,7 +54,6 @@ class DBpagination extends  DBexcutor
         $q = 'select '.$fields.' from '.$this->table_name. 
              $this->limit_querl_part.
              '  LIMIT '.$page_start.','.$this->page_size;
-        //echo $q;
         return $q;
     }
 }

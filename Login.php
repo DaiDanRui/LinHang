@@ -29,7 +29,7 @@ function try_to_login()
         {
             $_SESSION['CURRENT_LOGIN_USER'] = $username;
             $_SESSION['CURENNT_LOGIN_ID'] = $complete_ary[Config_user::id];
-            header("Commodity_browse");
+            header("Location:Commodity_browse.php");
         }
         else
         {

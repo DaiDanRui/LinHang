@@ -1,8 +1,12 @@
 <?php
     session_start();
-    
+    /* if(isset($_SESSION['a'])){
+        $_SESSION['a']++;
+    }else {
+        $_SESSION['a'] = 1;
+    }
+    echo $_SESSION['a']; */
     /**
-     * course_or_reward
      * type
      * page
      * title
@@ -13,15 +17,19 @@
     require_once 'Include_commodity_browse.php';
     include 'smarty_init.php';
     require_once 'class/Config.php';
+    require_once 'class/commodity/Commodity_type_Config.php';
     //0.连接数据库
     $conn = Config::connect();//多次使用的数据库连接
     
     //1.获取限定条件
         $where = ' where '.Config_commodity::commodity_state." < '2' ";
         
-        if(isset($_GET['course_or_reward'])&&$_GET['course_or_reward']!=0)//when $_GET['course_or_reward'] isset && $_GET['course_or_reward']!=0
+        //浏览的商品分类 
+        if(isset($_GET['type'])&&$_GET['type']=='market')//when $_GET['course_or_reward'] isset && $_GET['course_or_reward']!=0
         {
-            $where.='AND'. Config_commodity::course_or_reward.' = '."'".Injection::excute('course_or_reward')."'";
+            $where.=' AND '. Config_commodity::course_or_reward.' = '."'".Commodity_type_Config::course."'";
+        }else{
+            $where.=' AND '. Config_commodity::course_or_reward.' = '."'".Commodity_type_Config::all."'";
         }
         
         if(isset($_GET['type']))  //when $_GET['type'] isset && $_GET['type']!=0
@@ -29,16 +37,28 @@
             $type = Injection::excute('type');
             $where.='AND'.Config_commodity::type.' = '."'".$type."'";
         }
+      //时间限定
+        if(isset($_POST['time-week'])){
+            header('Location:Login.php');
+            $where .= ' AND '.Config_commodity::release_date > (date("Y-m-d H:i:s",time()-7*24*3600));
+        }else if(isset($_POST['time-month'])){
+            $where .= ' AND '.Config_commodity::release_date > (date("Y-m-d H:i:s",time()-30*24*3600));
+        }else if(isset($_POST['time-halfYear'])){
+            $where .= ' AND '.Config_commodity::release_date> (date("Y-m-d H:i:s",time()-6*30*24*3600));
+        }else if(isset($_POST['time-day'])){//三天内的
+            $where .= ' AND '.Config_commodity::release_date> (date("Y-m-d H:i:s",time()-3*30*24*3600));
+        }
         
-        if(isset($_GET['oder']))
-        {
-            $order = Injection::excute('order');
-            if($order==Config_commodity::leave_message_time || $order==Config_commodity::praise)
-            {
-               // $order = Config_commodity::release_date;
-                $where .= 'ORDER BY '.$order ;
-            }
-            
+        
+      //排序控制  
+        if(isset($_POST['price-high'])){//价格最高的
+            $where .= ' ORDER BY '.Config_commodity::price.' desc '  ;
+        }else if(isset($_POST['price-low'])){//价格最低的
+            $where .= ' ORDER BY '.Config_commodity::price;
+        }else if(isset($_POST['time-new'])){//
+            $where .= ' ORDER BY '.Config_commodity::release_date ;
+        }else if(isset($_POST['time-old'])){
+            $where .= ' ORDER BY '.Config_commodity::release_date.' desc ' ;
         }
     
     

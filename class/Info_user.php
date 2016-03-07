@@ -44,14 +44,24 @@ class Info_user
     public static function get_user_avatar_and_logname($conn,$user_id)
     {
         include_once('class/Config_user.php');
-        $query = 'select '.Config_user::pic_path.','.Config_user::log_name. 
-                  'from'.Config_user::table_name.
-                  ' when '.Config_user::id.' = '."'$user_id'";
-    
+        $query = ' select '.Config_user::pic_path.','.Config_user::log_name. 
+                  ' from '.Config_user::table_name.
+                  ' where '.Config_user::id.' = '."'$user_id'";
         $retval = mysqli_query($conn, $query);
         $array = mysqli_fetch_array($retval, MYSQLI_ASSOC);
         mysqli_free_result($retval);
         return $array;
+    }
+    public static function get_user_logname($conn,$user_id)
+    {
+        include_once('class/Config_user.php');
+        $query = ' select '.Config_user::log_name.
+        ' from '.Config_user::table_name.
+        ' where '.Config_user::id.' = '."'$user_id'";
+        $retval = mysqli_query($conn, $query);
+        $array = mysqli_fetch_array($retval, MYSQLI_ASSOC);
+        mysqli_free_result($retval);
+        return $array[Config_user::log_name];
     }
         
 }

@@ -28,7 +28,7 @@ class SQLexcute
      */
     public static function excute($sql)
     {
-       // echo $sql." dfdlfkdlkfdmfkdlj";
+        //echo $sql." dfdlfkdlkfdmfkdlj";
         include_once ('config.php');
         $conn = Config::connect();
         $result =  mysqli_query($conn, $sql);

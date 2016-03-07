@@ -33,7 +33,8 @@ function pagination($where,$conn,$tbl_name)
           Config_commodity::table_name.'.'.  Config_commodity::price,
           Config_commodity::table_name.'.'.  Config_commodity::release_date,
           Config_commodity::table_name.'.'.  Config_commodity::praise,
-          Config_commodity::table_name.'.'.  Config_commodity::leave_message_time
+          Config_commodity::table_name.'.'.  Config_commodity::leave_message_time,
+          Config_commodity::table_name.'.'.  Config_commodity::id
             
     //      Config_commodity::type
         );
@@ -54,6 +55,7 @@ function pagination($where,$conn,$tbl_name)
                 'time' => get_time($temp_database_row_array[Config_commodity::release_date]),
                 'star_numbers' => $temp_database_row_array[Config_commodity::praise],
                 'message_numbers' => $temp_database_row_array[Config_commodity::leave_message_time],
+                'id' => $temp_database_row_array[Config_commodity::id],
             );
         }
        //5.释放资源

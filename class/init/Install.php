@@ -65,9 +65,9 @@ class Install
          $table_commodity = new Table_commodity($this->conn);
         $table_commodity->initTable(); */
         
-        /* require_once 'Table_evaluation.php';
+        require_once 'Table_evaluation.php';
         $table_commodity = new Table_evaluation($this->conn);
-        $table_commodity->initTable(); */
+        $table_commodity->initTable();
         
         /* require_once 'Table_commodity_type.php';
          $table_commodity = new Table_commodity_type($this->conn);

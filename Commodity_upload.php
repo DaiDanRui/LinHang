@@ -37,7 +37,7 @@ function upload()
     
         $commodity_message = Array
         (
-      //      Config_commodity::course_or_reward  => (int)$_GET['course_or_reward'],
+    //        Config_commodity::course_or_reward  => (int)$_GET['course_or_reward'],
             Config_commodity::type =>isset($_POST['type'])?  Injection::excute('type'):'其他' ,
             Config_commodity::publisher => $_SESSION['CURRENT_LOGIN_ID']     ,
     
