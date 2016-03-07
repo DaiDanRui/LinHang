@@ -576,9 +576,29 @@ a {
     margin-left: 10%;
     border-spacing: 0.6em 2em;
 }
-.td-img{
+.td-img1{
     width: 6%;
-    background-image: url("../img/icon-circle.png");
+    background-image: url("../img/icon-circle1.png");
+    background-size: 100% 100%;
+}
+.td-img2{
+    width: 6%;
+    background-image: url("../img/icon-circle2.png");
+    background-size: 100% 100%;
+}
+.td-img3{
+    width: 6%;
+    background-image: url("../img/icon-circle3.png");
+    background-size: 100% 100%;
+}
+.td-img4{
+    width: 6%;
+    background-image: url("../img/icon-circle4.png");
+    background-size: 100% 100%;
+}
+.td-img5{
+    width: 6%;
+    background-image: url("../img/icon-circle5.png");
     background-size: 100% 100%;
 }
 .td-len{
