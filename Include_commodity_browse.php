@@ -50,7 +50,7 @@ function pagination($where,$conn,$tbl_name)
                 'description' => $temp_database_row_array[Config_commodity::description],
                 'title' => $temp_database_row_array[Config_commodity::title],
                 'price' => $temp_database_row_array[Config_commodity::price],
-                'url' => $userinfo[Config_user::pic_path],
+                'url' => 'upload/default.jpg', //need
                 'name' => $userinfo[Config_user::log_name],
                 'time' => get_time($temp_database_row_array[Config_commodity::release_date]),
                 'star_numbers' => $temp_database_row_array[Config_commodity::praise],

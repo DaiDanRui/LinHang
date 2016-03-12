@@ -6,6 +6,7 @@
 
 function get_commodity_pic($conn,$commodity)
 {
+    return  'upload/default.jpg';
     return array('upload/default.jpg','upload/default.jpeg','upload/default.jpg','upload/default.jpeg');
     require_once 'class/Config_picture.php';
     $query = 'select path from tbl_picture when commodity_id = '."'$commodity'";
