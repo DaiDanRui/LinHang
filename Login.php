@@ -24,7 +24,7 @@ function try_to_login()
         echo 'wrong log name';
     }else
     {
-        $complete_ary = mysqli_fetch_array($retval, MYSQL_ASSOC);
+        $complete_ary = mysqli_fetch_array($retval, MYSQLI_ASSOC);
         if( $complete_ary[Config_user::password] == $password )
         {
             $_SESSION['CURRENT_LOGIN_USER'] = $username;

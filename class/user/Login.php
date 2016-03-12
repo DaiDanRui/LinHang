@@ -35,7 +35,7 @@ class Login
         }
         else
         {
-            $complete_ary = mysqli_fetch_array($retval, MYSQL_ASSOC);
+            $complete_ary = mysqli_fetch_array($retval, MYSQLI_ASSOC);
             if( $complete_ary[Config_user::password] == $this->password )
             {
                 return ResultReturn::log_verify_pass;

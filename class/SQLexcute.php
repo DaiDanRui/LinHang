@@ -29,7 +29,7 @@ class SQLexcute
     public static function excute($sql)
     {
         //echo $sql." dfdlfkdlkfdmfkdlj";
-        include_once ('config.php');
+        include_once ('Config.php');
         $conn = Config::connect();
         $result =  mysqli_query($conn, $sql);
         mysqli_close($conn);

@@ -57,7 +57,7 @@ class User
             echo "erro: no sorce<br/>";
             return false;
         }
-        $row = mysqli_fetch_array($retval, MYSQL_ASSOC);
+        $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
         if($row){//如果该用户存在则更新，返回true
             $this->user_id = $row['user_id'] ;
             $this->user_is_seller = $row['user_is_seller'] ;
@@ -192,7 +192,7 @@ class User
      */
     public function is_exist(){
         $search_result = $this->search();
-        $test=mysqli_fetch_array($search_result, MYSQL_ASSOC);
+        $test=mysqli_fetch_array($search_result, MYSQLI_ASSOC);
         if($test){
             return ResultReturn::log_name_already_exist;
         }else {
