@@ -27,15 +27,15 @@
                 <p>
                     <{$my_star['description']}>
                 </p>
-                <{foreach $imgs as $url}>
+                <{foreach $my_star['imgs'] as $url}>
                 <img src="<{$url}>">
                 <{/foreach}>
             </div>
             <div class="item-bottom">
                 <h2><{$my_star['username']}> (<{$my_star['time']}>天前)</h2>
-                <h3><{$my_star['star']}></h3>
+                <h3><{$my_star['star_numbers']}></h3>
                 <img src="img/icon-save.png">
-                <h3><{$my_star['message']}></h3>
+                <h3><{$my_star['message_numbers']}></h3>
                 <img src="img/icon-msg.png">
             </div>
         </div>
