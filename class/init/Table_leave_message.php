@@ -21,7 +21,7 @@ class Table_leave_message extends Table
             commodity_id	BIGINT	not null 	,
             talker	VARCHAR(20)	not null 	,
             time	DATETIME	not null 	,
-            content	VARCHAR(200)	CHARACTER SET utf8 COLLATE utf8_general_ci not null ,
+            content	TEXT	CHARACTER SET utf8 COLLATE utf8_general_ci not null ,
             PRIMARY KEY(message_id),
             INDEX index_commodity_id(commodity_id)
         ';

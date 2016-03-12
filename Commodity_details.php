@@ -27,8 +27,9 @@ require_once 'class/Config.php';
         $array_pictures = get_commodity_pic($conn, $commodity_id);
         $array_message = get_leave_message($commodity_id, $conn);
         $userInfo = new Info_user();
+        $username = $userInfo->get_user_logname($conn, $array_commofity_info[Config_commodity::publisher]);
         $commodity_array_for_display = array(
-            'nickname' => $userInfo::get_user_logname($conn, $array_commofity_info[Config_commodity::publisher]),
+            'nickname' => $username,
             'title' => $array_commofity_info[Config_commodity::title],
             'time' => get_time($array_commofity_info[Config_commodity::release_date]),
             'price' => $array_commofity_info[Config_commodity::price],
@@ -86,7 +87,7 @@ require_once 'class/Config.php';
                 'description' => $temp_database_row_array[Config_leave_message::content],
                 'time' => $temp_database_row_array[Config_leave_message::time],
                 'nickname' => $temp_user[Config_user::log_name],
-                'img' => $temp_user[Config_user::pic_path],
+                'img' => 'upload/avatar.png',
             );
         }
         mysqli_free_result($retval);

@@ -38,7 +38,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     //3.显示数据
     $smarty->assign('page',$list['page']);
     $smarty->assign('items',$list['array']);
-    $smarty->display('Reward&Market/market-main.html');
+    $smarty->display('My/my-accepted.html');
     //4.释放资源
     mysqli_close($conn);
 }

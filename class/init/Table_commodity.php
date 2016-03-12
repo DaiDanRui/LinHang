@@ -25,7 +25,7 @@ class Table_commodity extends Table
             deleted_date     DATETIME	not null,
            
             title	         VARCHAR(20)	CHARACTER SET utf8 COLLATE utf8_general_ci    	,
-            description	     VARCHAR(100)   CHARACTER SET utf8 COLLATE utf8_general_ci    		,	
+            description	     TEXT   CHARACTER SET utf8 COLLATE utf8_general_ci    		,	
             
             commodity_state	     tinyint	 DEFAULT 0,	
             praise	         int	    	DEFAULT 0,

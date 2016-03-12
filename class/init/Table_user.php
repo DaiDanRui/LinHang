@@ -43,10 +43,10 @@ class Table_user extends Table
             pic_path	VARCHAR(40)	   CHARACTER SET utf8 COLLATE utf8_general_ci     ,	
             income	FLOAT(7,3)	  	DEFAULT 0,
             pay	FLOAT(7,3)	 	DEFAULT 0,
-            strongpoint	VARCHAR(40)	   CHARACTER SET utf8 COLLATE utf8_general_ci     ,	
-            interest	VARCHAR(40)	   CHARACTER SET utf8 COLLATE utf8_general_ci     ,	
+            strongpoint	TEXT	   CHARACTER SET utf8 COLLATE utf8_general_ci     ,	
+            interest	TEXT	   CHARACTER SET utf8 COLLATE utf8_general_ci     ,	
             
-            autograph VARCHAR(40)	   CHARACTER SET utf8 COLLATE utf8_general_ci ,
+            autograph TEXT	   CHARACTER SET utf8 COLLATE utf8_general_ci ,
             
             PRIMARY KEY (id),
             INDEX index_user_log_name (log_name(20))

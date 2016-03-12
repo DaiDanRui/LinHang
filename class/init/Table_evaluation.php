@@ -13,7 +13,7 @@ class Table_evaluation extends Table
             commodity_id	BIGINT	not null	,
             is_payer	TINYINT	not null	,
             evaluate_time	datetime	not null	,
-            evaluation	VARCHAR(200)	not null 	 ,
+            evaluation	TEXT	not null 	 ,
             valuator BIGINT not null,
             valuated BIGINT not null,
             score1	FLOAT(4,3)	not null	,

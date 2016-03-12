@@ -35,7 +35,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
             'good_buyer' => $user_array[Config_user::payer_credit],
             'good_seller' => $user_array[Config_user::seller_credit],
             'username' => $user_array[Config_user::log_name],
-     //       'url_header' => $user_array[Config_user::pic_path],
+            'url_header' => 'upload/avatar.png',
       //      'url_header' => $user_array[Config_user::pic_path],
        //     'url_header' => $user_array[Config_user::pic_path],
         );
