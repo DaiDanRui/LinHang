@@ -30,27 +30,43 @@ $(document).ready(function(){
     });
 });
 
-function registerCheck(theId,msg){
-    if(document.getElementById(theId).value == "" ){
-        window.alert(msg);
-        document.getElementById(theId).focus();
-        return true;
+function checkRegister(){
+    var userName = document.getElementById("username").value;
+    var pwd = document.getElementById("pwd").value;
+    var pwd_again = document.getElementById("pwd_again").value;
+    var phone = document.getElementById("phone").value;
+    if(userName == "" || userName == null){
+        alert("请输入用户名");
+        return falese;
     }
-    return false;
+    if(pwd == "" || pwd == null){
+        alert("请输入密码");
+        return false;
+    }
+    if(pwd_again == "" || pwd_again == null){
+        alert("请再次输入密码");
+        return falese;
+    }
+    if(phone == "" || phone == null){
+        alert("请输入手机号");
+        return false;
+    }
+    return true;
 }
 
-function register1(){
-    if (registerCheck("user_name","请输入用户名")) {
-        alert("请输入用户名");
-        return false;
-    }
-    if (registerCheck("pwd","请输入密码")) {
-        return false;
-    }
-    if (registerCheck("pwd_again","请再次输入密码")) {
-        return false;
-    }
 
-    alert("ok");
+
+function checkLogin(){
+    var userName = document.getElementById("username").value;
+    var pwd = document.getElementById("pwd").value;
+
+    if(userName == "" || userName == null){
+        alert("请输入用户名");
+        return falese;
+    }
+    if(pwd == "" || pwd == null){
+        alert("请输入密码");
+        return false;
+    }
     return true;
 }
