@@ -36,6 +36,7 @@
                 $where.=' AND '. Config_commodity::course_or_reward.' = '."'".Commodity_type_Config::reward."'";
             }
         }
+        
       //时间限定
         if(isset($_POST['time-week'])){
             header('Location:Login.php');
