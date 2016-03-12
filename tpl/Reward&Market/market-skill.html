@@ -9,6 +9,7 @@
     <title>市场-技能详情</title>
 </head>
 <body>
+<p style="display: none" id="skill_id"><{$skill['id']}></p>
     <div class="wrapper">
         <div class="nav">
             <a class="sets">
@@ -37,7 +38,7 @@
             </div>
 
             <div class="msg-total">
-                <h2 class="img-num"><{$skill['star_numbers']}></h2>
+                <h2 class="img-num" id="star_num"><{$skill['star_numbers']}></h2>
                 <img src="img/icon-save.png">
                 <h2 class="img-num"><{$skill['message_numbers']}></h2>
                 <img src="img/icon-msg.png">
@@ -58,7 +59,7 @@
 
         <div class="nav-bottom">
             <a class="bt-bottom"><h2>留言</h2></a>
-            <a class="bt-bottom"><h2>收藏</h2></a>
+            <a class="bt-bottom" id="collect"><h2>收藏</h2></a>
             <a class="bt-bottom" href="I_want_accept.php"><h2>我要买</h2></a>
         </div>
     </div>

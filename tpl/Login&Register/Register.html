@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/common.css" type="text/css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="js/validate.js"></script>
     <title>注册-个性-3</title>
 </head>
 <body>
@@ -17,7 +20,7 @@
                 <!--<img src="img/left.png">-->
             <!--</a>-->
         <!--</div>-->
-        <form method="post" action="Register.php">
+        <form method="post" action="Register.php" onsubmit="return checkRegister();return false;">
         <div class="input-out block">
             <div class="block-in-reg-2 input-in-login">
                 用户名&nbsp;<input class="input-out input-in-reg" type="text" name="username" id="username"/>
