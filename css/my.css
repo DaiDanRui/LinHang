@@ -1,0 +1,20 @@
+body,html{
+    height:100%;
+    font-size: 72.5%;
+}
+
+.my-name{
+    font-size: 100%;
+}
+
+.my-comment{
+    font-size: 150%;
+}
+
+.my-items{
+    font-size: 150%;
+}
+
+.my-item-link{
+    color: black;
+}
