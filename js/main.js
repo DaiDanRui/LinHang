@@ -35,3 +35,14 @@ $(document).ready(function(){
         $("#con3").css("display","block");
     });
 });
+
+function leftBar_none(){
+    $(".right-cover").css({
+        "opacity":"0",
+        "zIndex":"-1"
+    });
+    $(".menu-left").animate({
+        width: "0%"
+    });
+    $(".menu-left").children(".content").css("display","none");
+}

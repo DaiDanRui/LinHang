@@ -1,6 +1,5 @@
 body,html{
     height: 100%;
-    font-size: 62.5%;
 }
 p,h3,h2,h1,body{
     margin: 0;
@@ -42,10 +41,6 @@ a img{
 form{
     width: 100%;
     height: 100%;
-}
-
-a {
-    text-decoration: none;
 }
 
 /*head导航-------------------------------------------------------------------------*/
@@ -92,29 +87,21 @@ a {
     margin-right: 11.28%;
     margin-left: 0;
 }
-.search-input-div{
-    display: table;
-    float: left;
-    margin-left: 1%;
-    width: 82%;
-    height: 100%;
-}
-.input-in{
-    display: table-cell;
-    vertical-align: middle;
-}
 .search-input{
     border: 1px solid black;
     border-radius: 1em;
-    width: 80%;
-    height: 80%;
     margin: 0 auto;
+    width: 68%;
+    height: 70.2%;
+    margin-top: 1.5%;
 }
 .nav-title{
     position: absolute;
     left: 0;
     right: 0;
     top: 2%;
+    font-size: 3em;
+    line-height: 80%;
 }
 /*中间内容(主页)-------------------------------------------------------------------------*/
 .contents{
@@ -399,15 +386,20 @@ a {
 
 /*底部导航-------------------------------------------------------------------------*/
 .nav-bottom{
-    display: table;
     background-color: #f0c040;
     height: 6.7%;
     width: 100%;
+    font-size: 1.7em;
+    line-height: 120%;
 }
 .bt-bottom{
-    display: table-cell;
-    vertical-align: middle;
-    font-size: 2rem;
+    float: left;
+    width: 33.3%;
+    height: 100%;
+    padding-top: 3%;
+}
+.bt-bottom-2{
+    width: 50%;
 }
 .bt-bottom:hover{
     color: #fafafa;
@@ -472,23 +464,10 @@ a {
     float: left;
     width: 15%;
     height: 60%;
-    margin-top: 2%;
 }
-.menu-item button{
+.menu-item h1{
     float: left;
     margin-left: 10%;
-    border: none;
-    background-color: transparent;
-    font-size: 1.3rem;
-}
-.right-cover{
-    width: 100%;
-    position: fixed;
-    height: 100%;
-    top: 0;
-    background-color: black;
-    opacity: 0;
-    z-index: -1;
 }
 
 /*我的部分------------------------------------------------------------------------------------*/
@@ -515,6 +494,8 @@ a {
 .my-head h1{
     text-align: left;
     margin-top: 7%;
+    font-size: 2.5em;
+    font-weight: normal;
 }
 .head-name{
     float: left;
@@ -584,29 +565,9 @@ a {
     margin-left: 10%;
     border-spacing: 0.6em 2em;
 }
-.td-img1{
+.td-img{
     width: 6%;
-    background-image: url("../img/icon-circle1.png");
-    background-size: 100% 100%;
-}
-.td-img2{
-    width: 6%;
-    background-image: url("../img/icon-circle2.png");
-    background-size: 100% 100%;
-}
-.td-img3{
-    width: 6%;
-    background-image: url("../img/icon-circle3.png");
-    background-size: 100% 100%;
-}
-.td-img4{
-    width: 6%;
-    background-image: url("../img/icon-circle4.png");
-    background-size: 100% 100%;
-}
-.td-img5{
-    width: 6%;
-    background-image: url("../img/icon-circle5.png");
+    background-image: url("../img/icon-circle.png");
     background-size: 100% 100%;
 }
 .td-len{
@@ -621,9 +582,10 @@ a {
     height: 87%;
     margin: 2%;
     background-color: #fafafa;
-    box-shadow: 0.3em 0.3em 0.5em darkgray;
+    box-shadow: 0.2em 0.2em 0.3em darkgray;
     text-align: left;
     padding: 5%;
+    font-size: 2em;
 }
 /*我的(主界面)-----------------------------------------------------*/
 .back-color{
@@ -634,21 +596,30 @@ a {
     width: 96%;
     background-color: white;
     margin: 0 auto;
-    box-shadow: 0.3em 0.3em 0.5em lightgray;
+    box-shadow: 0.2em 0.2em 0.4em lightgray;
+    font-size: 1.2em;
 }
 .one-card{
     height: 15.3%;
     width: 97%;
     border-top: 1px solid lightgray;
     margin: 0 auto;
+    line-height: 40%;
 }
 .one-card img{
     float: left;
     width: 5%;
     height: 30%;
-    margin-top: 8%;
     margin-left: 19.6%;
 }
+.account-icon{
+    margin-top: 6.3%;
+}
+.my-main-icon{
+    margin-top: 5.6%;
+}
+
+
 .one-card a{
     float: left;
     margin-top: 8%;
@@ -662,8 +633,9 @@ a {
     margin-top: 2%;
 }
 .one-card-2{
-    height: 31%;
+    height: 33%;
     width: 100%;
+    line-height: 100%;
 }
 .my-content-3{
     height: 45%;
@@ -772,19 +744,21 @@ a {
 .item-5{
     width: 100%;
     height: 10%;
-    margin-top: 10%;
+    margin-top: 8%;
 }
 .item-5 h1{
     float: left;
     color: #fafafa;
     margin-top: 4%;
     margin-left: 10%;
+    font-size: 3em;
+    font-weight: lighter;
 }
 .item-5 input{
     width: 55%;
     height: 70%;
     border-radius: 0.7em;
-    font-size: 2em;
+    font-size: 3em;
     background-color: transparent;
     border: 0.1em solid;
     border-color: #fafafa;
@@ -801,10 +775,10 @@ a {
     width: 75%;
     height: 9%;
     border-radius: 0.8em;
-    font-size: 2.5em;
+    font-size: 3.3em;
     background-color: #fafafa;
     border: none;
-    margin-top: 50%;
+    margin-top: 60%;
 }
 /*我的(我的账户)----------------------------------------------*/
 .contents-6 .head{

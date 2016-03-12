@@ -12,17 +12,17 @@ class Config
      * 数据库站点
      * @var unknown
      */
-    const  HOST = '127.0.0.1';
+    const  HOST = 'localhost';
     /**
      * 数据库用户名
      * @var unknown
      */
-    const  USER = 'root';
+    const  USER = 'test2';
     /**
      * 数据库密码
      * @var unknown
      */
-    const  PASSWORD = 'root';
+    const  PASSWORD = 'chen';
     /**
      * 数据库名
      * @var unknown

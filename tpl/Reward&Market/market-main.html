@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="css/main.css" type="text/css" rel="stylesheet"/>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
@@ -15,7 +15,10 @@
             <a class="sets sets-set" href="My_set.php">
                 <img src="img/sets.png">
             </a>
-            <input class="search-input" />
+            <div class="search-input-div">
+                <div class="input-in"><input class="search-input" /></div>
+
+            </div>
             <a class="sets sets-set sets-add" href="Commodity_upload.php">
                 <img src="img/sets-add.png">
             </a>
@@ -60,13 +63,13 @@
         </div>
 
         <div class="nav-bottom">
-            <a href="Commodity_browse.php?type=market" class="bt-bottom"><h2>市场</h2></a>
-            <a href="Commodity_browse.php?type=reward" class="bt-bottom"><h2>悬赏</h2></a>
-            <a href="My_main.php" class="bt-bottom"><h2>我的</h2></a>
+            <a href="Commodity_browse.php?type=market" class="bt-bottom">市场</a>
+            <a href="Commodity_browse.php?type=reward" class="bt-bottom">悬赏</a>
+            <a href="My_main.php" class="bt-bottom">我的</a>
         </div>
         <div class="menu-left" tabindex="0" style="width: 0">
             <div class="head">
-                <a><img src="img/sets-back.png"></a>
+                <a onclick="leftBar_none()"><img src="img/sets-back.png"></a>
             </div>
             <div class="content" id="con1" style="display: none">
                 <div class="menu-item">
