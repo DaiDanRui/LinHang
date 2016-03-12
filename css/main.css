@@ -1,10 +1,14 @@
 body,html{
     height: 100%;
-    font-size: 62.5%;
+    font-size: 72.5%;
 }
 p,h3,h2,h1,body{
     margin: 0;
     padding: 0;
+}
+
+p{
+    font-size: 150%;
 }
 
 .wrapper{
@@ -120,7 +124,8 @@ a {
 .contents{
     background-color: #f0ead8;
     height: 86.6%;
-    overflow: auto;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 .contents-2{
     height: 78.8%;
@@ -134,7 +139,8 @@ a {
 }
 .contents-4{
     height: 93.3%;
-    overflow: auto;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 .contents-5{
     background-image: url("../img/back-2.png");
@@ -176,27 +182,27 @@ a {
     margin-right: 1%;
     margin-top: 1%;
 }
-.item-bottom{
+.item-bottom{/*change*/
     width: 97.5%;
     height: 15.5%;
     margin: 0 auto;
 }
 .item-bottom h2{
     float: left;
-    margin-top: 3%;
+    /*margin-top: 2%;*/
     margin-left: 1%;
     color: gray;
 }
 .item-bottom h3{
     float: right;
-    margin-top: 3.3%;
+    margin-top: 1.5%;
     margin-right: 2%;
     color: gray;
 }
 .item-bottom img{
     float: right;
     width: 4.27%;
-    margin-top: 3%;
+    margin-top: 2%;
     margin-left: 2%;
     margin-right: 1%;
 }
@@ -219,15 +225,16 @@ a {
     text-align: left;
     margin-top: 5.4%;
     margin-left: 2.7%;
-    width: 67.5%;
+    width: 50.5%;
 }
 .titles .sub-info{
     margin-top: 3.2%;
 }
-.price{
+.price{/*change*/
     float: right;
-    margin-top: 5.4%;
-    font-size: 20px;
+    margin: 2%;
+    margin-top: 3.4%;
+    font-size: 1.5rem;
     color: red;
 }
 .item-content{
@@ -235,14 +242,15 @@ a {
     width: 86.56%;
     text-align: left;
 }
-.price-2{
+.price-2{/*change*/
     margin: 2%;
-    margin-top: 5%;
+    margin-top: 10%;
 }
 .item-content-2{
     width: 97.5%;
     height: 58.5%;
-    overflow: auto;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 .picture{
     margin: 0 auto;
@@ -253,8 +261,8 @@ a {
 .picture img{
     height: 100%;
 }
-.msg-total{
-    margin-top: 3.1%;
+.msg-total{/*change*/
+    margin-top: 8.1%;
     padding-bottom: 9.4%;
     border-top: 1px solid gray;
     width: 100%;
@@ -336,11 +344,13 @@ a {
     margin-top: 2%;
     margin-left: 5%;
     height: 70%;
-    overflow: auto;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 .buy-content{
     height: 48.2%;
-    overflow: auto;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 .buy-content table{
     text-align: left;
@@ -354,7 +364,8 @@ a {
     width: 87.5%;
     height: 82.33%;
     margin: 0 auto;
-    overflow: auto;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 .topic{
     width: 100%;
@@ -407,7 +418,6 @@ a {
 .bt-bottom{
     display: table-cell;
     vertical-align: middle;
-    font-size: 2rem;
 }
 .bt-bottom:hover{
     color: #fafafa;
@@ -831,7 +841,8 @@ a {
 .contents-6 .middle{
     height: 77.2%;
     width: 100%;
-    overflow: auto;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     padding-top: 2%;
 }
 .item-6{
