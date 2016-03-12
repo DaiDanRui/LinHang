@@ -20,7 +20,7 @@ class DBfinder extends DBexcutor
         $this->table_name = $name;
     }
     /**
-     * 没有进行 mysqli_fetch_array($retval, MYSQL_ASSOC)
+     * 没有进行 mysqli_fetch_array($retval, MYSQLI_ASSOC)
      */
     /* public function excute_without_conn()
     {

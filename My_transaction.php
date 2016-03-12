@@ -1,14 +1,16 @@
 <?php
-defined('TRANSACTION_EACH_PAGE',10);
+define('TRANSACTION_EACH_PAGE',10);
 
 session_start();
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
     require_once 'class/Config.php';
-    $retval = found_transactions();
+    
+    $conn = Config::connect();
+    $retval = found_transactions($conn);
     //逐个配置 array 三级关联数组  供界面使用
     $array = array();
-    while (($temp_database_row_array = mysqli_fetch_array($retval, MYSQL_ASSOC))!=null) {
+    while (($temp_database_row_array = mysqli_fetch_array($retval, MYSQLI_ASSOC))!=null) {
         $array[] = array(
             
             'url_header' => $temp_database_row_array[Config_commodity::pic_path],

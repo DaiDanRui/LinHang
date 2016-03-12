@@ -35,6 +35,8 @@ require_once 'class/Config.php';
             'description' => $array_commofity_info[Config_commodity::description],
             'imgs' => get_commodity_pic($conn, $array_commofity_info[Config_commodity::id]),
             'id' => $commodity_id,
+            'star_numbers' => $array_commofity_info[Config_commodity::praise],
+            'message_numbers' => $array_commofity_info[Config_commodity::leave_message_time],
         );
         $smarty->assign('messages',$array_message);
         $smarty->assign('skill',$commodity_array_for_display);
@@ -76,7 +78,7 @@ require_once 'class/Config.php';
         $retval = $dbtraerser->excute($conn);
         
         $array_message = array();
-        while (($temp_database_row_array = mysqli_fetch_array($retval, MYSQL_ASSOC))!=null) 
+        while (($temp_database_row_array = mysqli_fetch_array($retval, MYSQLI_ASSOC))!=null) 
         {
             $temp_user = Info_user::get_user_avatar_and_logname($conn, $temp_database_row_array[Config_leave_message::talker]);
             $array_message[] = array(

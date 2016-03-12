@@ -44,7 +44,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     $retval = mysqli_query($conn, $query);
     
     $array_commofity_info = array();
-    while (($temp_database_row_array = mysqli_fetch_array($retval, MYSQL_ASSOC))!=null) {
+    while (($temp_database_row_array = mysqli_fetch_array($retval, MYSQLI_ASSOC))!=null) {
         //array_push($array, $temp_database_row_array);
         //据说以下类似方法效率高一倍
         $array_commofity_info[] = $temp_database_row_array;

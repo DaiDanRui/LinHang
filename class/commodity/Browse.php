@@ -30,7 +30,7 @@ class Browse
             Config_commodity::id. " = '$this->commodity_id' ");
         $result = $traverser->excute_without_conn();
         
-        $commodity_info=mysqli_fetch_array($result,MYSQL_ASSOC);
+        $commodity_info=mysqli_fetch_array($result,MYSQLI_ASSOC);
         return $commodity_info==null? false : $commodity_info;
     }
     

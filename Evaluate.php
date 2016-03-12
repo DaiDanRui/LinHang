@@ -39,7 +39,7 @@ function evaluate()
         Config_transaction::table_name,
         ' where '.Config_transaction::id.' = '."'".$transaction_id."'");
     $transaction_retval = $trasaction_DBtraveser->excute($conn);
-    $transaction_array = mysqli_fetch_array($transaction_retval, MYSQL_ASSOC);
+    $transaction_array = mysqli_fetch_array($transaction_retval, MYSQLI_ASSOC);
     
     if($transaction_array)
     {
