@@ -85,7 +85,7 @@ require_once 'class/Config.php';
             $temp_user = Info_user::get_user_avatar_and_logname($conn, $temp_database_row_array[Config_leave_message::talker]);
             $array_message[] = array(
                 'description' => $temp_database_row_array[Config_leave_message::content],
-                'time' => $temp_database_row_array[Config_leave_message::time],
+                'time' => get_time($temp_database_row_array[Config_leave_message::time]),
                 'nickname' => $temp_user[Config_user::log_name],
                 'img' => 'upload/avatar.png',
             );

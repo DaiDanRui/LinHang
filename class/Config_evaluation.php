@@ -12,7 +12,6 @@ class Config_evaluation
     const score2 = 'score2';
     const score3 = 'score3';
     const score = 'score';
-    
     const valuator = 'valuator' ;
     const valuated = 'valuated';
 }

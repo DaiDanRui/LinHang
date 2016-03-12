@@ -9,6 +9,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     add_message_to_DB($conn,$commodity_id);//存储信息
     update_message_time($conn,$commodity_id);//留言数增1
     mysqli_close($conn);
+    header("Location:Commodity_details.php?id=$commodity_id");
 }
 else 
 {

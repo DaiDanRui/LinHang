@@ -20,6 +20,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     require_once 'class/Config_user.php';
     require_once 'class/Config_transaction.php';
     require_once 'class/Config.php';
+    require_once 'class/Config_commodity.php';
 //    require_once 'Include_picture.php';
     $conn = Config::connect();
     $page = isset($_REQUEST['page'])?(int)$_REQUEST['page']:1;
@@ -28,11 +29,11 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     $choose_fields =array(
         Config_user::table_name.".".Config_user::pic_path,
         Config_user::table_name.".".Config_user::log_name,
-        Config_evaluation::table_name.".".Config_evaluation::evaluate_time,
-        Config_evaluation::table_name.".".Config_evaluation::score1,
-        Config_evaluation::table_name.".".Config_evaluation::score2,
-        Config_evaluation::table_name.".".Config_evaluation::score3,
-        Config_evaluation::table_name.".".Config_evaluation::score,
+        Config_evaluation::tbl_name.".".Config_evaluation::evaluate_time,
+        Config_evaluation::tbl_name.".".Config_evaluation::score1,
+        Config_evaluation::tbl_name.".".Config_evaluation::score2,
+        Config_evaluation::tbl_name.".".Config_evaluation::score3,
+        Config_evaluation::tbl_name.".".Config_evaluation::score,
         Config_commodity::table_name.".".Config_commodity::title,
     //    Config_commodity::table_name.".".Config_commodity::pic_path
     
@@ -63,6 +64,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
             );
      }
     //display
+    $smarty->assign('reviews',$array_for_html);
     $smarty->display('My/my-review.html');
     mysqli_free_result($retval);
     mysqli_close($conn);
@@ -75,7 +77,7 @@ function search_evaluated()
     global  $user_id;
     $where = ' where '.Config_evaluation::tbl_name.".".Config_evaluation::valuated
                   .' = '."'$user_id'"
-                  .' AND '.Config_evaluation::tbl_name.".".Config_evaluation::evaluated
+                  .' AND '.Config_evaluation::tbl_name.".".Config_evaluation::valuated
                   .' = '.Config_user::table_name.".".Config_user::id
                   .' AND '.Config_commodity::table_name.".".Config_commodity::id
                   .' = '.Config_evaluation::commodity_id;
@@ -87,7 +89,7 @@ function search_evaluation()
     global  $user_id;
     $where = ' where '.Config_evaluation::tbl_name.".".Config_evaluation::valuator
                   .' = '."'$user_id'"
-                  .' AND '.Config_evaluation::tbl_name.".".Config_evaluation::evaluated
+                  .' AND '.Config_evaluation::tbl_name.".".Config_evaluation::valuated
                   .' = '.Config_user::table_name.".".Config_user::id
                   .' AND '.Config_commodity::table_name.".".Config_commodity::id
                   .' = '.Config_evaluation::commodity_id;

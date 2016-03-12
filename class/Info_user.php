@@ -58,7 +58,6 @@ class Info_user
         $query = ' select '.Config_user::log_name.
         ' from '.Config_user::table_name.
         ' where '.Config_user::id.' = '."'$user_id'";
-        echo $query;
         $retval = mysqli_query($conn, $query);
         $array = mysqli_fetch_array($retval, MYSQLI_ASSOC);
         mysqli_free_result($retval);

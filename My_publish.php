@@ -37,7 +37,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     //$types = get_all_types($conn);
     //3.显示数据
     $smarty->assign('page',$list['page']);
-    $smarty->assign('items',$list['array']);
+    $smarty->assign('accepts',$list['array']);
     $smarty->display('My/my-accepted.html');
     //4.释放资源
     mysqli_close($conn);

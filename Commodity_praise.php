@@ -31,7 +31,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
         );
         $DBincrement->excute($conn);
     }
-    
+    header("Location:Commodity_details.php?id=$commodity_id");
     
 }
 

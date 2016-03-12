@@ -27,8 +27,8 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     //$types = get_all_types($conn);
     //3.显示数据
     $smarty->assign('page',$list['page']);
-    $smarty->assign('items',$list['array']);
-    $smarty->display('Reward&Market/market-main.html');
+    $smarty->assign('my_stars',$list['array']);
+    $smarty->display('My/my-star.html');
     //4.释放资源
     mysqli_close($conn);
 }
