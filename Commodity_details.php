@@ -33,7 +33,8 @@ require_once 'class/Config.php';
             'time' => get_time($array_commofity_info[Config_commodity::release_date]),
             'price' => $array_commofity_info[Config_commodity::price],
             'description' => $array_commofity_info[Config_commodity::description],
-            'imgs' => get_commodity_pic($conn, $array_commofity_info[Config_commodity::id])
+            'imgs' => get_commodity_pic($conn, $array_commofity_info[Config_commodity::id]),
+            'id' => $commodity_id,
         );
         $smarty->assign('messages',$array_message);
         $smarty->assign('skill',$commodity_array_for_display);

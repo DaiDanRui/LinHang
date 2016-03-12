@@ -25,17 +25,16 @@
         $where = ' where '.Config_commodity::commodity_state." < '2' ";
         
         //浏览的商品分类 
-        if(isset($_GET['type'])&&$_GET['type']=='market')//when $_GET['course_or_reward'] isset && $_GET['course_or_reward']!=0
-        {
-            $where.=' AND '. Config_commodity::course_or_reward.' = '."'".Commodity_type_Config::course."'";
-        }else{
-            $where.=' AND '. Config_commodity::course_or_reward.' = '."'".Commodity_type_Config::all."'";
-        }
+        
         
         if(isset($_GET['type']))  //when $_GET['type'] isset && $_GET['type']!=0
         {
-            $type = Injection::excute('type');
-            $where.='AND'.Config_commodity::type.' = '."'".$type."'";
+            if($_GET['type']=='market')//when $_GET['course_or_reward'] isset && $_GET['course_or_reward']!=0
+            {
+                $where.=' AND '. Config_commodity::course_or_reward.' = '."'".Commodity_type_Config::course."'";
+            }else{
+                $where.=' AND '. Config_commodity::course_or_reward.' = '."'".Commodity_type_Config::reward."'";
+            }
         }
       //时间限定
         if(isset($_POST['time-week'])){
