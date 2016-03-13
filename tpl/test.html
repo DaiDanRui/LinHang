@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>test</title>
 </head>
-<br>
-    just a test!<br>
-    <{$test}><br>
-    <{foreach $users as $user}>
-        <{$user['username']}><br>
-    <{/foreach}>
+<body>
+    <form action="Test.php" method="post" enctype="multipart/form-data">
+        <input name="into" placeholder="input" type="file"><br>
+        <input name="into" placeholder="input" type="file"><br>
+        <input name="into" placeholder="input" type="file"><br>
+        <input name="into" placeholder="input" type="file"><br>
+        <input type="submit" name="sub" value="submit">
+    </form>
 </body>
 </html>
