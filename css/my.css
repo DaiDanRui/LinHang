@@ -18,3 +18,21 @@ body,html{
 .my-item-link{
     color: black;
 }
+
+/*-------------------*/
+/*my-personal*/
+/*-------------------*/
+.per-top h2{
+    font-size: 140%;
+    margin-right: 3%;
+}
+.my-per-item h1{
+    font-size:150%;
+}
+
+.per-top-bottom h1{
+    font-size: 140%;
+}
+.per-top-bottom img{
+    margin-top: 1%;
+}
