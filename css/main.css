@@ -140,7 +140,7 @@ a {
 .contents-3{
     background-image: url("../img/back-2.png");
     background-size: 100% 100%;
-    height: 91.3%;
+    height: 93.3%;
 }
 .contents-4{
     height: 91.3%;
@@ -335,6 +335,8 @@ a {
     height: 56%;
     margin: 0 auto;
     margin-top: 2%;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 .item-info img{
     float: left;
@@ -346,9 +348,8 @@ a {
     width: 64%;
     margin-top: 2%;
     margin-left: 5%;
-    height: 70%;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
+    height: 90%;
+    text-align: left;
 }
 .buy-content{
     height: 48.2%;
@@ -432,7 +433,7 @@ a {
     width: 98%;
     height: 8.5%;
     margin: 0 auto;
-    margin-top: 12%;
+    margin-top: 10%;
 }
 
 .confirm-bottom-2{
@@ -516,7 +517,7 @@ a {
     width: 100%;
 }
 .my-head img{
-    height: 52.3%;
+    /*height: 52.3%;*/
     width: 18.6%;
     border-radius: 50%;
     float: left;
@@ -675,11 +676,15 @@ a {
 /*我的(账号设置/设置)------------------------------------------------------*/
 .my-content-2{
     height: 35%;
-    margin-top: 2%;
+    margin-top: 5%;
 }
 .one-card-2{
     height: 31%;
     width: 100%;
+}
+.one-card-2 .one-card-img{
+    height: 40%;
+    width: 5%;
 }
 .my-content-3{
     height: 45%;
@@ -698,13 +703,14 @@ a {
     background-color: #fafafa;
 }
 .item-3 .head{
-    height: 24%;
+    height: 30%;
     width: 100%;
 }
 .item-3 .middle{
-    height: 58%;
+    height: 52%;
     width: 100%;
     border-top: 1px solid lightgray;
+    overflow: hidden;
 }
 .item-3 .bottom{
     height: 18%;
@@ -714,7 +720,7 @@ a {
 .item-3 img,.item-3 h1,.item-3 h2{
     float: left;
 }
-.item-3 img{
+.item-3 .head img{
     width: 8%;
     height: 83.3%;
     margin-top: 1.3%;
@@ -724,9 +730,10 @@ a {
 .item-3 h1{
     margin-top: 2.5%;
     margin-left: 3%;
+    font-weight: 100;
 }
 .item-3 h2{
-    margin-top: 3%;
+    /*margin-top: 3%;*/
     margin-left: 4%;
     color: gray;
 }
@@ -763,26 +770,33 @@ a {
     height: 95%;
     width: 24%;
     margin-top: 0;
+    margin-left: 2.5%;
     border-radius: 0;
 }
 .item-4 .h1-price{
     float: left;
-    width: 30%;
+}
+.item-4 .h1-title{
+    width: 70%;
     text-align: left;
-    margin-top: 5%;
 }
 .item-4 .right{
+    display: table;
     float: right;
-    margin-top: 1%;
+    /*margin-top: 1%;*/
     width: 20%;
     text-align: left;
 }
 .item-4 .edit{
-    float: right;
-    height: 50%;
-    border-radius: 0;
-    width: 2.5%;
-    margin-top: 1.5%;
+    /*float: right;*/
+    display: table-cell;
+    vertical-align: middle;
+    /*width: 2.5%;*/
+    /*margin-top: 1.5%;*/
+}
+.item-4 img{
+    height: 60%;
+    width: 50%;
 }
 /*我的(修改密码)--------------------------------------------*/
 .item-5{
@@ -793,7 +807,7 @@ a {
 .item-5 h1{
     float: left;
     color: #fafafa;
-    margin-top: 4%;
+    margin-top: 2%;
     margin-left: 10%;
 }
 .item-5 input{
@@ -833,6 +847,7 @@ a {
     width: 21.875%;
     float: left;
     margin: 6.25%;
+    border-radius: 50%;
 }
 .contents-6 .head .right{
     float: left;

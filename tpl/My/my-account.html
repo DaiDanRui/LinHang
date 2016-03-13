@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <title>我的-我的账户</title>
 </head>
 <body>
@@ -16,7 +18,7 @@
     </div>
     <div class="contents-6">
         <div class="head">
-            <img src="<{$account['url_header']}>">
+            <img class="img-to-set" src="<{$account['url_header']}>">
             <div class="right">
                 <h1>总收入&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;￥<{$account['income']}></h1>
                 <h1>总支出&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;￥<{$account['outcome']}></h1>

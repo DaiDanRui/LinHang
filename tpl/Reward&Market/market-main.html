@@ -39,7 +39,7 @@
             <{foreach $items as $item}>
             <div class="item">
                 <div class="item-header-main">
-                    <img src="<{$item['url']}>">
+                    <img class="img-to-set" src="<{$item['url']}>">
                     <a href="Commodity_details.php?id=<{$item['id']}>"><h1><{$item['title']}></h1></a>
                     <div class="price"><{$item['price']}></div>
                 </div>
@@ -48,7 +48,7 @@
                         <{$item['description']}>
                     </p>
                     <{foreach $item['imgs'] as $url}>
-                        <img src="<{$url}>">
+                        <img class="img-to-set-2" src="<{$url}>">
                     <{/foreach}>
                 </div>
                 <div class="item-bottom">
@@ -74,11 +74,11 @@
             <div class="content" id="con1" style="display: none">
                 <div class="menu-item">
                     <img src="img/icon-circle1.png">
-                    <button type="submit" name="price-high">价格最高</button>
+                    <button type="submit" name="price-high">最豪华</button>
                 </div>
                 <div class="menu-item">
                     <img src="img/icon-circle2.png">
-                    <button type="submit" name="price-low">价格最低</button>
+                    <button type="submit" name="price-low">最实惠</button>
                 </div>
             </div>
             <div class="content" id="con2" style="display: none">
@@ -110,7 +110,7 @@
             <div class="content" id="con3" style="display: none;">
                 <div class="menu-item">
                     <img src="img/icon-circle1.png">
-                    <button type="submit" name="type-math">数理化工</button>
+                    <button type="submit" name="type-math">理工</button>
                 </div>
                 <div class="menu-item">
                     <img src="img/icon-circle2.png">

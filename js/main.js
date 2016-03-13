@@ -13,7 +13,6 @@ $(document).ready(function(){
         },"fast");
         $(".menu-left").focus();
     });
-
     $(".menu-left").blur(function(){
         $(".right-cover").css({
             "opacity":"0",
@@ -24,7 +23,6 @@ $(document).ready(function(){
         });
         $(".menu-left").children(".content").css("display","none");
     });
-
     $("#ser-1").click(function(){
         $("#con1").css("display","block");
     });
@@ -33,6 +31,12 @@ $(document).ready(function(){
     });
     $("#ser-3").click(function(){
         $("#con3").css("display","block");
+    });
+
+    $(".img-to-set .img-to-set-2 .img-to-set-3").ready(function(){
+        $(".img-to-set").height($(".img-to-set").width());
+        $(".img-to-set-2").height($(".img-to-set-2").width());
+        $(".img-to-set-3").height($(".img-to-set-3").width());
     });
 });
 

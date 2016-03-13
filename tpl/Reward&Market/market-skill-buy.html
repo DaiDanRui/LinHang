@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <title>市场-技能详情-我要买</title>
 </head>
 <body>
@@ -17,7 +19,7 @@
     <div class="contents contents-3">
         <div class="buy-header">
             <div class="item-header item-header-buy">
-                <img src="<{$detail['img']}>">
+                <img class="img-to-set" src="<{$detail['img']}>">
                 <div class="titles">
                     <h1><{$detail['title']}></h1>
                     <h3 class="sub-info"><{$detail['nickname']}>(<{$detail['time']}>天前)</h3>
@@ -25,7 +27,7 @@
                 <div class="price price-2"><{$detail['price']}></div>
             </div>
             <div class="item-info">
-                <img src="<{$detail['description_img']}>">
+                <img class="img-to-set-2" src="<{$detail['description_img']}>">
                 <div class="info-detail">
                     <p>
                         <{$detail['description']}>

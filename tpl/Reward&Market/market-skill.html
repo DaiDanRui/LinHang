@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/main.css" type="text/css" rel="stylesheet"/>
-    <script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <title>市场-技能详情</title>
 </head>
@@ -20,7 +20,7 @@
 
         <div class="contents">
             <div class="item-header">
-                <img src="<{$skill['img']}>">
+                <img class="img-to-set" src="<{$skill['img']}>">
                 <div class="titles">
                     <h1><{$skill['title']}></h1>
                     <h3><{$skill['nickname']}>&nbsp;(<{$skill['time']}>天前)</h3>
@@ -33,7 +33,7 @@
                     <{$skill['description']}>
                 </p>
             </div>
-            <div class="picture">
+            <div class="picture img-to-set-2">
                 <img src="<{$skill['description-img']}>">
             </div>
 
@@ -45,7 +45,7 @@
             </div>
             <{foreach $messages as $message}>
             <div class="msg-item-head">
-                <img class="msg-icon" src="<{$message['img']}>">
+                <img class="msg-icon img-to-set-3" src="<{$message['img']}>">
                 <h2 class="msg-name"><{$message['nickname']}></h2>
                 <h2 class="msg-time"><{$message['time']}>天前</h2>
             </div>
