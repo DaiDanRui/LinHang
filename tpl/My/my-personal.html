@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <link href="css/my.css" type="text/css" rel="stylesheet"/>
     <title>我的-个人信息</title>
 </head>
 <body>
@@ -14,51 +15,52 @@
     <div class="my-per-content">
         <div class="per-top">
             <img id="per-top" src="<{$my_personal['url_header']}>">
-            <h2>买家好评 : <{$my_personal['good_buyer']}> %</h2>
-            <h2>买家好评 : <{$my_personal['good_seller']}> %</h2>
+            <h2 class="my-per-comment">买家好评 : <{$my_personal['good_buyer']}> %</h2>
+            <h2 class="my-per-comment">卖家好评 : <{$my_personal['good_seller']}> %</h2>
             <div class="per-top-bottom">
                 <img src="img/icon-edit.png">
-                <h1><{$my_personal['introduction']}></h1>
+                <h1><{$my_personal['introduction']}>是对方是个</h1>
             </div>
+
         </div>
         <div class="per-content">
             <table>
-                <tr class="tr-content">
+                <tr class="my-per-item tr-content">
                     <td class="td-img1"></td>
                     <td><h1>昵称:</h1></td>
                     <td class="td-len"><h1>&nbsp;<{$my_personal['nickname']}></h1></td>
                 </tr>
-                <tr class="tr-content">
+                <tr class="my-per-item tr-content">
                     <td class="td-img2"></td>
                     <td><h1>姓名:</h1></td>
                     <td class="td-len"><h1>&nbsp;<{$my_personal['username']}></h1></td>
                 </tr>
-                <tr class="tr-content">
+                <tr class="my-per-item tr-content">
                     <td class="td-img3"></td>
                     <td><h1>性别:</h1></td>
                     <td class="td-len"><h1>&nbsp;<{$my_personal['gender']}></h1></td>
                 </tr>
-                <tr class="tr-content">
+                <tr class="my-per-item tr-content">
                     <td class="td-img4"></td>
                     <td><h1>手机:</h1></td>
                     <td class="td-len"><h1>&nbsp;<{$my_personal['phone']}></h1></td>
                 </tr>
-                <tr class="tr-content">
+                <tr class="my-per-item tr-content">
                     <td class="td-img5"></td>
                     <td><h1>邮箱:</h1></td>
                     <td class="td-len"><h1>&nbsp;<{$my_personal['email']}></h1></td>
                 </tr>
-                <tr class="tr-content">
+                <tr class="my-per-item tr-content">
                     <td class="td-img1"></td>
                     <td><h1>生日:</h1></td>
                     <td class="td-len"><h1>&nbsp;<{$my_personal['birth']}></h1></td>
                 </tr>
-                <tr class="tr-content">
+                <tr class="my-per-item tr-content">
                     <td class="td-img2"></td>
                     <td><h1>擅长:</h1></td>
                     <td class="td-len"><h1>&nbsp;<{$my_personal['good_at']}></h1></td>
                 </tr>
-                <tr class="tr-content">
+                <tr class="my-per-item tr-content">
                     <td class="td-img3"></td>
                     <td><h1>爱好:</h1></td>
                     <td class="td-len"><h1>&nbsp;<{$my_personal['hobby']}></h1></td>
