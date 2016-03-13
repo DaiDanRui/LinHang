@@ -64,8 +64,8 @@ function show_buy_html($commodity_id,$conn){
         require_once 'Include_picture.php';
         require_once 'class/Info_user.php';
         require_once 'class/Config_user.php';
-        $acceptor_info_array = Info_user::get_user_info($conn, $_SESSION['CURRENT_LOGIN_ID']);
-        $publisher_info_array = Info_user::get_user_info($conn, $array_commofity_info[Config_commodity::publisher]);
+        $acceptor_info_array = Info_user::get_user_info_by_id($conn, $_SESSION['CURRENT_LOGIN_ID']);
+        $publisher_info_array = Info_user::get_user_info_by_id($conn, $array_commofity_info[Config_commodity::publisher]);
         $commodity_array_for_display = array(
             'nickname' => $acceptor_info_array[Config_user::log_name],
             'acceptor_phone' => $acceptor_info_array[Config_user::phone_number],
@@ -76,7 +76,7 @@ function show_buy_html($commodity_id,$conn){
             'time' => get_time($array_commofity_info[Config_commodity::release_date]),
             'price' => $array_commofity_info[Config_commodity::price],
             'description' => $array_commofity_info[Config_commodity::description],
-            'description-img' => 'upload/avatar.png',
+            'description_img' => get_one_commodity_pic($conn, $array_commofity_info[Config_commodity::id]) ,
             'img' => 'upload/avatar.png',
             'id' => $commodity_id,
       //      'star_numbers' => $array_commofity_info[Config_commodity::praise],
