@@ -45,6 +45,8 @@ class Info_commodity
         );
         return $DBupdater->excute($conn);
     }
+    
+    
 }
 
 ?>
