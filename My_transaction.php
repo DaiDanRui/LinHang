@@ -28,6 +28,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
             'acceptor' => $trader_avatar_and_logname[Config_user::log_name],
             'title'=> $temp_database_row_array[Config_commodity::title],
             'price' => $temp_database_row_array[Config_commodity::price],
+            'id' => $temp_database_row_array[Config_commodity::id],
             
         );
     }

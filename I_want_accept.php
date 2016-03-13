@@ -73,13 +73,7 @@ function send_msg($commodity_ary)
 
 }
 
-function get_time($release_date)
-{
-    $now_time = time();
-    $release_time=strtotime($release_date);
-    return (int)( ($now_time-$release_time) /3600/24);
 
-}
 
 function create_transaction($conn,$commodity_ary)
 {

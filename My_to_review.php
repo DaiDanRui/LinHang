@@ -6,4 +6,4 @@
         $conn = Config::connect();
         $commodity_array_for_display = show_buy_html($commodity_id, $conn);
         $smarty->assign('detail',$commodity_array_for_display);
-        $smarty->display('My/myt-to-review.html');
+        $smarty->display('My/my-to-review.html');
