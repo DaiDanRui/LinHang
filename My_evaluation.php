@@ -40,11 +40,12 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     );
     
    
-    //如果是查找自己评价别人的
-    $where = search_evaluation();
-    //如果是查找别人评价自己的
-    $where = search_evaluated();
-    
+    if(isset($_REQUEST['evaluation'])) //如果是查找自己评价别人的
+    {   
+        $where = search_evaluation();
+    }else { //如果是查找别人评价自己的
+        $where = search_evaluated();
+    }
     $DBpagination = new DBpagination
     ($table_name, $where, $page, EVALUATION_PAGE_SIZE, $choose_fields);
     $retval = $DBpagination->excute($conn);

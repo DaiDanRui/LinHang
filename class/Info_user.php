@@ -4,10 +4,9 @@ class Info_user
 {
     public static function  get_user_account($conn,$id){
         require_once 'class/Config_user.php';
-        $query = 'select '.Config_user::income.','.Config_user::pay.
+        $query = ' select '.Config_user::income.','.Config_user::pay.
         ' from '.Config_user::table_name.
-        ' when '.Config_user::id.' = '."'$id'";
-        
+        ' where '.Config_user::id.' = '."'$id'";
         $retval = mysqli_query($conn, $query);
         $array = mysqli_fetch_array($retval, MYSQLI_ASSOC);
         return $array;
@@ -39,7 +38,7 @@ class Info_user
     {
         require_once ('class/Config_user.php');
         $query = 'select '.Config_user::pic_path.' from '.Config_user::table_name.
-        ' when '.Config_user::log_name.' = '."'$username'";
+        ' where '.Config_user::log_name.' = '."'$username'";
         
         $retval = mysqli_query($conn, $query);
         $array = mysqli_fetch_array($retval, MYSQLI_NUM);

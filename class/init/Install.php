@@ -57,6 +57,11 @@ class Install
     
     
     private function  initialDBTable(){
+        
+        require_once 'Table_budget.php';
+        $tbl_budget = new Table_budget($this->conn);
+        $tbl_budget->initTable();
+        
         /* require_once 'Table_user.php';
         $table_user = new Table_user($this->conn);
         $table_user->initTable(); */
@@ -65,9 +70,9 @@ class Install
          $table_commodity = new Table_commodity($this->conn);
         $table_commodity->initTable(); */
         
-        require_once 'Table_evaluation.php';
+        /* require_once 'Table_evaluation.php';
         $table_commodity = new Table_evaluation($this->conn);
-        $table_commodity->initTable();
+        $table_commodity->initTable(); */
         
         /* require_once 'Table_commodity_type.php';
          $table_commodity = new Table_commodity_type($this->conn);

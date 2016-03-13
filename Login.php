@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 include_once ('smarty_init.php');
 include_once ('class/user/Login.php');
 include_once ('class/user/ResultReturn.php');

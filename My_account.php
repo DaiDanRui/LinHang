@@ -9,10 +9,22 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     require_once 'class/Info_user.php';
     require_once 'class/DBpagination.php';
     require_once 'class/Config.php';
+    require_once 'class/Config_commodity.php';
+    require_once 'class/DBcount.php';
+    require_once 'class/Config_user.php';
+    
     $conn = Config::connect();
     $id = $_SESSION['CURRENT_LOGIN_ID'];
     //choose from user table
     $income_and_pay = Info_user::get_user_account($conn, $id);
+    $username_avatar = Info_user::get_user_avatar_and_logname($conn, $id);
+    $income_and_outcome = array(
+        'income'=>$income_and_pay[Config_user::income],
+        'outcome' => $income_and_pay[Config_user::pay],
+    //    'url_header' => $username_avatar[Config_user::pic_path],
+        'url_header' =>'upload/avatar.png',
+        'username' => $username_avatar[Config_user::log_name]
+    );
     
     //choose from
     $tbl_name = Config_budget::table_name.','.Config_commodity::table_name;
@@ -21,12 +33,12 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
         Config_commodity::table_name.'.'.Config_commodity::price,
         Config_commodity::table_name.'.'.Config_commodity::title,
     );
-    $where = ' '.Config_budget::table_name.'.'.Config_budget::commodity_id.' = '
-        .' AND '.Config_commodity::table_name.'.'.Config_commodity::id
+    $where = ' where '.Config_budget::table_name.'.'.Config_budget::commodity_id.' = '
+             .Config_commodity::table_name.'.'.Config_commodity::id
     
-        .' AND ('.Config_budget::table_name.'.'.Config_budget::holder_id.' = '.$id
+        .' AND ('.Config_budget::table_name.'.'.Config_budget::holder_id.' = '."'$id'"
         .' OR '
-            .Config_budget::table_name.'.'.Config_budget::payer_id.' = '.$id
+            .Config_budget::table_name.'.'.Config_budget::payer_id.' = '."'$id'"
             . ')';
     
     //向数据库查询符合条件数，以计算显示分页数目
@@ -52,7 +64,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
         );
     }
     
-    $smarty->assign('account',$income_and_pay);
+    $smarty->assign('account',$income_and_outcome);
     $smarty->assign('accounts',$account_ary);
     $smarty->display('My/my-account.html');
     
