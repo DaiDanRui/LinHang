@@ -122,7 +122,7 @@ a {
     position: absolute;
     left: 0;
     right: 0;
-    top: 2%;
+    top: 1%;
 }
 /*中间内容(主页)-------------------------------------------------------------------------*/
 .contents{
@@ -366,7 +366,7 @@ a {
 /*(发布)--------------------------------*/
 .content-wrapper{
     width: 87.5%;
-    height: 82.33%;
+    height: 90%;
     margin: 0 auto;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
@@ -377,7 +377,7 @@ a {
     margin-top: 2%;
 }
 .content-wrapper input{
-    width: 83%;
+    width: 80%;
     height: 75%;
     margin-top: 1.5%;
     float: right;
@@ -386,7 +386,7 @@ a {
     margin-top: 1%;
 }
 .cont-bottom input{
-    width: 70%;
+    width: 65%;
 }
 .content-wrapper h1{
     float: left;
@@ -398,8 +398,8 @@ a {
     font-size: 180%;
 }
 .area{
-    width: 98%;
-    height: 30%;
+    width: 92%;
+    height: 20%;
     margin-top: 3%;
 }
 .imgs{
@@ -437,7 +437,9 @@ a {
     width: 97%;
     margin-top: 59%;
 }
-
+.confirm-bottom-3{
+    margin-top: 1%;
+}
 .confirm-bottom button{
     width: 100%;
     height: 100%;
