@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <link href="css/my.css" type="text/css" rel="stylesheet"/>
     <script type="text/javascript" src="js/jquery-1.12.0.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <title>我的-设置</title>
@@ -11,7 +12,7 @@
 <body>
 <div class="wrapper back-color">
     <div class="nav">
-        <a class="sets">
+        <a class="sets" onclick="history.go(-1)">
             <img src="img/sets-back.png">
         </a>
         <h1 class="nav-title">设置</h1>
@@ -19,20 +20,20 @@
     <div class="my-content-3">
         <div class="cards cards-2">
             <div class="one-card one-card-3">
-                <img src="img/icon-circle1.png">
-                <a><h1>&nbsp;账号设置&nbsp;>></h1></a>
+                <div class="one-card-img"><img src="img/icon-circle1.png"></div>
+                <a class="my-item-link" href="My_account_set.php">&nbsp;账号设置&nbsp;>></a>
             </div>
             <div class="one-card one-card-3">
-                <img src="img/icon-circle2.png">
-                <a><h1>&nbsp;更改个人资料&nbsp;>></h1></a>
+                <div class="one-card-img"><img src="img/icon-circle2.png"></div>
+                <a class="my-item-link" >&nbsp;更改个人资料&nbsp;>></a>
             </div>
             <div class="one-card one-card-3">
-                <img src="img/icon-circle3.png">
-                <a><h1>&nbsp;主题设置&nbsp;>></h1></a>
+                <div class="one-card-img"><img src="img/icon-circle3.png"></div>
+                <a class="my-item-link" >&nbsp;主题设置&nbsp;>></a>
             </div>
             <div class="one-card one-card-3">
-                <img src="img/icon-circle4.png">
-                <a><h1>&nbsp;关于我们&nbsp;>></h1></a>
+                <div class="one-card-img"><img src="img/icon-circle4.png"></div>
+                <a class="my-item-link" >&nbsp;关于我们&nbsp;>></a>
             </div>
         </div>
     </div>

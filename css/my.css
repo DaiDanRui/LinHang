@@ -12,11 +12,15 @@ body,html{
 }
 
 .my-items{
-    font-size: 150%;
+    /*font-size: 150%;*/
 }
 
 .my-item-link{
-    color: black;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    color: #424254;
+    font-size: 1.5rem;
 }
 
 /*-------------------*/
