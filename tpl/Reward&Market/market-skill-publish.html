@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <link href="css/webuploader.css" type="text/css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="js//webuploader.js"></script>
+    <script type="text/javascript" src="js/upload2.js"></script>
     <title>市场-发布技能</title>
 </head>
 <body>
@@ -16,34 +21,43 @@
     </div>
     <div class="contents-4">
         <form method="post" action="Commodity_upload.php">
-        <div class="content-wrapper">
-            <div class="topic">
-                <h1>主题</h1>
-                <input class="publish-input-out" placeholder="请输入" name="topic" id="topic">
-            </div>
-            <textarea class="publish-input-out area" placeholder="简要描述~" name="description" id="description"></textarea>
-            <div class="imgs">
-                <input >
-            </div>
-            <div class="topic cont-bottom">
-                <h1>截止日期</h1>
-                <input class="publish-input-out" name="time" id="time">
-            </div>
-            <div class="topic cont-bottom">
-                <h1>报酬</h1>
-                <input class="publish-input-out" name="price" id="price">
-            </div>
-            <div class="topic cont-bottom">
-                <h1>联系方式</h1>
-                <input class="publish-input-out" name="phone" id="phone">
-            </div>
-        </div>
+            <div class="content-wrapper">
+                <div class="topic">
+                    <h1>主题</h1>
+                    <input class="publish-input-out" placeholder="请输入" name="topic" id="topic">
+                </div>
+                <textarea class="publish-input-out area" placeholder="简要描述~" name="description" id="description"></textarea>
 
-        <div class="confirm-bottom confirm-bottom-3">
-            <button name="confirm" id="confirm" type="submit">
-                确认
-            </button>
-        </div>
+
+
+
+                <div id="itemList" >
+                    <div id="fileList" class="uploader-list"></div>
+                    <div id="filePicker"></div>
+                </div>
+
+
+
+
+                <div class="topic cont-bottom">
+                    <h1>截止日期</h1>
+                    <input class="publish-input-out" name="time" id="time">
+                </div>
+                <div class="topic cont-bottom">
+                    <h1>报酬</h1>
+                    <input class="publish-input-out" name="price" id="price">
+                </div>
+                <div class="topic cont-bottom">
+                    <h1>联系方式</h1>
+                    <input class="publish-input-out" name="phone" id="phone">
+                </div>
+            </div>
+
+            <div class="confirm-bottom">
+                <button name="confirm" id="confirm" type="submit">
+                    确认
+                </button>
+            </div>
         </form>
     </div>
 </div>
