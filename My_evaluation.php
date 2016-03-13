@@ -35,7 +35,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
         Config_evaluation::tbl_name.".".Config_evaluation::score3,
         Config_evaluation::tbl_name.".".Config_evaluation::score,
         Config_commodity::table_name.".".Config_commodity::title,
-    //    Config_commodity::table_name.".".Config_commodity::pic_path
+        Config_commodity::table_name.'.'.Config_commodity::price
     
     );
     
@@ -53,7 +53,8 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     while(($row=mysqli_fetch_array($retval, MYSQLI_ASSOC))!=NULL)
      {
             $array_for_html[] = array(
-                'url_header' => $row[Config_user::pic_path],
+            //    'url_header' => $row[Config_user::pic_path],
+                'url_header' => 'upload/avatar.png',
                 'title' => $row[Config_commodity::title],
                 'price' => $row[Config_commodity::price],
                 'username' => $row[Config_user::log_name],
