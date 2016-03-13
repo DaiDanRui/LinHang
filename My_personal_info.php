@@ -22,6 +22,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
         'birth' => $user_array[Config_user::birthday],
         'good_at' => $user_array[Config_user::strongpoint],
         'hobby' => $user_array[Config_user::interestc],
+        'url_header'=> 'upload/avatar.png'
     );
     $smarty->assign('my_personal',$my_personal);
     $smarty->display('My/my-personal.html');
