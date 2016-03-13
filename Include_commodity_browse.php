@@ -44,7 +44,7 @@ function pagination($where,$conn,$tbl_name)
        //逐个配置 array 三级关联数组  供界面使用
         $array = array();
         while (($temp_database_row_array = mysqli_fetch_array($reval, MYSQLI_ASSOC))!=null) {
-            $userinfo = Info_user::get_user_info($conn, $temp_database_row_array[Config_commodity::publisher]);
+            $userinfo = Info_user::get_user_info_by_id($conn, $temp_database_row_array[Config_commodity::publisher]);
             $array[] = array(
                 'imgs' => get_commodity_pic($conn, $temp_database_row_array[Config_commodity::id]),
                 'description' => $temp_database_row_array[Config_commodity::description],
