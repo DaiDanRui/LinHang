@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <title>我的-去评价</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="nav">
+        <a class="sets">
+            <img src="img/sets-back.png">
+        </a>
+        <h1 class="nav-title">评价</h1>
+    </div>
+    <div class="contents contents-3">
+        <div class="buy-header">
+            <div class="item-header item-header-buy">
+                <img class="img-to-set" src="<{$detail['img']}>">
+                <div class="titles">
+                    <h1><{$detail['title']}></h1>
+                    <h3 class="sub-info"><{$detail['nickname']}>(<{$detail['time']}>天前)</h3>
+                </div>
+                <div class="price price-2"><{$detail['price']}></div>
+            </div>
+            <div class="item-info">
+                <img class="img-to-set-2" src="<{$detail['description_img']}>">
+                <div class="info-detail">
+                    <p>
+                        <{$detail['description']}>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper wrapper-2">
+            <div class="topic cont-bottom">
+                <h1>截止日期</h1>
+                <input class="publish-input-out" name="time" id="time">
+            </div>
+            <div class="topic cont-bottom">
+                <h1>报酬</h1>
+                <input class="publish-input-out" name="price" id="price">
+            </div>
+            <div class="topic cont-bottom">
+                <h1>联系方式</h1>
+                <input class="publish-input-out" name="phone" id="phone">
+            </div>
+        </div>
+
+        <div class="confirm-bottom confirm-bottom-4">
+            <form method="post" action="I_want_accept.php">
+                <button name="confirm" type="submit">
+                    确认
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
