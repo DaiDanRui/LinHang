@@ -12,7 +12,7 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     require_once 'class/Config_commodity.php';
     require_once 'class/DBcount.php';
     require_once 'class/Config_user.php';
-    
+    require_once 'class/commodity/Commodity_type_Config.php';
     $conn = Config::connect();
     $id = $_SESSION['CURRENT_LOGIN_ID'];
     //choose from user table
@@ -29,9 +29,14 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     //choose from
     $tbl_name = Config_budget::table_name.','.Config_commodity::table_name;
     $choose_fields = array(
+        Config_budget::table_name.'.'.Config_budget::holder_id,
+        Config_budget::table_name.'.'.Config_budget::payer_id,
         Config_budget::table_name.'.'.Config_budget::pay_date,
         Config_commodity::table_name.'.'.Config_commodity::price,
         Config_commodity::table_name.'.'.Config_commodity::title,
+        Config_commodity::table_name.'.'.Config_commodity::id,
+        Config_commodity::table_name.'.'.Config_commodity::publisher,
+        Config_commodity::table_name.'.'.Config_commodity::course_or_reward,
     );
     $where = ' where '.Config_budget::table_name.'.'.Config_budget::commodity_id.' = '
              .Config_commodity::table_name.'.'.Config_commodity::id
@@ -55,12 +60,20 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     $account_ary = array();
     while(($temp_account_ary=mysqli_fetch_array($retval, MYSQLI_ASSOC))!=null)
     {
+        $is_loginer_income = $temp_account_ary[Config_budget::holder_id]==$id;
+        if($is_loginer_income){
+            $trader = $temp_account_ary[ Config_budget::payer_id  ];
+        }else {
+            $trader = $temp_account_ary[  Config_budget::holder_id ];
+        }
+        $type = $temp_account_ary[Config_commodity::course_or_reward]==Commodity_type_Config::reward? '悬赏':'技能';
         $account_ary[] = array(
             'time' => $temp_account_ary[Config_budget::pay_date],
-            'type' => 0,
+            'type' => $type,
             'title' => $temp_account_ary[Config_commodity::title],
-            'trader' => $temp_account_ary[Config_budget::commodity_id],
-            'price_type' => $temp_account_ary[Config_commodity::publisher]==$id? 'income':'pay',
+            'trader' => Info_user::get_user_logname($conn, $trader),
+            'price' => $temp_account_ary[Config_commodity::price],
+            'price_type' => $is_loginer_income? '收入':'支出',
         );
     }
     
