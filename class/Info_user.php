@@ -2,8 +2,31 @@
 
 class Info_user
 {
+    const logname_not_exsit = 1;
+    const wrong_pass_word = 2;
+    const done = 3;
+    public static function updateInfo($logname,$pwd,$conn,$newPwd){
+        require_once 'Config_user.php';
+        require_once 'DBtraverser.php';
+        $where = ' where '.Config_user::log_name."='$logname'";
+        $myDBtraveser = new DBtraverser(Config_user::table_name, $where);
+        $retval = $myDBtraveser->excute($conn);
+        if (mysqli_num_rows($retval)==0){
+            return self::logname_not_exsit;
+        }
+        $array = mysqli_fetch_array($retval, MYSQLI_ASSOC);
+        if($array[Config_user::password]!=$pwd){
+            return self::wrong_pass_word;
+        }
+        $query = 'update '.Config_user::table_name. ' set '.Config_user::password.' = '.$newPwd.$where;
+        mysqli_query($conn, $query);
+        return self::done;
+        
+    }
+    
+    
     public static function  get_user_account($conn,$id){
-        require_once 'class/Config_user.php';
+        require_once 'Config_user.php';
         $query = ' select '.Config_user::income.','.Config_user::pay.
         ' from '.Config_user::table_name.
         ' where '.Config_user::id.' = '."'$id'";
@@ -14,7 +37,7 @@ class Info_user
     
     public static function get_user_info_by_id($conn,$id)
     {
-        require_once('class/Config_user.php');
+        require_once('Config_user.php');
         require_once 'DBtraverser.php';
         $myDBtraveser = new DBtraverser(Config_user::table_name, ' where '.Config_user::id."='$id'");
         $retval = $myDBtraveser->excute($conn);
@@ -25,7 +48,7 @@ class Info_user
     
     public static function get_user_info($conn,$username)
     {
-        require_once('class/Config_user.php');
+        require_once('Config_user.php');
         require_once 'DBtraverser.php';
         $myDBtraveser = new DBtraverser(Config_user::table_name, ' where '.Config_user::log_name."='$username'");
         $retval = $myDBtraveser->excute($conn);
