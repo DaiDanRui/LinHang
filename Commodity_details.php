@@ -34,7 +34,7 @@ require_once 'class/Config.php';
             'time' => get_time($array_commofity_info[Config_commodity::release_date]),
             'price' => $array_commofity_info[Config_commodity::price],
             'description' => $array_commofity_info[Config_commodity::description],
-            'description-img' => get_commodity_pic($conn, $array_commofity_info[Config_commodity::id]) ,
+            'description-img' => get_one_commodity_pic($conn, $array_commofity_info[Config_commodity::id]) ,
             'img' => 'upload/avatar.png',
             'id' => $commodity_id,
             'star_numbers' => $array_commofity_info[Config_commodity::praise],

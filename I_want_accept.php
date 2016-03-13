@@ -10,42 +10,82 @@
 session_start();
 $_SESSION['CURRENT_LOGIN_ID'] = 1;
 $_SESSION['CURRENT_LOGIN_USER'] = 'daixinyan';
-if(isset($_SESSION['CURRENT_LOGIN_ID']) && isset($_SESSION['CURRENT_LOGIN_USER']))
+
+if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
     require_once 'class/Config.php';
-    require_once 'class/Info_commodity.php';
-    require_once 'class/commodity/Transaction_state_config.php';
-
-    $commodity_id = (int)$_REQUEST['commodity_id'];
     //连接数据库
     $conn = Config::connect();
-    //商品信息获取
-    $commodity = new Info_commodity($conn, $commodity_id);
-    $commodity_ary = $commodity->get_commodity($conn);
-    //判断当前用户是否具有权限: 当当前用户不是发布者
-    if($commodity_ary[Config_commodity::publisher]!=$_SESSION['CURRENT_LOGIN_ID'])
+    $commodity_id = (int)$_REQUEST['id'];
+    if(isset($_POST['confirm']))//确定要买
     {
-        //更新商品状态
-        $commodity->update(Transaction_state_config::one_want_accept,$conn);
-        //创建订单
-        if(create_transaction($conn, $commodity_ary))
+        
+        require_once 'class/Info_commodity.php';
+        require_once 'class/commodity/Transaction_state_config.php';
+        
+        //商品信息获取
+        $commodity = new Info_commodity($conn, $commodity_id);
+        $commodity_ary = $commodity->get_commodity($conn);
+        //判断当前用户是否具有权限: 当当前用户不是发布者
+        if($commodity_ary[Config_commodity::publisher]!=$_SESSION['CURRENT_LOGIN_ID'])
         {
-            send_msg($commodity_ary);
-            include_once ('smarty_init.php');
-            $smarty->display("");
+            //更新商品状态
+            $commodity->update(Transaction_state_config::one_want_accept,$conn);
+            //创建订单
+            if(create_transaction($conn, $commodity_ary))
+            {
+                send_msg($commodity_ary);
+                header('Location: Commodity_details.php?id='.$commodity_id);
+            }
         }
-        else
-        {
-        }
-    }
-    else
+    
+    }else //展示我要买界面 
     {
+        show_buy_html($commodity_id,$conn);
     }
+    
 
 }
 else
 {
     include  'Login.php';
+}
+
+function show_buy_html($commodity_id,$conn){
+    require_once 'class/Config_commodity.php';
+    require_once 'class/DBtraverser.php';
+    
+    $where = ' where '.Config_commodity::id.' = '."'".$commodity_id."'";
+    $DBtraverser = new DBtraverser(Config_commodity::table_name,$where);
+    $result = $DBtraverser->excute($conn);
+    $array_commofity_info = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    if($array_commofity_info)
+    {
+        require_once 'Include_picture.php';
+        require_once 'class/Info_user.php';
+        require_once 'class/Config_user.php';
+        $acceptor_info_array = Info_user::get_user_info($conn, $_SESSION['CURRENT_LOGIN_ID']);
+        $publisher_info_array = Info_user::get_user_info($conn, $array_commofity_info[Config_commodity::publisher]);
+        $commodity_array_for_display = array(
+            'nickname' => $acceptor_info_array[Config_user::log_name],
+            'acceptor_phone' => $acceptor_info_array[Config_user::phone_number],
+            'publisher_name' => $publisher_info_array[Config_user::log_name],
+          //  'publisher_phone' =>  $publisher_info_array[Config_user::phone_number],
+            'publisher_phone' => $array_commofity_info[Config_commodity::communication_number],
+            'title' => $array_commofity_info[Config_commodity::title],
+            'time' => get_time($array_commofity_info[Config_commodity::release_date]),
+            'price' => $array_commofity_info[Config_commodity::price],
+            'description' => $array_commofity_info[Config_commodity::description],
+            'description-img' => 'upload/avatar.png',
+            'img' => 'upload/avatar.png',
+            'id' => $commodity_id,
+      //      'star_numbers' => $array_commofity_info[Config_commodity::praise],
+      //      'message_numbers' => $array_commofity_info[Config_commodity::leave_message_time],
+        );
+        include ('smarty_init.php');
+        $smarty->assign('detail',$commodity_array_for_display);
+        $smarty->display('Reward&Market/market-skill-buy.html');
+    }
 }
 
 function send_msg($commodity_ary)
@@ -65,6 +105,13 @@ function send_msg($commodity_ary)
 
 }
 
+function get_time($release_date)
+{
+    $now_time = time();
+    $release_time=strtotime($release_date);
+    return (int)( ($now_time-$release_time) /3600/24);
+
+}
 
 function create_transaction($conn,$commodity_ary)
 {
