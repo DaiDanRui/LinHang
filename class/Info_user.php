@@ -2,9 +2,20 @@
 
 class Info_user
 {
+    public static function  get_user_account($conn,$id){
+        require_once 'class/Config_user.php';
+        $query = 'select '.Config_user::income.','.Config_user::pay.
+        ' from '.Config_user::table_name.
+        ' when '.Config_user::id.' = '."'$id'";
+        
+        $retval = mysqli_query($conn, $query);
+        $array = mysqli_fetch_array($retval, MYSQLI_ASSOC);
+        return $array;
+    }
+    
     public static function get_user_info_by_id($conn,$id)
     {
-        include_once('class/Config_user.php');
+        require_once('class/Config_user.php');
         require_once 'DBtraverser.php';
         $myDBtraveser = new DBtraverser(Config_user::table_name, ' where '.Config_user::id."='$id'");
         $retval = $myDBtraveser->excute($conn);
@@ -15,7 +26,7 @@ class Info_user
     
     public static function get_user_info($conn,$username)
     {
-        include_once('class/Config_user.php');
+        require_once('class/Config_user.php');
         require_once 'DBtraverser.php';
         $myDBtraveser = new DBtraverser(Config_user::table_name, ' where '.Config_user::log_name."='$username'");
         $retval = $myDBtraveser->excute($conn);
@@ -26,7 +37,7 @@ class Info_user
     
     public static function get_user_avatar($conn,$username)
     {
-        include_once('class/Config_user.php');
+        require_once ('class/Config_user.php');
         $query = 'select '.Config_user::pic_path.' from '.Config_user::table_name.
         ' when '.Config_user::log_name.' = '."'$username'";
         

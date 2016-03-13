@@ -5,12 +5,14 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
     require_once 'class/Config.php';
     $commodity_id = (int) $_GET['id'];
+    
     $conn = Config::connect();
     
     //判断是否已赞
     require_once 'Inlcude_is_praised.php';
     if(!is_praised($conn, $commodity_id, $_SESSION['CURRENT_LOGIN_ID']))
     {
+      
         require_once 'class/DBincrement.php';
         require_once 'class/Config_commodity.php';
         require_once 'class/DBadder.php';
@@ -30,6 +32,8 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
             ' where '.Config_commodity::id.' = '."'".$commodity_id."'"
         );
         $DBincrement->excute($conn);
+    }else {
+        echo 'praised';
     }
     header("Location:Commodity_details.php?id=$commodity_id");
     

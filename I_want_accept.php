@@ -65,6 +65,7 @@ function send_msg($commodity_ary)
 
 }
 
+
 function create_transaction($conn,$commodity_ary)
 {
 
@@ -87,7 +88,7 @@ function create_transaction($conn,$commodity_ary)
         $holder = $commodity_acceptor_id;
     }
 
-    $myary = array(
+    $transaction_ary = array(
         Config_transaction::choosed_id => $commodity_ary[Config_commodity::id],
         Config_transaction::state => Transaction_state_config::one_want_accept,
 
@@ -102,7 +103,15 @@ function create_transaction($conn,$commodity_ary)
         Config_transaction::course_or_reward => $commodity_ary[Config_commodity::course_or_reward]
 
     );
-
-    $adder = new DBadder(Config_transaction::table_name, $myary);
-    return $adder->excute($conn);
+    
+    $adder = new DBadder(Config_transaction::table_name, $transaction_ary);
+    $adder->excute($conn);
+    
+    require_once 'class/Config_budget.php';
+    $budget_ary = array(
+        Config_budget::pay_date => date('Y-m-d H:i:s',time()),
+        Config_budget::transaction_id => mysqli_insert_id($conn),
+    );
+    $adder = new DBadder(Config_budget::table_name, $budget_ary);
+    $adder->excute($conn);
 }
