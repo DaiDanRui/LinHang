@@ -34,11 +34,11 @@ jQuery(function(){
         var $li = $(
                 '<div id="' + file.id + '" ' + 'class = "file-item thumbnail">' + '<img>' +
                 + '</div>'),
-            $info = $('<div class = "info">' + file.name + '</div>'),
+            //$info = $('<div class = "info">' + file.name + '</div>'),
 
             $img = $li.find('img');
 
-        $list.append($info);
+        //$list.append($info);
         $list.append($li);
 
         //创建缩略图
