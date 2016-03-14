@@ -34,10 +34,15 @@ function upload()
         require_once 'class/Injection.php';
         require_once 'class/Config.php';
         $conn = Config::connect();
-    
+        $course_or_reward =  1;
+        if(isset($_REQUEST['course_or_reward']))
+        {
+            $course_or_reward =  $_REQUEST['course_or_reward']=='skill'? 1:2;
+        }
+        
         $commodity_message = Array
         (
-    //        Config_commodity::course_or_reward  => (int)$_GET['course_or_reward'],
+            Config_commodity::course_or_reward  => (int)$_GET['course_or_reward'],
             Config_commodity::type =>isset($_POST['type'])?  Injection::excute('type'):'其他' ,
             Config_commodity::publisher => $_SESSION['CURRENT_LOGIN_ID']     ,
     
@@ -55,7 +60,7 @@ function upload()
     
         include_once('class/DBadder.php');
         $myDBadder = new DBadder(Config_commodity::table_name, $commodity_message);
-        $myDBadder->excute($conn);
+        //$myDBadder->excute($conn);
     
         upload_pictures($conn,mysqli_insert_id($conn));
         header('Commodity_browse.php');

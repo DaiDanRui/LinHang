@@ -18,7 +18,7 @@ class Info_user
         if($array[Config_user::password]!=$pwd){
             return self::wrong_pass_word;
         }
-        $query = 'update '.Config_user::table_name. ' set '.Config_user::password.' = '.$newPwd.$where;
+        $query = 'update '.Config_user::table_name. ' set '.Config_user::password.' = '."'$newPwd' ".$where;
         mysqli_query($conn, $query);
         return self::done;
         

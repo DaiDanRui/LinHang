@@ -31,7 +31,7 @@ function try_to_login()
         if( $complete_ary[Config_user::password] == $password )
         {
             $_SESSION['CURRENT_LOGIN_USER'] = $username;
-            $_SESSION['CURENNT_LOGIN_ID'] = $complete_ary[Config_user::id];
+            $_SESSION['CURRENT_LOGIN_ID'] = $complete_ary[Config_user::id];
             header("Location:Commodity_browse.php");
         }
         else

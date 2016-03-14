@@ -14,17 +14,24 @@ if(isset($_SESSION['CURRENT_LOGIN_ID'])){
         $logname = $_SESSION['CURRENT_LOGIN_USER'];
         $retval = Info_user::updateInfo($logname, $pwd, $conn, $newPwd);
         if($retval==Info_user::logname_not_exsit){
-            $smarty->display('My/my-change-pwd.html');
+            echo "<script language='javascript'> alert('logname_not_exsit!');
+                window.history.go(-1);
+                </script>";
+      //      $smarty->display('My/my-change-pwd.html');
         }else if($retval==Info_user::wrong_pass_word){
-            $smarty->display('My/my-change-pwd.html');
+            echo "<script language='javascript'> alert('wrong_pass_word!');
+                window.history.go(-1);</script>";
+    //        $smarty->display('My/my-change-pwd.html');
         }else if($retval==Info_user::done){
-            $smarty->display('My/my-change-pwd.html');
+           echo "<script language='javascript'> alert('done!') ;
+               window.history.go(-2);</script>";
+   //         $smarty->display('My/my-set.html');
         }
     }else {
         $smarty->display('My/my-change-pwd.html');
     }
 }else{
-    header('Login.php');
+    header('Location:Login.php');
 }
 
 

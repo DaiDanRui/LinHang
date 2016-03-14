@@ -48,11 +48,25 @@ function found_transactions($conn)
     $where = ' where '.Config_transaction::table_name.".".Config_transaction::choosed_id 
               .' = ' .Config_commodity::table_name.".".Config_commodity::id;
    
-    $where .= ' AND ('.Config_transaction::table_name.".".Config_transaction::commodity_buyer_id
-                        .' = ' ."'".$_SESSION['CURRENT_LOGIN_ID']."'"
-                     .' OR '.Config_transaction::table_name.".".Config_transaction::commodity_holder_id.
-                     ' = '."'".$_SESSION['CURRENT_LOGIN_ID']."'"
-                  .')';
+    if(isset($_GET['type']))
+    {
+        if($_GET['type']=='skill')
+        {
+            $where .= ' AND '.Config_transaction::table_name.".".Config_transaction::commodity_holder_id.
+                ' = '."'".$_SESSION['CURRENT_LOGIN_ID']."'";
+        }else 
+        {
+            $where .= ' AND '.Config_transaction::table_name.".".Config_transaction::commodity_buyer_id
+            .' = ' ."'".$_SESSION['CURRENT_LOGIN_ID']."'";
+        }
+    }else{
+        $where .= ' AND ('.Config_transaction::table_name.".".Config_transaction::commodity_buyer_id
+        .' = ' ."'".$_SESSION['CURRENT_LOGIN_ID']."'"
+            .' OR '.Config_transaction::table_name.".".Config_transaction::commodity_holder_id.
+            ' = '."'".$_SESSION['CURRENT_LOGIN_ID']."'"
+                .')';
+    }
+    
     
     $table_name = Config_transaction::table_name.",".Config_commodity::table_name;
     $choose_fields = array(

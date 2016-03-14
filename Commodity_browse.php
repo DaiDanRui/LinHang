@@ -1,11 +1,8 @@
 <?php
+if(!isset($_SESSION))
+{
     session_start();
-    /* if(isset($_SESSION['a'])){
-        $_SESSION['a']++;
-    }else {
-        $_SESSION['a'] = 1;
-    }
-    echo $_SESSION['a']; */
+}
     /**
      * type
      * page
@@ -50,8 +47,8 @@
         
         //是否有进行搜索
         if(isset($_REQUEST['search'])){
-            $where .= ' AND MATCH ('. Config_commodity::title.' ) AGAINST('. "'". $_REQUEST['search']."'" .')';
-            $where .=  ' AND '.Config_commodity::title.' LIKE %'. "'".$_REQUEST['search']."%'" .')';
+        //    $where .= ' AND MATCH ('. Config_commodity::title.' ) AGAINST('. "'". $_REQUEST['search']."'" .')';
+            $where .=  ' AND '.Config_commodity::title.' LIKE '."'%". $_REQUEST['search']."%'" .')';
         }
         
       //排序控制  
