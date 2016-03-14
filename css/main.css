@@ -373,6 +373,7 @@ a {
 }
 .wrapper-2{
     margin-top: 4%;
+    padding-top: 5%;
     width: 98%;
     height: 35%;
     overflow: hidden;
@@ -384,10 +385,13 @@ a {
     margin-top: 2%;
 }
 .wrapper-2 .topic{
-    height: 25%;
+    height: 22%;
     width: 86.56%;
     margin: 0 auto;
     margin-top: 3%;
+}
+.wrapper-2 h1{
+    font-weight: 300;
 }
 .content-wrapper input{
     width: 80%;
@@ -409,6 +413,9 @@ a {
     border-radius: 0.5em;
     border: 2px solid darkgray;
     font-size: 180%;
+}
+.publish-input-out-2{
+    border: 1px solid darkgray;
 }
 .area{
     width: 92%;
@@ -457,7 +464,7 @@ a {
     margin-top: 1%;
 }
 .confirm-bottom-4{
-    margin-top: 25%;
+    margin-top: 20%;
 }
 .confirm-bottom button{
     width: 100%;
@@ -715,7 +722,7 @@ a {
     margin: 0 auto;
     margin-top: 1.5%;
     width: 97.5%;
-    height: 28.6%;
+    height: 30.6%;
     background-color: #fafafa;
 }
 .item-3 .head{
@@ -754,11 +761,16 @@ a {
     color: gray;
 }
 .item-3 .bottom h2{
-    margin-top: 1.5%;
+    margin-top: 0.5%;
+}
+.for-me{
+    margin-top: 3%;
 }
 .item-3 .middle .title{
     width: 80%;
     text-align: left;
+    margin: 0;
+    margin-left: 3%;
 }
 .item-3 .h1-price{
     float: right;
@@ -769,8 +781,10 @@ a {
     width: 20%;
 }
 .item-3 table{
-    padding-top: 2%;
+    /*padding-top: 2%;*/
     margin-left: 2%;
+    width: 80%;
+    border-spacing: 1px 0;
 }
 /*我的(被接受的)-------------------------------------------------*/
 .item-4{

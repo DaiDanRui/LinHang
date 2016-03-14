@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/main.css" type="text/css" rel="stylesheet"/>
-    <title>我的-我的收藏</title>
+    <title>市场-主页</title>
 </head>
 <body>
 <div class="wrapper">
@@ -12,7 +12,7 @@
         <a class="sets" onclick="history.go(-1)">
             <img src="img/sets-back.png">
         </a>
-        <h1 class="nav-title">我的收藏</h1>
+        <h1 class="nav-title">我发布的</h1>
     </div>
 
     <div class="contents contents-5">
@@ -20,22 +20,22 @@
         <div class="item item-2">
             <div class="item-header-main">
                 <img src="<{$my_star['url']}>">
-                <a href="Commodity_details.php?id=<{$my_star['id']}>"><h1><{$my_star['title']}></h1></a>
-                <div class="price">￥<{$my_star['price']}></div>
+                <a href="Commodity_details.php?id=<{$my_publish['id']}>"><h1><{$my_publish['title']}></h1></a>
+                <div class="price">￥<{$my_publish['price']}></div>
             </div>
             <div class="item-content item-content-2">
                 <p>
-                    <{$my_star['description']}>
+                    <{$my_publish['description']}>
                 </p>
-                <{foreach $my_star['imgs'] as $url}>
+                <{foreach $my_publish['imgs'] as $url}>
                 <img src="<{$url}>">
                 <{/foreach}>
             </div>
             <div class="item-bottom">
-                <h2><{$my_star['name']}> (<{$my_star['time']}>天前)</h2>
-                <h3><{$my_star['star_numbers']}></h3>
+                <h2><{$my_publish['name']}> (<{$my_publish['time']}>天前)</h2>
+                <h3><{$my_publish['star_numbers']}></h3>
                 <img src="img/icon-save.png">
-                <h3><{$my_star['message_numbers']}></h3>
+                <h3><{$my_publish['message_numbers']}></h3>
                 <img src="img/icon-msg.png">
             </div>
         </div>

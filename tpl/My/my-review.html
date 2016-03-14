@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/main.css" type="text/css" rel="stylesheet"/>
-    <script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <title>我的-评价详情</title>
 </head>
@@ -21,13 +21,13 @@
         <{foreach $reviews as $review}>
         <div class="item-3">
             <div class="head">
-                <img src="<{$review['url_header']}>">
+                <img class="img-to-set" src="<{$review['url_header']}>">
                 <h1><{$review['username']}></h1>
-                <h2>for me</h2>
+                <h2 class="for-me">for me</h2>
             </div>
             <div class="middle">
                 <h1 class="title"><{$review['title']}></h1>
-                <h1 class="h1-price">￥&nbsp;<{$review['price']}></h1>
+                <!--<h1 class="h1-price">￥&nbsp;<{$review['price']}></h1>-->
                 <table>
                     <tr>
                         <td><h2>学习能力</h2></td>
