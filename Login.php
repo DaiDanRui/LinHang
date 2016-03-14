@@ -24,7 +24,9 @@ function try_to_login()
 
     //handle the login result
     if (mysqli_num_rows($retval)==0){
-        echo 'wrong log name';
+        echo "<script language='javascript'> alert('wrong log name!');
+                window.history.go(-1);
+                </script>";
     }else
     {
         $complete_ary = mysqli_fetch_array($retval, MYSQLI_ASSOC);
@@ -32,14 +34,17 @@ function try_to_login()
         {
             $_SESSION['CURRENT_LOGIN_USER'] = $username;
             $_SESSION['CURRENT_LOGIN_ID'] = $complete_ary[Config_user::id];
+            mysqli_free_result($retval);
             header("Location:Commodity_browse.php");
         }
         else
         {
-            echo 'wrong password';
+            mysqli_free_result($retval);
+            echo "<script language='javascript'> alert('wrong password!');
+                window.history.go(-1);
+                </script>";
         }
     }
-    mysqli_free_result($retval);
 }
 
 if (isset($_POST['login'])){
