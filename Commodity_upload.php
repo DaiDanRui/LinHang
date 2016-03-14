@@ -7,8 +7,8 @@ session_start();
 
 include_once("smarty_init.php");
 //测试
-   $_SESSION['CURRENT_LOGIN_ID'] = 1;
-   $_SESSION['CURRENT_LOGIN_USER'] = 'daixinyan';
+//    $_SESSION['CURRENT_LOGIN_ID'] = 1;
+//    $_SESSION['CURRENT_LOGIN_USER'] = 'daixinyan';
 //如果已经登陆
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
@@ -57,7 +57,7 @@ function upload()
         $myDBadder = new DBadder(Config_commodity::table_name, $commodity_message);
         $myDBadder->excute($conn);
     
-      //  upload_pictures($conn,mysqli_insert_id($conn));
+        upload_pictures($conn,mysqli_insert_id($conn));
         header('Commodity_browse.php');
     }else
     {
@@ -67,6 +67,7 @@ function upload()
 
 function upload_pictures($conn, $commodity_id)
 {
+    echo $commodity_id;
     require_once 'class/Picture_upload.php';
     for ($i = 1; true; $i++)
     {

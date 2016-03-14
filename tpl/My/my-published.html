@@ -16,10 +16,10 @@
     </div>
 
     <div class="contents contents-5">
-        <{foreach $my_stars as $my_star}>
+        <{foreach $my_publishs as $my_publish}>
         <div class="item item-2">
             <div class="item-header-main">
-                <img src="<{$my_star['url']}>">
+                <img src="<{$my_publish['url']}>">
                 <a href="Commodity_details.php?id=<{$my_publish['id']}>"><h1><{$my_publish['title']}></h1></a>
                 <div class="price">￥<{$my_publish['price']}></div>
             </div>

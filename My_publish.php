@@ -7,7 +7,7 @@
  */
 
 session_start();
-//$_SESSION['CURRENT_LOGIN_ID'] = 1;
+$_SESSION['CURRENT_LOGIN_ID'] = 1;
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
 
@@ -37,8 +37,8 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     //$types = get_all_types($conn);
     //3.显示数据
     $smarty->assign('page',$list['page']);
-    $smarty->assign('accepts',$list['array']);
-    $smarty->display('My/my-accepted.html');
+    $smarty->assign('my_publishs',$list['array']);
+    $smarty->display('My/my-published.html');
     //4.释放资源
     mysqli_close($conn);
 }
