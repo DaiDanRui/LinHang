@@ -32,4 +32,4 @@ $test = "hi";
 
 //$smarty->assign('skill',$arr);
 //$smarty->assign('test',$test);
-$smarty->display('Reward&Market/market-main.html');
+$smarty->display('My/my-main.html');
