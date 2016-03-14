@@ -23,10 +23,9 @@
     
     //1.获取限定条件
         $where = ' where '.Config_commodity::commodity_state." < '2' ";
+
         
         //浏览的商品分类 
-        
-        
         if(isset($_GET['type']))  //when $_GET['type'] isset && $_GET['type']!=0
         {
             if($_GET['type']=='market')//when $_GET['course_or_reward'] isset && $_GET['course_or_reward']!=0
@@ -49,6 +48,11 @@
             $where .= ' AND '.Config_commodity::release_date> (date("Y-m-d H:i:s",time()-3*30*24*3600));
         }
         
+        //是否有进行搜索
+        if(isset($_REQUEST['search'])){
+            $where .= ' AND MATCH ('. Config_commodity::title.' ) AGAINST('. "'". $_REQUEST['search']."'" .')';
+            $where .=  ' AND '.Config_commodity::title.' LIKE %'. "'".$_REQUEST['search']."%'" .')';
+        }
         
       //排序控制  
         if(isset($_POST['price-high'])){//价格最高的

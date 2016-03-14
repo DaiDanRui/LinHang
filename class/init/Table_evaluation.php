@@ -1,5 +1,5 @@
 <?php
-include('Table.php');
+require_once('Table.php');
 class Table_evaluation extends Table
 {
     public function __construct($conn){

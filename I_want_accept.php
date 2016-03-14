@@ -35,10 +35,9 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
             if(create_transaction($conn, $commodity_ary))
             {
                 send_msg($commodity_ary);
-                header('Location: Commodity_details.php?id='.$commodity_id);
             }
         }
-    
+        header('Location: Commodity_details.php?id='.$commodity_id);
     }else //展示我要买界面 
     {
         require 'Include_commodity.php';

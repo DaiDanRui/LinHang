@@ -39,9 +39,24 @@ class Picture_upload
         return $name;
     }
  
-    public static function uplpad_pictures(){
+    public static function uplpad_pictures($submit_name){
+        $names_array = array();
+        $fileArray = $_FILES['into'];//获取多个文件的信息，注意：这里的键名不包含[]
+        $upload_dir = 'upload/'; //保存上传文件的目录
+        foreach ( $fileArray['error'] as $key => $error) {
+            if ( $error == UPLOAD_ERR_OK ) { //PHP常量UPLOAD_ERR_OK=0，表示上传没有出错
+                $temp_name = $fileArray['tmp_name'][$key];
+                $tuozhan=explode("/",$fileArray['type'][$key]);
+                $file_name = uniqid().'.'.$tuozhan[1];
+                move_uploaded_file($temp_name, $upload_dir.$file_name);
+                $names_array[] = $file_name;
+            }
+            
+        }
+        return $names_array;
         
     }
+    
 }
 
 ?>
