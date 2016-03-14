@@ -15,7 +15,7 @@
  * 我的收藏： 市场界面一样。 标题 描述  发布者头像 图片 价格 时间 赞  留言数 
  */
 session_start();
-$_SESSION['CURRENT_LOGIN_ID'] = 1;
+//$_SESSION['CURRENT_LOGIN_ID'] = 1;
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
     

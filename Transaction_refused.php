@@ -7,10 +7,11 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     require_once 'class/commodity/Transaction_state_config.php';
     require_once 'class/Config_commodity.php';
 
+    require_once 'class/Info_commodity.php';
     $commodity_id = (int)$_GET['commodity_id'];
     $conn = Config::connect();
 
-    $commodity = new Transaction_commodity($conn, $commodity_id);
+    $commodity = new Info_commodity($conn, $commodity_id);
     $commodity_ary = $commodity->get_commodity();
 
     if($commodity_ary[Config_commodity::publisher]==$_SESSION['CURRENT_LOGIN_ID'])

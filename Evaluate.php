@@ -7,7 +7,7 @@ session_start();
  * score2
  * score3 
  */
-$_SESSION['CURRENT_LOGIN_ID'] = 1;
+//$_SESSION['CURRENT_LOGIN_ID'] = 1;
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
     evaluate();

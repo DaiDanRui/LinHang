@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['CURRENT_LOGIN_ID'] = 1;
+//$_SESSION['CURRENT_LOGIN_ID'] = 1;
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
     require_once 'class/Config.php';

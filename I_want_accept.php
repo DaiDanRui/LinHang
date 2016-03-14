@@ -8,8 +8,8 @@
  *
  */
 session_start();
-$_SESSION['CURRENT_LOGIN_ID'] = 1;
-$_SESSION['CURRENT_LOGIN_USER'] = 'daixinyan';
+//$_SESSION['CURRENT_LOGIN_ID'] = 1;
+//$_SESSION['CURRENT_LOGIN_USER'] = 'daixinyan';
 
 if(isset($_SESSION['CURRENT_LOGIN_ID']))
 {
