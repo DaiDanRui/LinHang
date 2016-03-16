@@ -20,7 +20,19 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     $where = ' where  tbl_praise.commodity_id = tbl_commodity.id AND tbl_praise.praiser_id = '.
               "'".$_SESSION['CURRENT_LOGIN_ID']."'";
     
-    
+    if(isset($_GET['type']))
+    {
+        require_once 'class/commodity/Commodity_type_Config.php';
+        if($_GET['type']=='skill')
+        {
+            $where .= ' AND '.Config_commodity::table_name.".".Config_commodity::course_or_reward
+            .' = '."'".Commodity_type_Config::course."'";
+        }else
+        {
+            $where .= ' AND '.Config_commodity::table_name.".".Config_commodity::course_or_reward
+            .' = ' ."'".Commodity_type_Config::reward."'";
+        }
+    }
     //2.获取数组数据
     $list =  pagination($where,$conn,Config_commodity::table_name.','.Config_praise::tbl_name);
     //所有分类信息

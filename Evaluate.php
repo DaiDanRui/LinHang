@@ -71,8 +71,9 @@ function evaluate()
             );
             $DBadder = new DBadder(Config_evaluation::tbl_name, $ary);
             $DBadder->excute($conn);
-            
-             $smarty->display("");
+            echo "<script language='javascript'> alert('done!');
+                window.history.go(-1);
+                </script>";
         }
         else {
         }

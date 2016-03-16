@@ -25,10 +25,19 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
     
     $where = ' where '.Config_commodity::publisher.' = '."'".$_SESSION['CURRENT_LOGIN_ID']."' "
         .' AND '.Config_commodity::commodity_state.' = '."'".Transaction_state_config::just_publish."'";
-    if(isset($_REQUEST[Config_commodity::course_or_reward]))
+
+    if(isset($_GET['type']))
     {
-        $where .= ' AND '.Config_commodity::course_or_reward.' = '.
-                  "'".$_REQUEST[Config_commodity::course_or_reward]."'";
+        require_once 'class/commodity/Commodity_type_Config.php';
+        if($_GET['type']=='skill')
+        {
+            $where .= ' AND '.Config_commodity::table_name.".".Config_commodity::course_or_reward
+            .' = '."'".Commodity_type_Config::course."'";
+        }else
+        {
+            $where .= ' AND '.Config_commodity::table_name.".".Config_commodity::course_or_reward
+            .' = ' ."'".Commodity_type_Config::reward."'";
+        }
     }
     
     //2.获取数组数据
