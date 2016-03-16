@@ -32,10 +32,13 @@ if(isset($_SESSION['CURRENT_LOGIN_ID']))
             ' where '.Config_commodity::id.' = '."'".$commodity_id."'"
         );
         $DBincrement->excute($conn);
+        header("Location:Commodity_details.php?id=$commodity_id");
     }else {
-        echo 'praised';
+         echo "<script language='javascript'> alert('praised!');
+                window.history.go(-1);
+                </script>"; 
     }
-    header("Location:Commodity_details.php?id=$commodity_id");
+    
     
 }
 

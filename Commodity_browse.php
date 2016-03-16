@@ -48,9 +48,9 @@ if(!isset($_SESSION))
         //是否有进行搜索
         if(isset($_REQUEST['search'])){
         //    $where .= ' AND MATCH ('. Config_commodity::title.' ) AGAINST('. "'". $_REQUEST['search']."'" .')';
-            $where .=  ' AND '.Config_commodity::title.' LIKE '."'%". $_REQUEST['search']."%'" .')';
+            $where .=  ' AND '.Config_commodity::title.' LIKE '."'%". $_REQUEST['search']."%'";
         }
-        
+        $where .=  ' AND '.Config_commodity::title.' LIKE '."'%". 'P'."%'";
       //排序控制  
         if(isset($_POST['price-high'])){//价格最高的
             $where .= ' ORDER BY '.Config_commodity::price.' desc '  ;

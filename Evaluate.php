@@ -25,7 +25,8 @@ function evaluate()
     require_once 'class/Config_transaction.php';
     include 'smarty_init.php';
     
-    $content = Injection::excute('content');  //评价内容
+    $content = '';
+//    $content = Injection::excute('content');  //评价内容
     $transaction_id = (int)$_REQUEST['transaction_id']; //评价交易单
     $evaluater_id = $_SESSION['CURRENT_LOGIN_ID']; //评价人ID
     $score1 = $_REQUEST['score1'];

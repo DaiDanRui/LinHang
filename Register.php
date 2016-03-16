@@ -3,7 +3,6 @@ session_start();
 include_once ('smarty_init.php');
 include_once 'class/Config_user.php';
 
-
 /**
  *
  * @param string $username
@@ -39,7 +38,8 @@ if (isset($_POST['reg'])){
         Config_user::payer_credit=>5,
 
         Config_user::log_name => $name,
-        Config_user::password => $pwd
+        Config_user::password => $pwd,
+        Config_user::pic_path => 'avatar.jpg',
     );
     if(is_username_exist($name)){
         
